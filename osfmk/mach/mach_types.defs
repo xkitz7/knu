@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -467,7 +467,7 @@ type processor_array_t = ^array[] of processor_t;
 		 * If other processor_info flavors are added, this definition
 		 * may need to be changed.
 		 *
-		 * See mach/processor_info.h and mach/arm/processor_info.h.
+		 * See mach/processor_info.h and mach//processor_info.h.
 		 */
 
 type processor_flavor_t     = int;
@@ -753,3 +753,4 @@ import <mach/mach_types.h>;
 #endif	/* _MACH_MACH_TYPES_DEFS_ */
 
 /* vim: set ft=c : */
+

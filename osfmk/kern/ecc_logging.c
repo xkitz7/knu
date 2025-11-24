@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2013 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -44,7 +44,7 @@
 #include <pexpert/pexpert.h>
 #include <pexpert/device_tree.h>
 #include <libkern/OSAtomic.h>
-#include <arm/pmap_public.h>
+/* Removed  include (intel-only) */
 #include <vm/vm_page.h>
 #include <vm/vm_protos.h>
 
@@ -342,3 +342,4 @@ ecc_log_get_next_event(struct ecc_event *ev)
 
 	return KERN_SUCCESS;
 }
+

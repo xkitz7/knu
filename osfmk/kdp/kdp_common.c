@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -237,7 +237,7 @@ kdp_generic_copyin(vm_map_t map, uint64_t uaddr, void *dest, size_t size, kdp_fa
 		if (phys_src && phys_dest) {
 #if defined(__arm64__)
 			/*
-			 * On arm devices the panic buffer is mapped as device memory and doesn't allow
+			 * On  devices the panic buffer is mapped as device memory and doesn't allow
 			 * unaligned accesses. To prevent these, we copy over bytes individually here.
 			 */
 			if (!not_in_kdp) {
@@ -414,3 +414,4 @@ kdp_task_dyld_info(task_t task, kdp_fault_flags_t fault_flags, uint64_t * dyld_l
 
 	return KERN_NOT_FOUND;
 }
+

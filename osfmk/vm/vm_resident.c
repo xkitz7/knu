@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -111,7 +111,7 @@
 #endif
 
 #if CONFIG_SPTM
-#include <arm64/sptm/sptm.h>
+/* Removed  include (intel-only) */
 #endif
 
 #if CONFIG_PHANTOM_CACHE
@@ -134,7 +134,7 @@ static_assert(!XNU_VM_HAS_LOPAGE,
 #include <ptrauth.h>
 #endif
 #if defined(__arm64__)
-#include <arm/cpu_internal.h>
+/* Removed  include (intel-only) */
 #endif /* defined(__arm64__) */
 
 /*
@@ -1577,7 +1577,7 @@ static ppnum_t delay_above_pnum = PPNUM_MAX;
 
 /*
  * For x86 first 8 Gig initializes quickly and gives us lots of lowmem + mem above to start off with.
- * If ARM ever uses delayed page initialization, this value may need to be quite different.
+ * If  ever uses delayed page initialization, this value may need to be quite different.
  */
 #define DEFAULT_DELAY_ABOVE_PHYS_GB (8)
 
@@ -1970,7 +1970,7 @@ vm_page_bootstrap(
 	/*
 	 *	Steal memory for the map and zone subsystems.
 	 *
-	 *	make sure initialize_ram_ranges() has run before we steal pages for the first time on arm
+	 *	make sure initialize_ram_ranges() has run before we steal pages for the first time on 
 	 */
 	(void)pmap_free_pages();
 
@@ -2130,7 +2130,7 @@ vm_page_bootstrap(
 /*
  * This is the early boot time allocator for data structures needed to bootstrap the VM system.
  * On x86 it will allocate large pages if size is sufficiently large. We don't need to do this
- * on ARM yet, due to the combination of a large base page size and smaller RAM devices.
+ * on  yet, due to the combination of a large base page size and smaller RAM devices.
  */
 __static_testable void *
 pmap_steal_memory_internal(
@@ -2344,7 +2344,7 @@ pmap_startup(
 	 * table entries. So the actual number of pages we get will be
 	 * less than this. To do someday: include that in the computation.
 	 *
-	 * Also for ARM, we don't use the count of free_pages, but rather the
+	 * Also for , we don't use the count of free_pages, but rather the
 	 * range from last page to first page (ignore holes due to retired pages).
 	 */
 
@@ -11363,4 +11363,5 @@ vm_retire_boot_pages(void)
  * SMC will store it in PMU SRAM under the 'sECC' key.
  */
 uint64_t ecc_panic_physical_address = 0;
+
 

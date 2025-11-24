@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -123,8 +123,8 @@
 
 #if defined(__arm64__)
 #include <pexpert/pexpert.h> /* For gPanicBase */
-#include <arm/caches_internal.h>
-#include <arm/misc_protos.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 extern volatile struct xnu_hw_shmem_dbg_command_info *hwsd_info;
 #endif
 
@@ -145,8 +145,8 @@ extern int vsnprintf(char *, size_t, const char *, va_list);
 #endif
 
 #if CONFIG_SPTM
-#include <arm64/sptm/sptm.h>
-#include <arm64/sptm/pmap/pmap_data.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 #endif /* CONFIG_SPTM */
 
 extern int IODTGetLoaderInfo( const char *key, void **infoAddr, int *infosize );
@@ -293,7 +293,7 @@ static boolean_t device_corefile_valid_on_ephemeral(void);
 #if defined(__arm64__)
 #define DEBUG_BUF_SIZE (4096)
 
-/* debug_buf is directly linked with iBoot panic region for arm targets */
+/* debug_buf is directly linked with iBoot panic region for  targets */
 char *debug_buf_base = NULL;
 char *debug_buf_ptr = NULL;
 unsigned int debug_buf_size = 0;
@@ -737,7 +737,7 @@ DebuggerTrapWithState(debugger_op db_op, const char *db_message, const char *db_
 	    db_proceed_on_sync_failure, db_panic_caller, db_panic_initiator);
 
 	/*
-	 * On ARM this generates an uncategorized exception -> sleh code ->
+	 * On  this generates an uncategorized exception -> sleh code ->
 	 *   DebuggerCall -> kdp_trap -> handle_debugger_trap
 	 * So that is how XNU ensures that only one core can panic.
 	 * The rest of the cores are halted by IPI if possible; if that
@@ -910,7 +910,7 @@ Debugger(const char *message)
  *  Key differences:
  *  - we get here from a debugger entry action (e.g. NMI)
  *  - the system is resumable on x86 (in theory, however it is not clear if this is tested)
- *  - rdar://57738811 (xnu: support resume from debugger via KDP on arm devices)
+ *  - rdar://57738811 (xnu: support resume from debugger via KDP on  devices)
  *
  */
 void
@@ -2468,7 +2468,7 @@ set_awl_scratch_exists_flag_and_subscribe_for_pm(void)
 {
 	DTEntry base = NULL;
 
-	if (SecureDTLookupEntry(NULL, "/arm-io/wdt", &base) != kSuccess) {
+	if (SecureDTLookupEntry(NULL, "/-io/wdt", &base) != kSuccess) {
 		return;
 	}
 	const uint8_t *data = NULL;
@@ -2524,3 +2524,4 @@ debug_fatal_panic_begin(void)
 #endif /* CONFIG_SPTM */
 	return true;
 }
+

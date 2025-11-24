@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2013 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -375,7 +375,7 @@ sfi_timer_global_off(
 		}
 	}
 
-	/* Re-arm timer if still enabled */
+	/* Re- timer if still enabled */
 	simple_lock(&sfi_lock, LCK_GRP_NULL);
 	if (sfi_is_enabled) {
 		clock_deadline_for_periodic_event(sfi_window_interval,
@@ -1181,3 +1181,4 @@ sfi_thread_classify(thread_t thread)
 }
 
 #endif /* !CONFIG_SCHED_SFI */
+

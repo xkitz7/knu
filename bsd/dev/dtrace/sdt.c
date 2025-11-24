@@ -1,4 +1,4 @@
-/*
+﻿/*
  * CDDL HEADER START
  *
  * The contents of this file are subject to the terms of the
@@ -33,7 +33,7 @@
 #include <miscfs/devfs/devfs.h>
 
 #if defined(__arm64__)
-#include <arm/caches_internal.h>
+/* Removed  include (intel-only) */
 #endif /* defined(__arm64__) */
 
 #include <sys/dtrace.h>
@@ -810,3 +810,4 @@ sdt_provide_module(void *arg, struct modctl *ctl)
 		ctl->mod_sdtdesc = NULL;
 	}
 }
+

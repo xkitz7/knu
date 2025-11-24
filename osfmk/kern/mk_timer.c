@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -229,7 +229,7 @@ mk_timer_destroy_trap(
 }
 
 /*
- * mk_timer_arm_trap: Start (arm) a timer
+ * mk_timer_arm_trap: Start () a timer
  *
  * Parameters:  args                     User argument descriptor (see below)
  *
@@ -384,3 +384,4 @@ mk_timer_cancel_trap(
 
 	return result;
 }
+

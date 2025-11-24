@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2006-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -292,7 +292,7 @@ _memstat_write_memlimit_to_ledger_locked(proc_t p, bool is_active, bool drop_loc
  *  DRAM (GB) | critical | idle | pressure | reaper | freeze
  *  (0,3]     | 5%       | 10%  | 15%      | 20%    | 50%
  *  (3,6]     | 4%       | 9%   | 15%      | 18%    | 50%
- *  (6,∞)     | 4%       | 8%   | 12%      | 16%    | 50%
+ *  (6,âˆž)     | 4%       | 8%   | 12%      | 16%    | 50%
  */
 
 #define MEMORYSTATUS_CRITICAL_PERCENTAGE_SMALL 5UL
@@ -1961,7 +1961,7 @@ initialize_entitled_max_task_limit()
 	    memorystatus_entitled_dev_max_task_footprint_mb <
 	    memorystatus_entitled_max_task_footprint_mb) {
 		memorystatus_log_error("memorystatus: Entitled developer limit (%d MB) "
-		    "must be ≥ entitled task limit (%d MB)\n",
+		    "must be â‰¥ entitled task limit (%d MB)\n",
 		    memorystatus_entitled_dev_max_task_footprint_mb,
 		    memorystatus_entitled_max_task_footprint_mb);
 		memorystatus_entitled_dev_max_task_footprint_mb =
@@ -6566,7 +6566,7 @@ memstat_kill_top_process(uint32_t cause, os_reason_t jetsam_reason,
 			 * processes in hopes of stumbling onto a vnode gain that helps
 			 * the system recover.  The process that happens to trigger
 			 * this path has no known relationship to the vnode shortage.
-			 * Deadlock avoidance: attempt to safeguard the caller.
+			 * Deadlock avoidance: attempt to safeguard theÂ caller.
 			 */
 
 			if (p == current_proc()) {
@@ -8822,7 +8822,7 @@ static int
 memorystatus_cmd_rearm_memlimit(pid_t pid, uint32_t flags, __unused int32_t *retval)
 {
 	if (pid == -1) {
-		/* Re-arm all pids */
+		/* Re- all pids */
 		proc_iterate(
 			PROC_ALLPROCLIST,
 			_memstat_rearm_proc_memlimit,
@@ -8830,7 +8830,7 @@ memorystatus_cmd_rearm_memlimit(pid_t pid, uint32_t flags, __unused int32_t *ret
 			NULL,
 			NULL);
 	} else {
-		/* Re-arm one pid */
+		/* Re- one pid */
 		proc_t p = (pid == proc_selfpid()) ? proc_self() : proc_find(pid);
 		if (!p) {
 			return ESRCH;
@@ -9181,7 +9181,7 @@ memorystatus_control(struct proc *p, struct memorystatus_control_args *args, int
 
 #if DEVELOPMENT || DEBUG
 	/*
-	 * On development kernels, processes should be able to re-arm themselves
+	 * On development kernels, processes should be able to re- themselves
 	 * without entitlement for testing.
 	 */
 	if (args->command == MEMORYSTATUS_CMD_REARM_MEMLIMIT && proc_getpid(p) == args->pid) {
@@ -9780,3 +9780,4 @@ memorystatus_cmd_increase_jetsam_task_limit(pid_t pid, uint32_t byte_increase)
 	return error;
 }
 #endif /* DEVELOPMENT */
+

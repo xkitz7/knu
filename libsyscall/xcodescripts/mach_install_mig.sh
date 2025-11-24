@@ -1,4 +1,4 @@
-#!/bin/sh -xe
+﻿#!/bin/sh -xe
 #
 # Copyright (c) 2010 Apple Inc. All rights reserved.
 #
@@ -48,9 +48,9 @@ SRC="$SRCROOT/mach"
 FILTER_MIG="$SRCROOT/xcodescripts/filter_mig.awk"
 
 # MACHINE_ARCH *really* needs to be a 32-bit arch to generate vm_map_internal.h correctly, even if there are no 32-bit targets.
-# thread_state_t *really* needs to pick up arm64 over intel because it has a larger struct type.
+# thread_state_t *really* needs to pick up  over intel because it has a larger struct type.
 case "$ARCHS" in
-*arm64*)
+**)
     MACHINE_ARCH=armv7
     ;;
 *x86_64*)
@@ -184,3 +184,4 @@ for mig in $MIGS_INTERNAL; do
 	$MIG -novouchers -arch $MACHINE_ARCH -cc $MIGCC -header "$MIG_INTERNAL_HEADER_DST/${MIG_NAME}_internal.h" $MIG_INCFLAGS $SRC/$mig
 done
  
+

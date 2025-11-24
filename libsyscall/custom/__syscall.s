@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1999-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -60,7 +60,7 @@ __SYSCALL(___syscall, syscall, 7)
  * Ignore nominal number of arguments: just pop from stack and let the kernel 
  * interpret.
  */
-#include <mach/arm64/asm.h>
+/* Removed  include (intel-only) */
 MI_ENTRY_POINT(___syscall)
 		ldp x1, x2, [sp]
 		ldp x3, x4, [sp, #16]
@@ -71,3 +71,4 @@ MI_ENTRY_POINT(___syscall)
 #else
 #error Unsupported architecture
 #endif
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2007 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
@@ -45,7 +45,7 @@
 /*
  * Note the shared region size here seems odd for x86.
  * The size is chosen to end the address space at a boundary
- * that the arm64 pmap uses for pmap->max. We use this
+ * that the  pmap uses for pmap->max. We use this
  * limit to prevent problems with Rosetta. Given how large
  * the region is now, the few fewer megabytes shouldn't matter.
  */
@@ -242,3 +242,4 @@ __END_DECLS
 #endif /* !KERNEL */
 
 #endif /* _MACH_SHARED_REGION_H_ */
+

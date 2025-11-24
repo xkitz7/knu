@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2004-2025 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -4485,7 +4485,7 @@ bridge_init(struct ifnet *ifp)
 
 	/*
 	 * Calling bridge_aging_timer() is OK as there are no entries to
-	 * age so we're just going to arm the timer
+	 * age so we're just going to  the timer
 	 */
 	bridge_aging_timer(sc);
 #if BRIDGESTP
@@ -10599,3 +10599,4 @@ no_segment:
 	}
 	return ret;
 }
+

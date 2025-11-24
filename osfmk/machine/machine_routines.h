@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -34,7 +34,7 @@
 #if defined (__i386__) || defined(__x86_64__)
 #include "i386/machine_routines.h"
 #elif defined (__arm__) || defined (__arm64__)
-#include "arm/machine_routines.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
@@ -411,7 +411,7 @@ void ml_task_post_signature_processing_hook(task_t task);
  *
  * @note This is always true on x86_64.
  *
- * @note On ARM, this can be set through LocalPolicy, or internally through the
+ * @note On , this can be set through LocalPolicy, or internally through the
  *       -unsafe_kernel_text boot arg.
  */
 bool ml_unsafe_kernel_text(void);
@@ -420,3 +420,4 @@ bool ml_unsafe_kernel_text(void);
 __END_DECLS
 
 #endif /* _MACHINE_MACHINE_ROUTINES_H */
+

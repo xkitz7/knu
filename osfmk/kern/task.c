@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -196,7 +196,7 @@
 #include <kdp/processor_core.h>
 
 #if defined (__arm64__)
-#include <pexpert/arm64/board_config.h>
+/* Removed  include (intel-only) */
 #endif
 
 #include <string.h>
@@ -2517,7 +2517,7 @@ task_deliver_crash_notification(
 	}
 	task_unlock(corpse);
 
-	/* Arm the no-sender notification for taskport */
+	/*  the no-sender notification for taskport */
 	task_reference(corpse);
 	corpse_port = convert_corpse_to_port_and_nsrequest(corpse);
 
@@ -10791,5 +10791,6 @@ task_best_name(task_t task)
 {
 	return proc_best_name(task_get_proc_raw(task));
 }
+
 
 

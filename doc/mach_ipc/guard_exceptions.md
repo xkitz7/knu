@@ -1,4 +1,4 @@
-Mach Port Guard exceptions
+﻿Mach Port Guard exceptions
 ==========================
 
 Mach Port Guard exceptions are used to denote various misuses of Mach IPC.
@@ -267,10 +267,10 @@ ports at the port type level, this is left mostly undocumented on purpose.
 ### `kGUARD_EXC_INVALID_NOTIFICATION_REQ` 0x00000041
 
 - **ReportCrash Name**: INVALID\_NOTIFICATION\_REQ,
-- **Target meaning**: IOT_ port type that you are trying to arm the notification on
+- **Target meaning**: IOT_ port type that you are trying to  the notification on
 - **Payload meaning**: The type of notification you were registering for
 
-This exception is thrown when a process is trying to arm a notification
+This exception is thrown when a process is trying to  a notification
 on a port type that disallows such requests.
 
 
@@ -401,7 +401,7 @@ This is usually a sign of port right mismanagement.
 - **ReportCrash Name**: `KERN_FAILURE`,
 - **Target meaning**: always zero,
 - **Payload meaning**:
-   - `0x0100000000000000`: task other than launchd arm pd on service ports,
+   - `0x0100000000000000`: task other than launchd  pd on service ports,
    - `0x0200000000000000`: not using IOT_NOTIFICATION_PORT for pd notification,
    - `0x0300000000000000`: notification port not owned by launchd,
    - `0x0400000000000000`: register multiple pd notification.
@@ -558,4 +558,5 @@ soft error.
 
 This is the same as `kGUARD_EXC_IMMOVABLE`, except that this is delivered as a
 soft error.
+
 

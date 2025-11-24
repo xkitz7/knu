@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -195,7 +195,7 @@ PE_get_primary_kc_format(kc_format_t *type)
 			*type = KCFormatFileset;
 		} else {
 #if defined(__arm64__)
-			/* From osfmk/arm/arm_init.c */
+			/* From osfmk//arm_init.c */
 			extern bool static_kernelcache;
 			if (static_kernelcache) {
 				*type = KCFormatStatic;
@@ -243,3 +243,4 @@ PE_get_kc_format(kc_kind_t type, kc_format_t *format)
 	}
 	return true;
 }
+

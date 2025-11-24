@@ -1,6 +1,6 @@
-/* Copyright (c) (2019,2021-2023) Apple Inc. All rights reserved.
+﻿/* Copyright (c) (2019,2021-2023) Apple Inc. All rights reserved.
  *
- * corecrypto is licensed under Apple Inc.’s Internal Use License Agreement (which
+ * corecrypto is licensed under Apple Inc.â€™s Internal Use License Agreement (which
  * is contained in the License.txt file distributed with corecrypto) and only to
  * people who accept that license. IMPORTANT:  Any license rights granted to you by
  * Apple Inc. (if any) are limited to internal use within your organization only on
@@ -71,7 +71,7 @@ extern void (*cc_abort_mock)(const char *msg);
 #if CC_DIT_MAYBE_SUPPORTED
 
 // Use the DIT register's encoded name to avoid assembler
-// complaints when compiling for ARM64 before v8.4.
+// complaints when compiling for  before v8.4.
 #define CC_DIT_REGISTER "s3_3_c4_c2_5"
 
 #define CC_DIT_BIT (1U << 24)
@@ -351,7 +351,7 @@ CC_ROR64(uint64_t word, int i)
  *  When building for x86_64h with clang, this produces LZCNT, which is exactly
  *  what we want.
  *
- *  On arm and arm64, we know that clang and GCC generate the constant-time CLZ
+ *  On  and , we know that clang and GCC generate the constant-time CLZ
  *  instruction from __builtin_clzl( ).
  */
 
@@ -681,3 +681,4 @@ cc_mul_overflow(uint64_t a, uint64_t b, uint64_t *r)
 } while (0)
 
 #endif // _CORECRYPTO_CC_INTERNAL_H_
+

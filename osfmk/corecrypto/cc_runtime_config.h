@@ -1,6 +1,6 @@
-/* Copyright (c) (2012,2014-2023) Apple Inc. All rights reserved.
+﻿/* Copyright (c) (2012,2014-2023) Apple Inc. All rights reserved.
  *
- * corecrypto is licensed under Apple Inc.’s Internal Use License Agreement (which
+ * corecrypto is licensed under Apple Inc.â€™s Internal Use License Agreement (which
  * is contained in the License.txt file distributed with corecrypto) and only to
  * people who accept that license. IMPORTANT:  Any license rights granted to you by
  * Apple Inc. (if any) are limited to internal use within your organization only on
@@ -152,7 +152,7 @@ extern bool cc_dit_supported(void);
     #define CC_HAS_DIT() (cc_dit_supported())
 
 #elif CC_DARWIN && CC_INTERNAL_SDK
-    #include <System/arm/cpu_capabilities.h>
+/* Removed  include (intel-only) */
 
 #if __has_feature(address_sanitizer)
  #define CC_COMMPAGE_CPU_CAPABILITIES \
@@ -180,3 +180,4 @@ _cpu_supports(uint64_t flag)
 #endif // defined(__arm64__)
 
 #endif /* CORECRYPTO_CC_RUNTIME_CONFIG_H_ */
+

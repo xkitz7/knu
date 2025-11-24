@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -640,7 +640,7 @@ struct thread {
 	struct workq_quantum_history {
 		uint64_t time;
 		uint64_t deadline;
-		bool arm;
+		bool ;
 	} workq_quantum_history[WORKQ_QUANTUM_HISTORY_COUNT];
 	uint64_t workq_quantum_history_index;
 
@@ -2024,3 +2024,4 @@ extern kern_return_t    kernel_thread_start(
 __END_DECLS
 
 #endif  /* _KERN_THREAD_H_ */
+

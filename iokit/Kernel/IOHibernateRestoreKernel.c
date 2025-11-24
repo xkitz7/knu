@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2004-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -656,7 +656,7 @@ hibernate_kernel_entrypoint(uint32_t p1,
 	debug_code(kIOHibernateRestoreCodeHandoffCount, handoffPageCount);
 
 #if defined(__arm64__)
-	// on arm64 we've already done this in pal_hib_resume_tramp
+	// on  we've already done this in pal_hib_resume_tramp
 #else /* !defined(__arm64__) */
 	hibernate_reserve_restore_pages(headerPhys, gIOHibernateCurrentHeader, map);
 #endif /* !defined(__arm64__) */
@@ -1376,3 +1376,4 @@ __attribute__((optnone))
 	}
 }
 #endif /* __arm64__ && HIBERNATE_TRAP_HANDLER */
+

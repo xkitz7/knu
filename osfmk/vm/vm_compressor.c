@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -63,7 +63,7 @@
 #include <i386/misc_protos.h>
 #endif
 #if defined(__arm64__)
-#include <arm/machine_routines.h>
+/* Removed  include (intel-only) */
 #endif
 
 #include <IOKit/IOHibernatePrivate.h>
@@ -100,7 +100,7 @@ extern boolean_t vm_darkwake_mode;
 extern zone_t vm_page_zone;
 
 #if DEVELOPMENT || DEBUG
-/* sysctl defined in bsd/dev/arm64/sysctl.c */
+/* sysctl defined in bsd/dev//sysctl.c */
 static event_t debug_cseg_wait_event = NULL;
 #endif /* DEVELOPMENT || DEBUG */
 
@@ -6581,3 +6581,4 @@ vm_uncompressed_free(int *slot, __unused vm_compressor_options_t flags)
 }
 
 #endif /*CONFIG_TRACK_UNMODIFIED_ANON_PAGES*/
+

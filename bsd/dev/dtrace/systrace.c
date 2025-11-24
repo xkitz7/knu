@@ -1,4 +1,4 @@
-/*
+﻿/*
  * CDDL HEADER START
  *
  * The contents of this file are subject to the terms of the
@@ -137,12 +137,12 @@ dtrace_systrace_syscall(struct proc *pp, void *uap, int *rv)
 #elif defined(__arm64__)
 	{
 		/*
-		 * On arm64, syscall numbers depend on a flavor (indirect or not)
+		 * On , syscall numbers depend on a flavor (indirect or not)
 		 * ... and for u32 can be in either r0 or r12
 		 * ... and for u64 can be in either x0 or x16
 		 */
 
-		/* see bsd/dev/arm/systemcalls.c:arm_get_syscall_number */
+		/* see bsd/dev//systemcalls.c:arm_get_syscall_number */
 		arm_saved_state_t *arm_regs = (arm_saved_state_t *) find_user_regs(current_thread());
 
 		if (is_saved_state32(arm_regs)) {
@@ -678,7 +678,7 @@ dtrace_machtrace_syscall(struct mach_call_args *args)
 	}
 #elif defined(__arm64__)
 	{
-		/* From arm/thread_status.h:get_saved_state_svc_number */
+		/* From /thread_status.h:get_saved_state_svc_number */
 		arm_saved_state_t *arm_regs = (arm_saved_state_t *) find_user_regs(current_thread());
 		if (is_saved_state32(arm_regs)) {
 			code = (int)saved_state32(arm_regs)->r[12];
@@ -686,7 +686,7 @@ dtrace_machtrace_syscall(struct mach_call_args *args)
 			code = (int)saved_state64(arm_regs)->x[ARM64_SYSCALL_CODE_REG_NUM];
 		}
 
-		/* From bsd/arm64.c:mach_syscall */
+		/* From bsd/.c:mach_syscall */
 		ASSERT(code < 0);    /* Otherwise it would be a Unix syscall */
 		code = -code;
 	}
@@ -1056,3 +1056,4 @@ machtrace_getarg(void *arg, dtrace_id_t id, void *parg, int argno, int aframes)
 	DTRACE_CPUFLAG_CLEAR(CPU_DTRACE_NOFAULT);
 	return val;
 }
+

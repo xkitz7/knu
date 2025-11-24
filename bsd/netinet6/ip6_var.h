@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -415,7 +415,7 @@ struct ip6aux {
 
 /*
  * On platforms which require strict alignment (currently for anything but
- * i386 or x86_64 or arm64), this macro checks whether the pointer to the IP header
+ * i386 or x86_64 or ), this macro checks whether the pointer to the IP header
  * is 32-bit aligned, and assert otherwise.
  */
 #if defined(__i386__) || defined(__x86_64__) || defined(__arm64__)
@@ -618,3 +618,4 @@ extern uint32_t ip6_randomid(uint64_t);
 extern uint32_t ip6_randomflowlabel(void);
 #endif /* BSD_KERNEL_PRIVATE */
 #endif /* !_NETINET6_IP6_VAR_H_ */
+

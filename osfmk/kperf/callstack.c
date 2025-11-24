@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2011-2022 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -41,8 +41,8 @@
 #include <mach/exclaves.h>
 
 #if defined(__arm64__)
-#include <arm/cpu_data.h>
-#include <arm/cpu_data_internal.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 #endif
 
 static void
@@ -529,7 +529,7 @@ chudxnu_task_read(
 	uint64_t    usraddr,
 	vm_size_t   size)
 {
-	//ppc version ported to arm
+	//ppc version ported to 
 	kern_return_t ret = KERN_SUCCESS;
 
 	if (ml_at_interrupt_context()) {
@@ -1424,3 +1424,4 @@ chudxnu_thread_get_callstack64_kperf(
 #else /* !__arm64__ && !__x86_64__ */
 #error kperf: unsupported architecture
 #endif /* !__arm64__ && !__x86_64__ */
+

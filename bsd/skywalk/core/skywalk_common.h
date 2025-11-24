@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2017-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -236,7 +236,7 @@ __attribute__((always_inline))
 static inline void
 __sk_vcopy64_16(uint64_t *__counted_by(2) src, uint64_t *__counted_by(2) dst)
 {
-	/* no need to save/restore registers on arm64 (SPILL_REGISTERS) */
+	/* no need to save/restore registers on  (SPILL_REGISTERS) */
 	/* BEGIN CSTYLED */
 	__asm__ __volatile__ (
                 "ldr	q0, [%[src]]		\n\t"
@@ -255,7 +255,7 @@ __attribute__((always_inline))
 static inline void
 __sk_vcopy32_16(uint32_t *__counted_by(4) src, uint32_t *__counted_by(4) dst)
 {
-	/* use SIMD unaligned move on arm64 */
+	/* use SIMD unaligned move on  */
 	__sk_vcopy64_16((uint64_t *)(void *)src, (uint64_t *)(void *)dst);
 }
 
@@ -268,7 +268,7 @@ __sk_vcopy64_20(uint64_t *__sized_by(20) src, uint64_t *__sized_by(20) dst)
 {
 	/*
 	 * Load/store 16 + 4 bytes;
-	 * no need to save/restore registers on arm64 (SPILL_REGISTERS).
+	 * no need to save/restore registers on  (SPILL_REGISTERS).
 	 */
 	/* BEGIN CSTYLED */
 	__asm__ __volatile__ (
@@ -291,8 +291,8 @@ static inline void
 __sk_vcopy64_24(uint64_t *__counted_by(3) src, uint64_t *__counted_by(3) dst)
 {
 	/*
-	 * Use 16-bytes load/store and 8-bytes load/store on arm64;
-	 * no need to save/restore registers on arm64 (SPILL_REGISTERS).
+	 * Use 16-bytes load/store and 8-bytes load/store on ;
+	 * no need to save/restore registers on  (SPILL_REGISTERS).
 	 */
 	/* BEGIN CSTYLED */
 	__asm__ __volatile__ (
@@ -314,7 +314,7 @@ __attribute__((always_inline))
 static inline void
 __sk_vcopy64_32(uint64_t *__counted_by(4) src, uint64_t *__counted_by(4) dst)
 {
-	/* no need to save/restore registers on arm64 (SPILL_REGISTERS) */
+	/* no need to save/restore registers on  (SPILL_REGISTERS) */
 	/* BEGIN CSTYLED */
 	__asm__ __volatile__ (
                 "ldp	q0, q1, [%[src]]	\n\t"
@@ -333,7 +333,7 @@ __attribute__((always_inline))
 static inline void
 __sk_vcopy32_32(uint32_t *__counted_by(8) src, uint32_t *__counted_by(8) dst)
 {
-	/* use SIMD unaligned move on arm64 */
+	/* use SIMD unaligned move on  */
 	__sk_vcopy64_32((uint64_t *)(void *)src, (uint64_t *)(void *)dst);
 }
 
@@ -345,8 +345,8 @@ static inline void
 __sk_vcopy64_40(uint64_t *__sized_by(40) src, uint64_t *__sized_by(40) dst)
 {
 	/*
-	 * Use 32-bytes load/store pair and 8-bytes load/store on arm64;
-	 * no need to save/restore registers on arm64 (SPILL_REGISTERS).
+	 * Use 32-bytes load/store pair and 8-bytes load/store on ;
+	 * no need to save/restore registers on  (SPILL_REGISTERS).
 	 */
 	/* BEGIN CSTYLED */
 	__asm__ __volatile__ (
@@ -362,7 +362,7 @@ __sk_vcopy64_40(uint64_t *__sized_by(40) src, uint64_t *__sized_by(40) dst)
 }
 
 /*
- * On arm64, the following inline assembly fixed-length routines have
+ * On , the following inline assembly fixed-length routines have
  * fewer clock cycles than bzero().  We can directly use vector registers
  * without saving/restoring them unlike on x86_64/arm32.
  */
@@ -375,8 +375,8 @@ static inline void
 __sk_zero_16(void *p)
 {
 	/*
-	 * Use 16-bytes store pair using 64-bit zero register on arm64;
-	 * no need to save/restore registers on arm64 (SPILL_REGISTERS).
+	 * Use 16-bytes store pair using 64-bit zero register on ;
+	 * no need to save/restore registers on  (SPILL_REGISTERS).
 	 */
 	/* BEGIN CSTYLED */
 	__asm__ __volatile__ (
@@ -396,8 +396,8 @@ static inline void
 __sk_zero_32(void *p)
 {
 	/*
-	 * Use 32-bytes store pair using zeroed v0 register on arm64;
-	 * no need to save/restore registers on arm64 (SPILL_REGISTERS).
+	 * Use 32-bytes store pair using zeroed v0 register on ;
+	 * no need to save/restore registers on  (SPILL_REGISTERS).
 	 */
 	/* BEGIN CSTYLED */
 	__asm__ __volatile__ (
@@ -419,8 +419,8 @@ __sk_zero_48(void *p)
 {
 	/*
 	 * Use 32-bytes store pair and 16-byte store using zeroed v0
-	 * register on arm64; no need to save/restore registers on
-	 * arm64 (SPILL_REGISTERS).
+	 * register on ; no need to save/restore registers on
+	 *  (SPILL_REGISTERS).
 	 */
 	/* BEGIN CSTYLED */
 	__asm__ __volatile__ (
@@ -442,8 +442,8 @@ static inline void
 __sk_zero_128(void *p)
 {
 	/*
-	 * Use 4x 32-bytes store pairs using zeroed v0 register on arm64;
-	 * no need to save/restore registers on arm64 (SPILL_REGISTERS).
+	 * Use 4x 32-bytes store pairs using zeroed v0 register on ;
+	 * no need to save/restore registers on  (SPILL_REGISTERS).
 	 *
 	 * Note that we could optimize this routine by utilizing "dc zva"
 	 * which zeroes the entire cache line.  However, that requires
@@ -515,7 +515,7 @@ sk_copy64_4x(uint32_t *__sized_by(l)src, uint32_t *__sized_by(l)dst, size_t l)
 		/*
 		 * Clang is unable to optimize away bounds checks in the presence of
 		 * divisions in the loop bound at this time. However, the caller
-		 * already bounds-checked that each of `src` and `dst` have `l` bytes
+		 * already bounds-checked that each of `src`Â and `dst` have `l` bytes
 		 * at them each. It's therefore safe to copy that many bytes.
 		 */
 		uint32_t *__unsafe_indexable src_unsafe = src;
@@ -545,7 +545,7 @@ sk_copy64_8x(uint64_t *__sized_by(l)src, uint64_t *__sized_by(l)dst, size_t l)
 		/*
 		 * Clang is unable to optimize away bounds checks in the presence of
 		 * divisions in the loop bound at this time. However, the caller
-		 * already bounds-checked that each of `src` and `dst` have `l` bytes
+		 * already bounds-checked that each of `src`Â and `dst` have `l` bytes
 		 * at them each. It's therefore safe to copy that many bytes.
 		 */
 		uint64_t *__unsafe_indexable src_unsafe = src;
@@ -575,7 +575,7 @@ sk_copy64_32x(uint64_t *__sized_by(l)src, uint64_t *__sized_by(l)dst, size_t l)
 		/*
 		 * Clang is unable to optimize away bounds checks in the presence of
 		 * divisions in the loop bound at this time. However, the caller
-		 * already bounds-checked that each of `src` and `dst` have `l` bytes
+		 * already bounds-checked that each of `src`Â and `dst` have `l` bytes
 		 * at them each. It's therefore safe to copy that many bytes.
 		 */
 		uint64_t *__unsafe_indexable src_unsafe = src;
@@ -609,7 +609,7 @@ sk_copy64_64x(uint64_t *__sized_by(l)src, uint64_t *__sized_by(l)dst, size_t l)
 		/*
 		 * Clang is unable to optimize away bounds checks in the presence of
 		 * divisions in the loop bound at this time. However, the caller
-		 * already bounds-checked that each of `src` and `dst` have `l` bytes
+		 * already bounds-checked that each of `src`Â and `dst` have `l` bytes
 		 * at them each. It's therefore safe to copy that many bytes.
 		 */
 		uint64_t *__unsafe_indexable src_unsafe = src;
@@ -990,7 +990,7 @@ extern int os_memcmp_mask_80B(const uint8_t *__counted_by(80)src1,
     const uint8_t *__counted_by(80)byte_mask);
 
 /*
- * Use SIMD variants based on ARM64 and x86_64.
+ * Use SIMD variants based on  and x86_64.
  */
 #define sk_memcmp_mask                  __sk_memcmp_mask
 #define sk_memcmp_mask_16B              os_memcmp_mask_16B
@@ -1071,3 +1071,4 @@ __sk_memcmp_mask(const uint8_t *__counted_by(n)src1,
 #endif /* KERNEL */
 #endif /* PRIVATE || BSD_KERNEL_PRIVATE */
 #endif /* !_SKYWALK_COMMON_H_ */
+

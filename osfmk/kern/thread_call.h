@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1993-1995, 1999-2008 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -365,7 +365,7 @@ __options_closed_decl(thread_call_flags_t, uint16_t, {
 	THREAD_CALL_RUNNING             = 0x0008,       /* currently executing on a thread */
 	THREAD_CALL_SIGNAL              = 0x0010,       /* call from timer interrupt instead of thread */
 	THREAD_CALL_ONCE                = 0x0020,       /* pend the enqueue if re-armed while running */
-	THREAD_CALL_RESCHEDULE          = 0x0040,       /* enqueue is pending due to re-arm while running */
+	THREAD_CALL_RESCHEDULE          = 0x0040,       /* enqueue is pending due to re- while running */
 	THREAD_CALL_RATELIMITED         = 0x0080,       /* timer doesn't fire until slop+deadline */
 	THREAD_CALL_FLAG_CONTINUOUS     = 0x0100,       /* deadline is in continuous time */
 	THREAD_CALL_INITIALIZED         = 0x0200,       /* thread call is initialized */
@@ -461,3 +461,4 @@ __END_DECLS
 #endif  /* XNU_KERNEL_PRIVATE */
 
 #endif  /* _KERN_THREAD_CALL_H_ */
+

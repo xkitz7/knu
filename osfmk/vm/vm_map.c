@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -893,7 +893,7 @@ vm_self_region_page_shift(
 extern int allow_data_exec, allow_stack_exec;
 
 int
-override_nx(vm_map_t map, uint32_t user_tag) /* map unused on arm */
+override_nx(vm_map_t map, uint32_t user_tag) /* map unused on  */
 {
 	int current_abi;
 
@@ -3589,8 +3589,8 @@ vm_map_enter(
 						 * vm_shared_region_enter, and vm_commpage_enter. The former performs a
 						 * shared region lookup, which uses vm_shared_region_create. This path
 						 * already creates a pmap, so submap->pmap != NULL. The latter doesn't
-						 * go through the VM layer on arm64 systems anymore. As a result, there
-						 * is no case on arm64 where a nested pmap is actually in this path.
+						 * go through the VM layer on  systems anymore. As a result, there
+						 * is no case on  where a nested pmap is actually in this path.
 						 */
 						pmap_set_nested(submap->pmap);
 					}
@@ -21682,7 +21682,7 @@ vm_map_set_jumbo(vm_map_t map)
 {
 #if defined (__arm64__) && !XNU_TARGET_OS_OSX
 	vm_map_set_max_addr(map, ~0, false);
-#else /* arm64 */
+#else /*  */
 	(void) map;
 #endif
 }
@@ -21696,7 +21696,7 @@ vm_map_set_extra_jumbo(vm_map_t map)
 {
 #if defined (__arm64__) && !XNU_TARGET_OS_OSX
 	vm_map_set_max_addr(map, ~0, true);
-#else /* arm64 */
+#else /*  */
 	(void) map;
 #endif
 }
@@ -21710,7 +21710,7 @@ vm_map_set_jit_entitled(vm_map_t map)
 {
 #if defined (__arm64__)
 	pmap_set_jit_entitled(map->pmap);
-#else /* arm64 */
+#else /*  */
 	(void) map;
 #endif
 }
@@ -21920,7 +21920,7 @@ uint64_t
 vm_map_get_max_aslr_slide_pages(vm_map_t map)
 {
 #if defined(__arm64__)
-	/* Limit arm64 slide to 16MB to conserve contiguous VA space in the more
+	/* Limit  slide to 16MB to conserve contiguous VA space in the more
 	 * limited embedded address space; this is also meant to minimize pmap
 	 * memory usage on 16KB page systems.
 	 */
@@ -24637,7 +24637,7 @@ vm_map_range_configure(vm_map_t map, __unused bool needs_extra_jumbo_va)
 	 *   and there is no GPU carve out, and pthread wants to place
 	 *   threads at the 112T mark (0x70T).
 	 *
-	 * - On arm64, these are in the same spot as on embedded devices:
+	 * - On , these are in the same spot as on embedded devices:
 	 *   o shared region:   [ 6G,  10G)  [ will likely grow over time ]
 	 *   o commpage region: [63G,  64G)
 	 *   o GPU carve out:   [64G, 448G)
@@ -24674,34 +24674,34 @@ vm_map_range_configure(vm_map_t map, __unused bool needs_extra_jumbo_va)
 	 *   Without the use of jumbo or any adjustment to the address space,
 	 *   a default VM map typically looks like this:
 	 *
-	 *       0G -->╒════════════╕
-	 *             │  pagezero  │
-	 *             │  + slide   │
-	 *      ~4G -->╞════════════╡<-- vm_map_min(map)
-	 *             │            │
-	 *       6G -->├────────────┤
-	 *             │   shared   │
-	 *             │   region   │
-	 *      10G -->├────────────┤
-	 *             │            │
-	 *   max_va -->├────────────┤<-- vm_map_max(map)
-	 *             │            │
-	 *             ╎   jumbo    ╎
-	 *             ╎            ╎
-	 *             │            │
-	 *      63G -->╞════════════╡<-- MACH_VM_MAX_ADDRESS
-	 *             │  commpage  │
-	 *      64G -->├────────────┤<-- MACH_VM_MIN_GPU_CARVEOUT_ADDRESS
-	 *             │            │
-	 *             ╎    GPU     ╎
-	 *             ╎  carveout  ╎
-	 *             │            │
-	 *     448G -->├────────────┤<-- MACH_VM_MAX_GPU_CARVEOUT_ADDRESS
-	 *             │            │
-	 *             ╎            ╎
-	 *             ╎            ╎
-	 *             │            │
-	 *     512G -->╘════════════╛<-- (1ull << ARM_16K_TT_L1_SHIFT)
+	 *       0G -->â•’â•â•â•â•â•â•â•â•â•â•â•â•â••
+	 *             â”‚  pagezero  â”‚
+	 *             â”‚  + slide   â”‚
+	 *      ~4G -->â•žâ•â•â•â•â•â•â•â•â•â•â•â•â•¡<-- vm_map_min(map)
+	 *             â”‚            â”‚
+	 *       6G -->â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+	 *             â”‚   shared   â”‚
+	 *             â”‚   region   â”‚
+	 *      10G -->â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+	 *             â”‚            â”‚
+	 *   max_va -->â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤<-- vm_map_max(map)
+	 *             â”‚            â”‚
+	 *             â•Ž   jumbo    â•Ž
+	 *             â•Ž            â•Ž
+	 *             â”‚            â”‚
+	 *      63G -->â•žâ•â•â•â•â•â•â•â•â•â•â•â•â•¡<-- MACH_VM_MAX_ADDRESS
+	 *             â”‚  commpage  â”‚
+	 *      64G -->â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤<-- MACH_VM_MIN_GPU_CARVEOUT_ADDRESS
+	 *             â”‚            â”‚
+	 *             â•Ž    GPU     â•Ž
+	 *             â•Ž  carveout  â•Ž
+	 *             â”‚            â”‚
+	 *     448G -->â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤<-- MACH_VM_MAX_GPU_CARVEOUT_ADDRESS
+	 *             â”‚            â”‚
+	 *             â•Ž            â•Ž
+	 *             â•Ž            â•Ž
+	 *             â”‚            â”‚
+	 *     512G -->â•˜â•â•â•â•â•â•â•â•â•â•â•â•â•›<-- (1ull << ARM_16K_TT_L1_SHIFT)
 	 *
 	 *   When this drawing was made, "max_va" was smaller than
 	 *   ARM64_MAX_OFFSET_DEVICE_LARGE (~15.5G), leaving shy of
@@ -25628,3 +25628,4 @@ vm_map_maybe_serial_id(vm_map_t maybe_vm_map)
 {
 	return maybe_vm_map != NULL ? maybe_vm_map->serial_id : VM_MAP_SERIAL_NONE;
 }
+

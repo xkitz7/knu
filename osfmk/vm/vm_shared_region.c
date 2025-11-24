@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2007-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
@@ -156,8 +156,8 @@
 #include <sys/code_signing.h>
 
 #if defined(__arm64__)
-#include <arm/cpu_data_internal.h>
-#include <arm/misc_protos.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 #endif
 
 /*
@@ -416,7 +416,7 @@ vm_shared_region_set(
 }
 
 /*
- * New arm64 shared regions match with an existing arm64e region.
+ * New  shared regions match with an existing arm64e region.
  * They just get a private non-authenticating pager.
  */
 static inline bool
@@ -854,7 +854,7 @@ vm_shared_region_create(
 #if __ARM_MIXED_PAGE_SIZE__
 		if (cputype == CPU_TYPE_ARM64 &&
 		    target_page_shift == FOURK_PAGE_SHIFT) {
-			/* arm64/4k address space */
+			/* /4k address space */
 			pmap_flags |= PMAP_CREATE_FORCE_4K_PAGES;
 		}
 #endif /* __ARM_MIXED_PAGE_SIZE__ */
@@ -881,7 +881,7 @@ vm_shared_region_create(
 #if __ARM_MIXED_PAGE_SIZE__
 			if (cputype == CPU_TYPE_ARM64 &&
 			    target_page_shift == FOURK_PAGE_SHIFT) {
-				/* arm64/4k address space */
+				/* /4k address space */
 				vm_map_set_page_shift(sub_map, FOURK_PAGE_SHIFT);
 				vm_map_set_page_shift(config_map, FOURK_PAGE_SHIFT);
 			}
@@ -1937,7 +1937,7 @@ vm_shared_region_map_file_setup(
 				 * region by file. We're protected by "sr_mapping_in_progress"
 				 * here, so no need to lock "shared_region".
 				 *
-				 * Note that if we have an AOT shared cache (ARM) for a
+				 * Note that if we have an AOT shared cache () for a
 				 * translated task, then it's always the first file.
 				 * The original "native" (i.e. x86) shared cache is the
 				 * second file.
@@ -4193,3 +4193,4 @@ vm_shared_region_root_dir(
 	vm_shared_region_unlock();
 	return vnode;
 }
+

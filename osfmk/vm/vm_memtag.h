@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2022 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,7 +31,7 @@
 #ifdef  KERNEL
 
 #if __arm64__
-#include <pexpert/arm64/board_config.h>
+/* Removed  include (intel-only) */
 #endif /* __arm64__ */
 
 #include <kern/assert.h>
@@ -204,3 +204,4 @@ __END_DECLS
 #endif  /* KERNEL */
 
 #endif  /* _MACH_VM_MEMTAG_H_ */
+

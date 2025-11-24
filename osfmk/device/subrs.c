@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -138,7 +138,7 @@
 #if defined (__i386__) || defined (__x86_64__)
 #include "i386/string.h"
 #elif defined (__arm__) || defined (__arm64__)
-#include "arm/string.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
@@ -702,7 +702,7 @@ strlcat_impl(char *dst, const char *src, size_t siz)
  *  * when `dst` is filled with `dstsz` characters;
  *  * when `srcsz` characters have been copied;
  *  * when a NUL character has been copied from `src` to `dst`.
- * `dst` is always NUL-terminated, truncating `src` as needed.
+ * `dst` is always NUL-terminated, truncating `src`Â as needed.
  * If `dstsz` is 0, the function returns NULL. Otherwise, it returns `dst`,
  * regardless of whether there was free space in dst to append any characters.
  * This function is most useful to concatenate a fixed-size string to another.
@@ -752,7 +752,7 @@ strlcpy_impl(char * dst, const char * src, size_t maxlen)
  *  * when `dstsz` characters have been copied;
  *  * when `srcsz` characters have been copied;
  *  * when a NUL character has been copied from `src` to `dst`.
- * `dst` is always NUL-terminated, truncating `src` as needed.
+ * `dst` is always NUL-terminated, truncating `src`Â as needed.
  * If `dstsz` is 0, the function returns NULL. Otherwise, it returns `dst`.
  * This function is most useful to copy a fixed-size string from one buffer to
  * another.
@@ -933,3 +933,4 @@ __strcat_chk(char *restrict dst, const char *restrict src, size_t chk_size)
 	memcpy_impl(dst + len1, src, len2 + 1);
 	return dst;
 }
+

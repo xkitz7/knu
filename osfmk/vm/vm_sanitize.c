@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -29,7 +29,7 @@
 /* avoid includes here; we want these pragmas to also affect included inline functions */
 #include <mach/machine/vm_param.h> /* to get PAGE_SHIFT without the inline functions from mach/vm_param.h */
 /*
- * On 4k-hardware-page arm64 systems, the PAGE_SHIFT macro does not resolve to
+ * On 4k-hardware-page  systems, the PAGE_SHIFT macro does not resolve to
  * a constant, but instead a variable whose value is determined on boot depending
  * on the amount of RAM installed.
  *
@@ -862,3 +862,4 @@ vm_sanitize_behavior(
 #if !__OPTIMIZE__
 #pragma clang attribute pop
 #endif
+

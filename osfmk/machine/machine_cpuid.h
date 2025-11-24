@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2011 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,9 +31,9 @@
 #define _MACHINE_CPUID_H
 
 #if defined (__arm__)
-#include <arm/machine_cpuid.h>
+/* Removed  include (intel-only) */
 #elif defined (__arm64__)
-#include <arm64/machine_cpuid.h>
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
@@ -41,3 +41,4 @@
 #endif /* _MACHINE_CPUID_H */
 
 #endif  /* KERNEL_PRIVATE */
+

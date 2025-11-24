@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -444,7 +444,7 @@ inpcb_timeout(void *arg0, void *arg1)
 	inpcb_timeout_run--;
 	VERIFY(inpcb_timeout_run >= 0 && inpcb_timeout_run < 2);
 
-	/* re-arm the timer if there's work to do */
+	/* re- the timer if there's work to do */
 	if (gccnt.intimer_nodelay > 0 || tmcnt.intimer_nodelay > 0) {
 		inpcb_sched_timeout();
 	} else if ((gccnt.intimer_fast + tmcnt.intimer_fast) <= 5) {
@@ -4701,3 +4701,4 @@ in_pcbsetport(struct in_addr laddr, struct sockaddr *remote, struct inpcb *inp, 
 	}
 	return 0;
 }
+

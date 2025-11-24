@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2013-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -993,7 +993,7 @@ ipc_importance_task_delayed_drop_scan(
 
 	/* importance lock may have been temporarily dropped */
 
-	/* If there are any entries left in the queue, re-arm the call here */
+	/* If there are any entries left in the queue, re- the call here */
 	if (!queue_empty(&ipc_importance_delayed_drop_queue)) {
 		ipc_importance_task_t task_imp;
 		uint64_t deadline;
@@ -3904,3 +3904,4 @@ task_importance_list_pids(task_t task, int flags, char *pid_list, unsigned int m
 
 	return pidcount;
 }
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2017-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -33,7 +33,7 @@
 #if defined(__x86_64__)
 #include <x86_64/monotonic.h>
 #elif defined(__arm64__)
-#include <arm64/monotonic.h>
+/* Removed  include (intel-only) */
 #else
 #error unsupported architecture
 #endif
@@ -74,3 +74,4 @@ int mt_microstackshot_start_arch(uint64_t period);
 #endif /* CONFIG_CPU_COUNTERS */
 
 #endif /* !defined(MACHINE_MONOTONIC_H) */
+

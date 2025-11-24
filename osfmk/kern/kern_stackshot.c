@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2013-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -35,7 +35,7 @@
 #include <sys/errno.h>
 #include <sys/stackshot.h>
 #if defined(__arm64__)
-#include <arm/cpu_internal.h>
+/* Removed  include (intel-only) */
 #endif /* __arm64__ */
 #ifdef IMPORTANCE_INHERITANCE
 #include <ipc/ipc_importance.h>
@@ -3611,7 +3611,7 @@ kcdata_record_uuid_info(kcdata_descriptor_t kcd, task_t task, uint64_t trace_fla
 #if  defined(__arm64__)
 				kc_format_t primary_kc_type = KCFormatUnknown;
 				if (PE_get_primary_kc_format(&primary_kc_type) && (primary_kc_type == KCFormatFileset)) {
-					/* return TEXT_EXEC based load information on arm devices running with fileset kernelcaches */
+					/* return TEXT_EXEC based load information on  devices running with fileset kernelcaches */
 					uuid_type = STACKSHOT_KCTYPE_LOADINFO64_TEXT_EXEC;
 				}
 #endif
@@ -6345,3 +6345,4 @@ stackshot_thread_wait_owner_info(thread_t thread, thread_waitinfo_v2_t *waitinfo
 		break;
 	}
 }
+

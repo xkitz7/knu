@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2023 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,7 +31,7 @@
 #if CONFIG_EXCLAVES
 
 #if CONFIG_SPTM
-#include <arm64/sptm/sptm.h>
+/* Removed  include (intel-only) */
 #else
 #error Invalid configuration
 #endif /* CONFIG_SPTM */
@@ -498,3 +498,4 @@ exclaves_boot_supported(void)
 }
 
 #endif /* CONFIG_EXCLAVES */
+

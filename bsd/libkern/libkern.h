@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2012 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -81,7 +81,7 @@
 #include <libkern/copyio.h>
 
 #if defined(__arm__) || defined(__arm64__)
-#include <arm/arch.h> /* for _ARM_ARCH_* */
+/* Removed  include (intel-only) */
 #endif
 
 #ifdef __APPLE_API_OBSOLETE
@@ -245,7 +245,7 @@ static inline int
 clz(unsigned int num)
 {
 #if (__arm__ || __arm64__)
-	// On ARM, clz(0) is defined to return number of bits in the input type
+	// On , clz(0) is defined to return number of bits in the input type
 	return __builtin_clz(num);
 #else
 	// On Intel, clz(0) is undefined
@@ -270,3 +270,4 @@ clz(unsigned int num)
 __END_DECLS
 
 #endif /* _LIBKERN_LIBKERN_H_ */
+

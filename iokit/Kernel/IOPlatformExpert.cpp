@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1998-2022 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -54,7 +54,7 @@
 #include <libkern/OSAtomic.h>
 
 #if defined(__arm64__)
-#include <arm64/tlb.h>
+/* Removed  include (intel-only) */
 #endif
 
 extern "C" {
@@ -354,7 +354,7 @@ IOPlatformExpert::haltRestart(unsigned int type)
 	}
 
 #if defined (__x86_64__)
-	// On ARM kPEPanicRestartCPU is supported in the drivers
+	// On  kPEPanicRestartCPU is supported in the drivers
 	if (type == kPEPanicRestartCPU) {
 		type = kPERestartCPU;
 	}
@@ -2366,3 +2366,4 @@ IOPanicPlatform::start(IOService * provider)
 
 	return false;
 }
+

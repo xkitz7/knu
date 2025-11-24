@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -33,11 +33,12 @@
 #define PRECISE_USER_KERNEL_TIME 1
 
 #elif defined (__arm__)
-#include <pexpert/arm/board_config.h>
+/* Removed  include (intel-only) */
 #elif defined (__arm64__)
-#include <pexpert/arm64/board_config.h>
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
 
 #endif /* _MACHINE_CONFIG_H */
+

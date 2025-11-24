@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1189,7 +1189,7 @@ CellsValue( UInt32 numCells, UInt32 *cells)
 	if (numCells == 1) {
 		return IOPhysical32( 0, cells[0] );
 	} else {
-#if defined(__arm64__) || defined(arm)
+#if defined(__arm64__) || defined()
 		return IOPhysical32( cells[numCells - 1], cells[numCells - 2] );
 #else
 		return IOPhysical32( cells[numCells - 2], cells[numCells - 1] );
@@ -1502,3 +1502,4 @@ IONDRVLibrariesInitialize( IOService * provider )
 {
 	return kIOReturnUnsupported;
 }
+

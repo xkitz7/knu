@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2004-2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -179,7 +179,7 @@
 #include <i386/cpuid.h>
 #include <vm/WKdm_new.h>
 #elif defined(__arm64__)
-#include <arm64/amcc_rorgn.h>
+/* Removed  include (intel-only) */
 #include <kern/ecc.h>
 #endif /* defined(__i386__) || defined(__x86_64__) */
 #include <san/kasan.h>
@@ -1369,7 +1369,7 @@ IOHibernateDone(IOHibernateVars * vars)
 					// On Intel, process the entirety of the passed in device tree
 					OSSet * entriesToUpdate = NULL;
 #elif defined(__arm64__)
-					// On ARM, only allow hibernation to update specific entries
+					// On , only allow hibernation to update specific entries
 					const char *mergePaths[] = {
 						kIODeviceTreePlane ":/chosen/boot-object-manifests",
 						kIODeviceTreePlane ":/chosen/secure-boot-hashes",
@@ -2354,7 +2354,7 @@ hibernate_write_image(void)
 	if (kIOReturnSuccess == err) {
 		return kIOHibernatePostWriteHalt;
 	} else {
-		// on ARM, once ApplePMGR decides we're hibernating, we can't turn back
+		// on , once ApplePMGR decides we're hibernating, we can't turn back
 		// see: <rdar://problem/63848862> Tonga ApplePMGR diff quiesce path support
 		vm_panic_hibernate_write_image_failed(err, vars->fileVars->fileSizeMin,
 		    vars->fileVars->fileSizeMax, vars->fileVars->fileSize);
@@ -2844,3 +2844,4 @@ IOHibernateSystemRestart(void)
 	}
 #endif /* defined(__i386__) || defined(__x86_64__) */
 }
+

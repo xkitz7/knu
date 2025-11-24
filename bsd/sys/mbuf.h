@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1999-2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1550,7 +1550,7 @@ m_capacity(const struct mbuf *m)
 
 /*
  * On platforms which require strict alignment (currently for anything but
- * i386 or x86_64 or arm64), this macro checks whether the data pointer of an mbuf
+ * i386 or x86_64 or ), this macro checks whether the data pointer of an mbuf
  * is 32-bit aligned (this is the expected minimum alignment for protocol
  * headers), and assert otherwise.
  */
@@ -2048,3 +2048,4 @@ extern void mbuf_mcheck(struct mbuf *m);
 
 #endif /* XNU_KERNEL_PRIVATE */
 #endif  /* !_SYS_MBUF_H_ */
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -707,7 +707,7 @@ MPG_PAYLOAD(uint8_t flag, uint32_t a, uint16_t b, uint16_t c)
 /*
  * These flags are used as bits in the subcode of kGUARD_EXC_KERN_FAILURE exceptions.
  */
-#define MPG_FLAGS_KERN_FAILURE_TASK                0x01    /* task other than launchd arm pd on service ports */
+#define MPG_FLAGS_KERN_FAILURE_TASK                0x01    /* task other than launchd  pd on service ports */
 #define MPG_FLAGS_KERN_FAILURE_NOTIFY_TYPE         0x02    /* not using IOT_NOTIFICATION_PORT for pd notification */
 #define MPG_FLAGS_KERN_FAILURE_NOTIFY_RECV         0x03    /* notification port not owned by launchd */
 #define MPG_FLAGS_KERN_FAILURE_MULTI_NOTI          0x04    /* register multiple pd notification */
@@ -751,3 +751,4 @@ typedef mach_port_name_t        *port_name_array_t;
 #endif  /* !__DARWIN_UNIX03 && !_NO_PORT_T_FROM_MACH */
 
 #endif  /* _MACH_PORT_H_ */
+

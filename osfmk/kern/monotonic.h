@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2017-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -61,7 +61,7 @@ __END_DECLS
 __BEGIN_DECLS
 
 #if defined(__arm__) || defined(__arm64__)
-#include <arm/cpu_data_internal.h>
+/* Removed  include (intel-only) */
 #elif defined(__x86_64__)
 #include <i386/cpu_data.h>
 #else /* !defined(__arm__) && !defined(__arm64__) && !defined(__x86_64__) */
@@ -130,3 +130,4 @@ __END_DECLS
 #endif /* CONFIG_CPU_COUNTERS */
 
 #endif /* !defined(KERN_MONOTONIC_H) */
+

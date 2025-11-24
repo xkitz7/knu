@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000,2008-2009 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -56,7 +56,7 @@ __BEGIN_DECLS
 #endif
 
 #if CONFIG_SPTM
-#include <arm64/sptm/sptm.h>
+/* Removed  include (intel-only) */
 #endif
 
 #if PRAGMA_MARK
@@ -641,3 +641,4 @@ __throw_length_error(const char *msg __unused)
 	panic("Size of array created by new[] has overflowed");
 }
 };
+

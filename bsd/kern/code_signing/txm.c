@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2022 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
@@ -66,7 +66,7 @@
  * behavior, the kernel also has to take some locks on its side befor calling into TXM.
  */
 #include <sys/trusted_execution_monitor.h>
-#include <pexpert/arm64/board_config.h>
+/* Removed  include (intel-only) */
 
 /* Lock group used for all locks within the kernel for TXM */
 LCK_GRP_DECLARE(txm_lck_grp, "txm_code_signing_lck_grp");
@@ -1921,3 +1921,4 @@ TXM_METRIC(trustcaches, bytes_tombstoned, trustCaches.bytesTombstoned);
 
 
 #endif /* CONFIG_SPTM */
+

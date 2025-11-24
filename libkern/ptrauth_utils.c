@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -33,7 +33,7 @@
 
 /*
  * On ptrauth systems, ptrauth_utils_sign_blob_generic is implemented
- * in osfmk/arm64/machine_routines_asm.s
+ * in osfmk//machine_routines_asm.s
  */
 
 #if !__has_feature(ptrauth_calls)
@@ -82,3 +82,4 @@ ptrauth_utils_auth_blob_generic(__unused const void * ptr, __unused size_t len_b
 	return;
 }
 #endif // __has_feature(ptrauth_calls)
+

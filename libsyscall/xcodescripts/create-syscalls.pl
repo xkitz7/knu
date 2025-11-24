@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+﻿#!/usr/bin/perl
 #
 # Copyright (c) 2006-2014 Apple Inc. All rights reserved.
 #
@@ -259,9 +259,9 @@ sub checkForCustomStubs {
         $$sym{is_custom} = $source;
         if (!$$sym{is_private}) {
             foreach my $subarch (@Architectures) {
-                (my $arch = $subarch) =~ s/arm(v.*)/arm/;
+                (my $arch = $subarch) =~ s/(v.*)//;
                 $arch =~ s/x86_64(.*)/x86_64/;
-                $arch =~ s/arm64(.*)/arm64/;
+                $arch =~ s/(.*)//;
                 $$sym{aliases}{$arch} = [] unless $$sym{aliases}{$arch};
                 push(@{$$sym{aliases}{$arch}}, $$sym{asm_sym});
             }
@@ -282,9 +282,9 @@ sub readAliases {
     
     my @a = ();
     for my $arch (@Architectures) {
-        (my $new_arch = $arch) =~ s/arm(v.*)/arm/g;
+        (my $new_arch = $arch) =~ s/(v.*)//g;
         $new_arch =~ s/x86_64(.*)/x86_64/g;
-        $new_arch =~ s/arm64(.*)/arm64/g;
+        $new_arch =~ s/(.*)//g;
         push(@a, $new_arch) unless grep { $_ eq $new_arch } @a;
     }
     
@@ -342,12 +342,12 @@ sub writeStubForSymbol {
     my @conditions;
     my $has_arm64 = 0;
     for my $subarch (@Architectures) {
-        (my $arch = $subarch) =~ s/arm(v.*)/arm/;
+        (my $arch = $subarch) =~ s/(v.*)//;
         $arch =~ s/x86_64(.*)/x86_64/;
-        $arch =~ s/arm64(.*)/arm64/;
+        $arch =~ s/(.*)//;
         push(@conditions, "defined(__${arch}__)") unless grep { $_ eq $arch } @{$$symbol{except}};
 
-        if($arch eq "arm64") {
+        if($arch eq "") {
             $has_arm64 = 1 unless grep { $_ eq $arch } @{$$symbol{except}};
         }
     }
@@ -413,9 +413,9 @@ sub writeAliasesForSymbol {
     }
 
     foreach my $subarch (@Architectures) {
-        (my $arch = $subarch) =~ s/arm(v.*)/arm/;
+        (my $arch = $subarch) =~ s/(v.*)//;
         $arch =~ s/x86_64(.*)/x86_64/;
-        $arch =~ s/arm64(.*)/arm64/;
+        $arch =~ s/(.*)//;
         
         next unless scalar($$symbol{aliases}{$arch});
         
@@ -500,4 +500,5 @@ for my $s (@sources) {
 }
 undef $f;
 undef $path;
+
 

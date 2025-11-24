@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2006-2023 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -59,7 +59,7 @@
 #endif
 
 #if defined (__arm__) || defined(__arm64__)
-#include <libkern/arm/_OSByteOrder.h>
+/* Removed  include (intel-only) */
 #endif
 
 
@@ -123,3 +123,4 @@ _OSSwapInt64(
 #endif /* __GNUC__ */
 
 #endif /* ! _OS__OSBYTEORDER_H */
+

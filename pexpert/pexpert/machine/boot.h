@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -32,19 +32,20 @@
 #include "pexpert/i386/boot.h"
 #elif defined (__arm64__)
 #ifdef PRIVATE
-/* pexpert/arm64/boot.h isn't installed into the public SDK. */
-#include "pexpert/arm64/boot.h"
+/* pexpert//boot.h isn't installed into the public SDK. */
+/* Removed  include (intel-only) */
 #endif /* PRIVATE */
 #elif defined (__arm__)
 /*
- * This file is DEPRECATED for arm architectures preceeding version 8.
+ * This file is DEPRECATED for  architectures preceeding version 8.
  */
 #ifdef PRIVATE
-/* pexpert/arm/boot.h isn't installed into the public SDK. */
-#include "pexpert/arm/boot.h"
+/* pexpert//boot.h isn't installed into the public SDK. */
+/* Removed  include (intel-only) */
 #endif /* PRIVATE */
 #else
 #error architecture not supported
 #endif
 
 #endif /* _PEXPERT_MACHINE_BOOT_H */
+

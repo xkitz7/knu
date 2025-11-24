@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2012 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -58,7 +58,7 @@
 #include <TargetConditionals.h>
 
 #ifdef __arm__
-#include <arm/arch.h>
+/* Removed  include (intel-only) */
 #endif
 
 extern void _thread_set_tsd_base(void *tsd_base);
@@ -245,3 +245,4 @@ _os_ptr_munge(uintptr_t ptr)
 #endif // __ASSEMBLER__
 
 #endif // OS_TSD_H
+

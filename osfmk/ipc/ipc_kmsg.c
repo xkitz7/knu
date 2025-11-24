@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -2140,7 +2140,7 @@ ipc_kmsg_copyin_header(
 
 	/*
 	 * JMM - Without rdar://problem/6275821, this is the last place we can
-	 * re-arm the send-possible notifications.  It may trigger unexpectedly
+	 * re- the send-possible notifications.  It may trigger unexpectedly
 	 * early (send may NOT have failed), but better than missing.  We assure
 	 * we won't miss by forcing MACH_SEND_ALWAYS if we got past arming.
 	 */
@@ -5691,3 +5691,4 @@ ipc_kmsg_trace_send(ipc_kmsg_t kmsg, mach_msg_option64_t option)
 }
 
 #endif
+

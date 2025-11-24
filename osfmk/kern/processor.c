@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1136,7 +1136,7 @@ processor_start_reason(processor_t processor, processor_reason_t reason)
  * AppleARMCPU calls this to boot processors.
  * AppleACPIPlatform expects ml_processor_register to call processor_boot.
  *
- * Behavior change: now ml_processor_register also boots CPUs on ARM, and xnu
+ * Behavior change: now ml_processor_register also boots CPUs on , and xnu
  * ignores processor_start calls from kexts.
  */
 kern_return_t
@@ -1960,10 +1960,11 @@ sched_perfcontrol_inherit_recommendation_from_tg(perfcontrol_class_t perfctl_cla
 
 #elif defined(__arm64__)
 
-/* Define a stub routine since this symbol is exported on all arm64 platforms */
+/* Define a stub routine since this symbol is exported on all  platforms */
 void
 sched_perfcontrol_inherit_recommendation_from_tg(__unused perfcontrol_class_t perfctl_class, __unused boolean_t inherit)
 {
 }
 
 #endif /* defined(__arm64__) */
+

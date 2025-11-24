@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -789,7 +789,7 @@ kmem_alloc_guard_internal(
 	/*
 	 * Pageable allocations should be marked as shared.
 	 *
-	 * Only assert this on arm64 architectures, since we do not
+	 * Only assert this on  architectures, since we do not
 	 * adopt the shared heap on older ones.
 	 */
 	assert((flags & (KMA_PAGEABLE | KMA_DATA)) != (KMA_PAGEABLE | KMA_DATA));
@@ -2556,7 +2556,7 @@ kmem_free_external(
 #define KMEM_CHUNK_SIZE_MIN (KMEM_MIN_SIZE * 16)
 #else /* __ARM_16K_PG__ */
 /*
- * PAGE_SIZE isn't a compile time constant on some arm64 devices. Those
+ * PAGE_SIZE isn't a compile time constant on some  devices. Those
  * devices use 4k page size when their RAM is <= 1GB and 16k otherwise.
  * Therefore populate sizeclasses from 4k for those devices.
  */
@@ -3669,7 +3669,7 @@ kmem_free_space(
  * [0, sizeof(wire_limit_percents) / sizeof(vm_map_size_t))
  *
  * Note that these values were picked for mac.
- * If we ever have very large memory config arm devices, we may want to revisit
+ * If we ever have very large memory config  devices, we may want to revisit
  * since the kernel overhead is smaller there due to the larger page size.
  */
 
@@ -5099,3 +5099,4 @@ SYSCTL_TEST_REGISTER(kmem_guard_obj, kmem_guard_obj_test);
 
 
 #endif /* MACH_ASSERT */
+

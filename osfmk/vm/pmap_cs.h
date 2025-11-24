@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2021 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
@@ -54,7 +54,7 @@ pmap_cs_enabled(void);
  */
 
 #if defined(__arm64__)
-#include <pexpert/arm64/board_config.h>
+/* Removed  include (intel-only) */
 #endif
 
 #include <vm/pmap.h>
@@ -848,3 +848,4 @@ __END_DECLS
 
 #endif /* KERNEL_PRIVATE */
 #endif /* _VM_PMAP_CS_H_ */
+

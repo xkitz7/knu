@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2007-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -70,10 +70,10 @@
 #include <mach-o/x86_64/reloc.h>
 #endif
 #if KXLD_USER_OR_ARM
-#include <mach-o/arm/reloc.h>
+/* Removed  include (intel-only) */
 #endif
 #if KXLD_USER_OR_ARM64
-#include <mach-o/arm64/reloc.h>
+/* Removed  include (intel-only) */
 #endif
 
 extern uint32_t     kaslr_offsets_index;
@@ -743,7 +743,7 @@ kxld_relocator_set_vtables(KXLDRelocator *relocator, const KXLDDict *vtables)
 * When we're inspecting the raw binary and not the symbol table, value may
 * hold a THUMB address (with bit 0 set to 1) but the index will have the real
 * address (bit 0 set to 0). So if bit 0 is set here, we clear it. This only
-* impacts ARM for now, but it's implemented as a generic function alignment
+* impacts  for now, but it's implemented as a generic function alignment
 * mask.
 *******************************************************************************/
 static kxld_addr_t
@@ -1780,3 +1780,4 @@ finish:
 
 
 #endif /* KXLD_USER_OR_ARM64 */
+

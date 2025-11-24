@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,7 +31,7 @@
 #include <kern/cpu_data.h>
 
 #if __arm64__
-#include <arm/machine_routines.h>
+/* Removed  include (intel-only) */
 #endif /* __arm64__ */
 
 #if CONFIG_DEBUG_SYSCALL_REJECTION
@@ -574,3 +574,4 @@ SYSCTL_PROC(_kern, OID_AUTO, debug_disable_preemption_test, CTLTYPE_QUAD | CTLFL
     0, 0, _sysctl_debug_disable_preemption_test, "Q", "disable preemption for specified number of nanoseconds, for testing");
 
 #endif /* __arm64__ && (DEBUG || DEVELOPMENT) */
+

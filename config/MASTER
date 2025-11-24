@@ -1,4 +1,4 @@
-#
+﻿#
 # Mach Operating System
 # Copyright (c) 1986 Carnegie-Mellon University
 # Copyright 2001-2018 Apple Inc.
@@ -750,12 +750,12 @@ options		COPYOUT_SHIM			# Shim for copyout memory analysis via kext #<copyout_sh
 
 #
 # Enable hardware correlation of mach absolute time
-# across intel/arm boundary
+# across intel/ boundary
 options		CONFIG_MACH_BRIDGE_SEND_TIME #  # <config_mach_bridge_send_time>
 options		CONFIG_MACH_BRIDGE_RECV_TIME #  # <config_mach_bridge_recv_time>
 
 options		CONFIG_QUIESCE_COUNTER # Support for _COMM_PAGE_CPU_QUIESCENT_COUNTER # <config_quiesce_counter>
-options		CONFIG_ARM_PFZ	# Support for PFZ on ARM # <config_arm_pfz>
+options		CONFIG_ARM_PFZ	# Support for PFZ on  # <config_arm_pfz>
 
 #
 # Sanitizers
@@ -794,3 +794,4 @@ options		CONFIG_EXT_PANICLOG		# <config_ext_paniclog>
 
 # support for collecting statistics on task suspension
 options		CONFIG_TASK_SUSPEND_STATS	# <config_task_suspend_stats>
+

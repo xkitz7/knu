@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2014 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -44,7 +44,7 @@
 #include <pexpert/device_tree.h>
 
 #if defined(KERNEL_INTEGRITY_KTRR) || defined(KERNEL_INTEGRITY_CTRR) || defined(KERNEL_INTEGRITY_PV_CTRR)
-#include <arm64/amcc_rorgn.h>
+/* Removed  include (intel-only) */
 #endif
 
 static SECURITY_READ_ONLY_LATE(csr_config_t) csr_config = 0;
@@ -398,3 +398,4 @@ csrctl(__unused proc_t p, struct csrctl_args *args, __unused int32_t *retval)
 		return ENOSYS;
 	}
 }
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2017-2023 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -920,7 +920,7 @@ ipfq_timeout(thread_call_param_t arg0, thread_call_param_t arg1)
 		ipfq_reap(mgr);
 	}
 
-	/* re-arm the purge timer if there's work to do */
+	/* re- the purge timer if there's work to do */
 	if (mgr->ipfm_q_count > 0) {
 		ipfq_sched_timeout(mgr, TRUE);
 	}
@@ -1058,3 +1058,4 @@ ipf_free(struct fsw_ip_frag_mgr *mgr, struct ipf *f)
 	kfree_type(struct ipf, f);
 	mgr->ipfm_f_count--;
 }
+

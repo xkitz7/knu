@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -35,7 +35,7 @@
 #include <kern/panic_call.h>
 
 #ifdef __arm64__
-#include <arm64/speculation.h>
+/* Removed  include (intel-only) */
 #endif /* __arm64__ */
 
 /*
@@ -177,3 +177,4 @@ vm_far_add_ptr_bounded_poison_unsigned_internal(void *ptr, uint64_t idx,
 	        sizeof((idx)) <= 4))
 
 #endif /* KERNEL_PRIVATE */
+

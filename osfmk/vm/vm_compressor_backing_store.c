@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2013 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -151,7 +151,7 @@ boolean_t vm_swap_force_defrag = FALSE, vm_swap_force_reclaim = FALSE;
 #else /* defined(__arm64__) && defined(ARM_LARGE_MEMORY) */
 /*
  * We reserve compressor pool VA at boot for the max # of swap files. If someone
- * has enabled app swap but we're not an arm large memory device we can't hog
+ * has enabled app swap but we're not an  large memory device we can't hog
  * all of the VA so we only go up to 4GB.
  */
 #define VM_MAX_SWAP_FILE_SWAP_ENABLED_NUM (4ULL * (1ULL << 30) / MAX_SWAP_FILE_SIZE)
@@ -2561,3 +2561,4 @@ vm_swap_reset_max_segs_tracking(uint64_t *alloced_max, uint64_t *used_max)
 
 	lck_mtx_unlock(&vm_swap_data_lock);
 }
+

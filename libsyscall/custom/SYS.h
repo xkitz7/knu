@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1999-2011 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -165,12 +165,11 @@ LEAF(pseudo, 0)					;\
 	UNWIND_EPILOGUE
 
 #elif defined(__arm__)
-
-#include <architecture/arm/asm_help.h>
-#include <mach/arm/syscall_sw.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 
 /*
- * ARM system call interface:
+ *  system call interface:
  *
  * swi 0x80
  * args: r0-r6
@@ -425,10 +424,9 @@ pseudo:									;\
 	bx lr
 
 #elif defined(__arm64__)
-
-#include <mach/arm/syscall_sw.h>
-#include <mach/arm/vm_param.h>
-#include <mach/arm64/asm.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 
 #if defined(__arm64__) && !defined(__LP64__)
 #define ZERO_EXTEND(argnum) uxtw  x ## argnum, w ## argnum
@@ -443,7 +441,7 @@ pseudo:									;\
 #endif
 
 /*
- * ARM64 system call interface:
+ *  system call interface:
  *
  * TBD
  */
@@ -495,4 +493,5 @@ name:
 #else
 #error Unsupported architecture
 #endif
+
 

@@ -1,4 +1,4 @@
-# -*- mode: makefile;-*-
+﻿# -*- mode: makefile;-*-
 #
 # Copyright (C) 2010-2020 Apple Inc. All rights reserved.
 #
@@ -36,7 +36,7 @@ include $(MakeInc_cmd)
 # Default to current kernel architecture
 
 ifneq ($(filter $(SUPPORTED_EMBEDDED_PLATFORMS),$(PLATFORM)),)
-     override DEFAULT_ARCH_CONFIG := ARM64
+     override DEFAULT_ARCH_CONFIG := 
 else ifneq ($(filter $(SUPPORTED_SIMULATOR_PLATFORMS),$(PLATFORM)),)
      override DEFAULT_ARCH_CONFIG := X86_64
 else
@@ -112,7 +112,7 @@ endif
 # seperated by whitespace.
 #
 # Example:
-#	TARGET_CONFIGS="release ppc default debug i386 default release arm MX31ADS"
+#	TARGET_CONFIGS="release ppc default debug i386 default release  MX31ADS"
 # Parameters may be in upper or lower case (they are converted to upper).
 #
 # "default" parameter is a special case.  It means use the default value for
@@ -131,7 +131,7 @@ KERNEL_CONFIGS_EMBEDDED := $(KERNEL_CONFIGS)
 endif
 
 ifeq ($(ARCH_CONFIGS),DEFAULT)
-ARCH_CONFIGS_EMBEDDED := ARM64
+ARCH_CONFIGS_EMBEDDED := 
 ARCH_CONFIGS_DESKTOP := X86_64
 else
 ARCH_CONFIGS_EMBEDDED := $(strip $(shell echo $(filter-out X86_64, $(ARCH_CONFIGS)) | $(TR) a-z A-Z))
@@ -145,25 +145,25 @@ DEVICEMAP_PRODUCTS_ARM64 := $(shell $(EMBEDDED_DEVICE_MAP) -db $(EDM_DBPATH)		\
 					FROM Files					\
 					  INNER JOIN Manifests USING (manifestID)	\
 					  INNER JOIN Targets USING (Target)		\
-					WHERE (KernelMachOArchitecture LIKE "arm64"	\
+					WHERE (KernelMachOArchitecture LIKE ""	\
 					   AND fileType in ("KernelCache", "RestoreKernelCache"))')
 DEVICEMAP_PRODUCTS_OSX_ARM64 := $(shell $(EMBEDDED_DEVICE_MAP) -db $(EDM_DBPATH)		\
 					-list -query 'SELECT DISTINCT TargetType		\
 					      	FROM Files					\
 					  	  INNER JOIN Manifests USING (manifestID)	\
 					  	  INNER JOIN Targets USING (Target)		\
-					    	WHERE (KernelMachOArchitecture LIKE "arm64"	\
+					    	WHERE (KernelMachOArchitecture LIKE ""	\
 					   	  AND fileType in ("KernelCache", "RestoreKernelCache") \
 						  AND SDKPlatform == "macosx")')
 
 
-# Generate a list of mappings of the form "n75:arm;t8002" based on the device map
-DEVICEMAP_PRODUCT_SOC_MAPPINGS := $(shell $(EMBEDDED_DEVICE_MAP) -db $(EDM_DBPATH) -list -query SELECT DISTINCT TargetType, KernelMachOArchitecture, KernelPlatform FROM Targets | awk -F\| '{ if ($$2 ~ /arm64[a-z]?/) { print $$1 ":arm64;" $$3 ";" $$4} else { print $$1 ":" $$2 ";" $$3 ";" $$4} }' )
+# Generate a list of mappings of the form "n75:;t8002" based on the device map
+DEVICEMAP_PRODUCT_SOC_MAPPINGS := $(shell $(EMBEDDED_DEVICE_MAP) -db $(EDM_DBPATH) -list -query SELECT DISTINCT TargetType, KernelMachOArchitecture, KernelPlatform FROM Targets | awk -F\| '{ if ($$2 ~ /[a-z]?/) { print $$1 ":;" $$3 ";" $$4} else { print $$1 ":" $$2 ";" $$3 ";" $$4} }' )
 
 # use embedded_device_map
 endif
 
-# Map a product like "n75" to "arm;t8002", or potentially multiple "soc;platform" strings, if the product has multiple platforms.
+# Map a product like "n75" to ";t8002", or potentially multiple "soc;platform" strings, if the product has multiple platforms.
 # $(1) is a product name in lower case
 function_lookup_product = $(call function_parse_product_configs,$(call function_substitute_word_with_replacement,	\
 				 $(1),						\
@@ -174,9 +174,9 @@ function_lookup_product = $(call function_parse_product_configs,$(call function_
 ifneq ($(PLATFORM),MacOSX)
 ifneq ($(EMBEDDED_DEVICE_MAP),)
 # Generate a list of mappings for products that use a different platform for their kernel configuration than their true platform
-# of the form "n71m:arm64;s8000;s8003". The 4th element is the true SoC platform, which will get an on-disk copy, while the
+# of the form "n71m:;s8000;s8003". The 4th element is the true SoC platform, which will get an on-disk copy, while the
 # kernel's recursive build system will build the 3rd element as the KernelPlatform
-DEVICEMAP_PRODUCT_SOC_ALIASES := $(shell $(EMBEDDED_DEVICE_MAP) -db $(EDM_DBPATH) -list -query SELECT DISTINCT TargetType, KernelMachOArchitecture, KernelPlatform, Platform FROM Targets WHERE KernelPlatform "!=" Platform | awk -F\| '{ if ($$2 ~ /arm64[a-z]?/) { print $$1 ":arm64;" $$3 ";" $$4} else { print $$1 ":" $$2 ";" $$3 ";" $$4} }' )
+DEVICEMAP_PRODUCT_SOC_ALIASES := $(shell $(EMBEDDED_DEVICE_MAP) -db $(EDM_DBPATH) -list -query SELECT DISTINCT TargetType, KernelMachOArchitecture, KernelPlatform, Platform FROM Targets WHERE KernelPlatform "!=" Platform | awk -F\| '{ if ($$2 ~ /[a-z]?/) { print $$1 ":;" $$3 ";" $$4} else { print $$1 ":" $$2 ";" $$3 ";" $$4} }' )
 
 endif
 endif
@@ -205,7 +205,7 @@ TARGET_CONFIGS := $(foreach my_devicemap_config,$(foreach my_product_config,$(sh
 TARGET_CONFIGS_ALIASES := $(foreach my_devicemap_config,$(foreach my_product_config,$(shell printf "%s" "$(PRODUCT_CONFIGS)" | $(TR) A-Z a-z),$(call function_lookup_product_alias,$(my_product_config))),$(foreach my_kernel_config,$(KERNEL_CONFIGS),$(my_kernel_config) $(subst ;, ,$(my_devicemap_config))))
 else ifeq (xnu_headers_driverkit,$(RC_ProjectName))
 # generate TARGET_CONFIGS for all kernel configs for B&I
-TARGET_CONFIGS = DEVELOPMENT arm64 DEFAULT DEVELOPMENT X86_64 DEFAULT
+TARGET_CONFIGS = DEVELOPMENT  DEFAULT DEVELOPMENT X86_64 DEFAULT
 else ifneq ($(filter %_release_embedded,$(MAKECMDGOALS))$(filter %_release_embedded_nohdrs,$(MAKECMDGOALS)),)
 # generate TARGET_CONFIGS for RELEASE kernel configs and products in the device map
 TARGET_CONFIGS := $(foreach my_devicemap_config,$(foreach my_arch_config,$(ARCH_CONFIGS_EMBEDDED),$(foreach my_product_config,$(DEVICEMAP_PRODUCTS_$(my_arch_config)),$(call function_lookup_product,$(my_product_config)))),$(foreach my_kernel_config,RELEASE,$(my_kernel_config) $(subst ;, ,$(my_devicemap_config))))
@@ -258,8 +258,8 @@ TARGET_CONFIGS_ALIASES_UC := $(strip $(shell printf "%s" "$(TARGET_CONFIGS_ALIAS
 #
 # TARGET_CONFIGS is unwieldy for use in Makefiles. Convert them to
 # "build configurations" which are tuples joined by "^". For
-# example, "RELEASE I386 DEFAULT DEVELOPMENT ARM DEFAULT" becomes
-# "RELEASE^I386^NONE DEVELOPMENT^ARM^T8002", which can be looped
+# example, "RELEASE I386 DEFAULT DEVELOPMENT  DEFAULT" becomes
+# "RELEASE^I386^NONE DEVELOPMENT^^T8002", which can be looped
 # over trivially. PRIMARY_BUILD_CONFIGS is the first config
 # for each architecture, used primarily for machine-dependent recursion.
 # VARIANT_CONFIGS contains one build configuration for each combination
@@ -805,3 +805,4 @@ print_exports_first_build_config: print_exports_bootstrap
 
 
 # vim: set ft=make:
+

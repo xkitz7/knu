@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2004-2024 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -276,8 +276,8 @@ struct IOHibernateImageHeader {
 	uint64_t    kernVirtSlide __attribute__ ((packed));
 
 	/**
-	 * The size of the non-arm64 version of this structure must be 512 bytes (to
-	 * fit into a single disk sector). There is no size constraint for the arm64
+	 * The size of the non- version of this structure must be 512 bytes (to
+	 * fit into a single disk sector). There is no size constraint for the 
 	 * version of this structure.
 	 */
 	uint32_t    reserved[45];
@@ -828,3 +828,4 @@ __END_DECLS
 #endif /* !__ASSEMBLER__ */
 
 #endif /* ! __IOKIT_IOHIBERNATEPRIVATE_H */
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2011-2021 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -393,8 +393,7 @@ kptimer_sample_pet_remote(void * __unused arg)
 }
 
 #if !defined(__x86_64__)
-
-#include <arm/cpu_internal.h>
+/* Removed  include (intel-only) */
 
 void kperf_signal_handler(void);
 void
@@ -460,7 +459,7 @@ kptimer_pet_handler(void * __unused param1, void * __unused param2)
 	BUF_INFO(PERF_TM_FIRE | DBG_FUNC_END);
 
 	/*
-	 * The PET thread will re-arm the timer when it's done.
+	 * The PET thread will re- the timer when it's done.
 	 */
 }
 
@@ -769,3 +768,4 @@ kptimer_set_pet_timerid(uint32_t petid)
 
 	return 0;
 }
+

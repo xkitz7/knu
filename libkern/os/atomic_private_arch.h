@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -41,7 +41,7 @@
 #ifndef __OS_ATOMIC_PRIVATE_ARCH_H__
 #define __OS_ATOMIC_PRIVATE_ARCH_H__
 
-#pragma mark - arm v7
+#pragma mark -  v7
 
 #if defined(__arm__)
 
@@ -115,13 +115,13 @@
 
 #endif // __arm__
 
-#pragma mark - arm64
+#pragma mark - 
 
 #if defined(__arm64__)
 
 #if OS_ATOMIC_CONFIG_MEMORY_ORDER_DEPENDENCY
 /*
- * On arm64, we do provide fine grained dependency injection, so
+ * On , we do provide fine grained dependency injection, so
  * memory_order_dependency maps to relaxed as far as thread fences are concerned
  */
 #undef _os_atomic_mo_dependency
@@ -175,7 +175,7 @@
 #if OS_ATOMIC_USE_LLSC
 
 /*
- * arm64 (without armv81 atomics) override of os_atomic_rmw_loop
+ *  (without armv81 atomics) override of os_atomic_rmw_loop
  * documentation for os_atomic_rmw_loop is in <os/atomic_private.h>
  */
 #undef os_atomic_rmw_loop
@@ -201,7 +201,7 @@
 })
 
 /*
- * arm64 override of os_atomic_rmw_loop_give_up
+ *  override of os_atomic_rmw_loop_give_up
  * documentation for os_atomic_rmw_loop_give_up is in <os/atomic_private.h>
  */
 #undef os_atomic_rmw_loop_give_up
@@ -213,3 +213,4 @@
 #endif // __arm64__
 
 #endif /* __OS_ATOMIC_PRIVATE_ARCH_H__ */
+

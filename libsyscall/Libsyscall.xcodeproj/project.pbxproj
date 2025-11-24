@@ -1,4 +1,4 @@
-// !$*UTF8*$!
+﻿// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -1040,18 +1040,18 @@
 		24D1158A11E672270063D54D /* iPhoneOS */ = {
 			isa = PBXGroup;
 			children = (
-				37DDFB7514748713009D3355 /* arm64 */,
-				24D1158B11E672270063D54D /* arm */,
+				37DDFB7514748713009D3355 /*  */,
+				24D1158B11E672270063D54D /*  */,
 			);
 			path = iPhoneOS;
 			sourceTree = "<group>";
 		};
-		24D1158B11E672270063D54D /* arm */ = {
+		24D1158B11E672270063D54D /*  */ = {
 			isa = PBXGroup;
 			children = (
 				24D1158C11E672270063D54D /* syscall.map */,
 			);
-			path = arm;
+			path = ;
 			sourceTree = "<group>";
 		};
 		24D1158D11E672270063D54D /* MacOSX */ = {
@@ -1079,12 +1079,12 @@
 			path = x86_64;
 			sourceTree = "<group>";
 		};
-		37DDFB7514748713009D3355 /* arm64 */ = {
+		37DDFB7514748713009D3355 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				37DDFB7614748713009D3355 /* syscall.map */,
 			);
-			path = arm64;
+			path = ;
 			sourceTree = "<group>";
 		};
 		401BB7141BCAE523005080D3 /* skywalk */ = {
@@ -1838,3 +1838,4 @@
 	};
 	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
 }
+

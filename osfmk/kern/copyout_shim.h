@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2017 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -34,8 +34,8 @@
 #if defined (__i386__) || defined(__x86_64__)
 #include "i386/types.h"
 #elif defined (__arm__) || defined (__arm64__)
-//XXX when ready to turn on for arm: #include "arm/types.h"
-#error ARM/ARM64 not supported
+//XXX when ready to turn on for : #include "/types.h"
+#error / not supported
 #else
 #error architecture not supported
 #endif
@@ -88,3 +88,4 @@ cos_kernel_reslide(const void *);
 
 #endif /* KERNEL_PRIVATE */
 #endif /* __COPYOUT_SHIM_X86_64_H__ */
+

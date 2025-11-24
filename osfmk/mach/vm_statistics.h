@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -133,7 +133,7 @@ typedef struct vm_statistics    vm_statistics_data_t;
  *	   ----
  *	rev3 -  changed name to vm_statistics64.
  *		changed some fields in structure to 64-bit on
- *		arm, i386 and x86_64 architectures.
+ *		, i386 and x86_64 architectures.
  *	rev4 -  require 64-bit alignment for efficient access
  *		in the kernel. No change to reported data.
  *
@@ -995,3 +995,4 @@ const char *mach_vm_tag_describe(unsigned int tag);
 __END_DECLS
 
 #endif  /* _MACH_VM_STATISTICS_H_ */
+

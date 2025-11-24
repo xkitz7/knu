@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1999-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -99,8 +99,7 @@ LEAF(___getpid, 0)
 	UNWIND_EPILOGUE
 
 #elif defined(__arm__)
-
-#include <arm/arch.h>
+/* Removed  include (intel-only) */
 
 	.data
 	.globl	__current_pid
@@ -172,3 +171,4 @@ L_done:
 #else
 #error Unsupported architecture
 #endif
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2018 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -258,11 +258,11 @@
 
 #if XNU_KERNEL_PRIVATE
 /* This macro is meant to be used for kpi deprecated to x86 3rd parties
- * but should be marked as unavailable for arm macOS devices.
+ * but should be marked as unavailable for  macOS devices.
  * XNU:                         nothing (API is still available)
  * 1st party kexts:             __deprecated
  * 3rd party kexts macOS x86:   __deprecated
- * 3rd party kexts macOS arm:   __unavailable
+ * 3rd party kexts macOS :   __unavailable
  */
 #define __kpi_deprecated_arm64_macos_unavailable
 #elif !KERNEL || !XNU_PLATFORM_MacOSX
@@ -1430,3 +1430,4 @@
 #endif /* XNU_KERNEL_PRIVATE */
 
 #endif /* !_CDEFS_H_ */
+

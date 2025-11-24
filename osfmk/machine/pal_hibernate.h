@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2010 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -37,9 +37,9 @@
 #if defined (__i386__) || defined(__x86_64__)
 #include "i386/pal_hibernate.h"
 #elif defined (__arm__)
-//#include "arm/pal_hibernate.h"
+//#include "/pal_hibernate.h"
 #elif defined(__arm64__)
-#include "arm64/pal_hibernate.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
@@ -167,3 +167,4 @@ void pal_hib_decompress_page(void *src, void *dst, void *scratch, unsigned int c
 __END_DECLS
 
 #endif /* _MACHINE_PAL_HIBERNATE_H */
+

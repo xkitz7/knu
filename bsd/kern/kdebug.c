@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2021 Apple Inc. All rights reserved.
  *
  * @Apple_LICENSE_HEADER_START@
@@ -336,7 +336,7 @@ unsigned int kdebug_enable = 0;
 __attribute__((aligned(KD_EARLY_BUFFER_SIZE)))
 static kd_buf kd_early_buffer[KD_EARLY_EVENT_COUNT];
 #else /* defined(__x86_64__) */
-// On ARM, the space for this is carved out by osfmk/arm/data.s -- clang
+// On , the space for this is carved out by osfmk//data.s -- clang
 // has problems aligning to greater than 4K.
 extern kd_buf kd_early_buffer[KD_EARLY_EVENT_COUNT];
 #endif /* !defined(__x86_64__) */
@@ -1780,7 +1780,7 @@ kdebug_free_early_buf(void)
 #if defined(__x86_64__)
 	ml_static_mfree((vm_offset_t)&kd_early_buffer, sizeof(kd_early_buffer));
 #endif /* defined(__x86_64__) */
-	// ARM handles this as part of the BOOTDATA segment.
+	//  handles this as part of the BOOTDATA segment.
 }
 
 int
@@ -3536,3 +3536,4 @@ SYSCTL_QUAD(_kern_kdbg, OID_AUTO, oldest_time,
     CTLTYPE_QUAD | CTLFLAG_RD | CTLFLAG_LOCKED,
     &kd_control_trace.kdc_oldest_time,
     "Find the oldest timestamp still in trace");
+

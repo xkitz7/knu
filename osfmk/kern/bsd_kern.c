@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2018 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -227,7 +227,7 @@ get_thread_lock_count(thread_t th __unused)
 	 * TODO: one day: resurect counting locks held to disallow
 	 *       holding locks across upcalls.
 	 *
-	 *       never worked on arm.
+	 *       never worked on .
 	 */
 	return 0;
 }
@@ -1593,3 +1593,4 @@ kern_return_for_errno(int bsd_errno)
 		return KERN_FAILURE;
 	}
 }
+

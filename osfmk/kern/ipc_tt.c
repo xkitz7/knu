@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2010 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -690,7 +690,7 @@ ipc_task_reset(
 #if CONFIG_CSR
 	old_sself = task->itk_settable_self;
 	if (task_is_a_corpse(task)) {
-		/* No extra send right for coprse, needed to arm no-sender notification */
+		/* No extra send right for coprse, needed to  no-sender notification */
 		task->itk_settable_self = IP_NULL;
 	} else {
 		/* we just made the port, no need to triple check */
@@ -4980,3 +4980,4 @@ thread_adopt_exception_handler(
 	return thread_set_exception_ports_internal(thread, exc_mask, exc_port,
 	           behavior_mask, flavor_mask, true);
 }
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1993-1995, 1999-2008 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -33,7 +33,7 @@
  * Call timer_call_setup once on a timer_call structure to register the callback
  * function and a context parameter that's passed to it (param0).
  *
- * To arm the timer to fire at a deadline, call any of the timer_call_enter
+ * To  the timer to fire at a deadline, call any of the timer_call_enter
  * functions.  If the function used accepts a parameter, it will be passed to
  * the callback function when it fires.
  *
@@ -279,3 +279,4 @@ void running_timers_deactivate(processor_t processor);
 #endif /* XNU_KERNEL_PRIVATE */
 
 #endif /* _KERN_TIMER_CALL_H_ */
+

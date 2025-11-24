@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -64,7 +64,7 @@ typedef struct lck_rw_s {
 	uint32_t        lck_rw_padding;
 	lck_rw_word_t   lck_rw;
 	uint32_t        lck_rw_owner;       /* ctid_t */
-} lck_rw_t;     /* arm: 8  arm64: 16 x86: 16 */
+} lck_rw_t;     /* : 8  : 16 x86: 16 */
 
 #define lck_rw_shared_count     lck_rw.shared_count
 #define lck_rw_interlock        lck_rw.interlock
@@ -790,3 +790,4 @@ extern void             lck_rw_assert(
 __END_DECLS
 
 #endif /* _KERN_RW_LOCK_H_ */
+

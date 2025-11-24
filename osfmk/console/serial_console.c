@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -49,7 +49,7 @@
 
 #if __arm64__
 #include <machine/machine_routines.h>
-#include <arm/cpu_data_internal.h>
+/* Removed  include (intel-only) */
 #endif
 
 #ifdef CONFIG_XNUPOST
@@ -790,3 +790,4 @@ console_serial_test(void)
 	return KERN_SUCCESS;
 }
 #endif
+

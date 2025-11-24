@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2015-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -91,7 +91,7 @@
 #endif /* defined(__x86_64__) */
 
 #if CONFIG_SPTM
-#include <arm64/sptm/sptm.h>
+/* Removed  include (intel-only) */
 #endif /* CONFIG_SPTM */
 
 kern_return_t kdp_core_polled_io_polled_file_available(IOCoreFileAccessCallback access_data, void *access_context, void *recipient_context);
@@ -1955,3 +1955,4 @@ kdp_core_unexclude_region(__unused vm_offset_t addr, __unused vm_size_t size)
 }
 
 #endif /* CONFIG_KDP_INTERACTIVE_DEBUGGING */
+

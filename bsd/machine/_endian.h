@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2023 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -34,9 +34,10 @@
 #if defined (__i386__) || defined(__x86_64__)
 #include <i386/_endian.h>
 #elif defined (__arm__) || defined (__arm64__)
-#include <arm/_endian.h>
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
 
 #endif /* _BSD_MACHINE__ENDIAN_H_ */
+

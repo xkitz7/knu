@@ -1,4 +1,4 @@
-// Copyright (c) 2023 Apple Inc. All rights reserved.
+﻿// Copyright (c) 2023 Apple Inc. All rights reserved.
 //
 // @APPLE_OSREFERENCE_LICENSE_HEADER_START@
 //
@@ -32,7 +32,7 @@
 #include <os/atomic_private.h>
 
 #if __arm64__
-#include <arm64/cpc_arm64.h>
+/* Removed  include (intel-only) */
 #endif // __arm64__
 
 #pragma mark - Ownership
@@ -117,3 +117,4 @@ cpc_change_security(bool enforce_security)
 }
 
 #endif // CPC_INSECURE
+

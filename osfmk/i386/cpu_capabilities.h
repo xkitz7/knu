@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2003-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -306,7 +306,7 @@ _NumCPUs( void )
 
 /*
  * _COMM_PAGE_USER_PAGE_SHIFT32 and _COMM_PAGE_USER_PAGE_SHIFT64 are the same on x86.
- * But both defined to maintain compatability with the arm commpage.
+ * But both defined to maintain compatability with the  commpage.
  */
 #define _COMM_PAGE_USER_PAGE_SHIFT_32 _COMM_PAGE_USER_PAGE_SHIFT_64
 
@@ -335,3 +335,4 @@ CREATE_COMM_PAGE_SYMBOL(___end_comm_page, _COMM_PAGE_END)
 #endif /* defined (__i386__) || defined (__x86_64__) */
 #endif /* _I386_CPU_CAPABILITIES_H */
 #endif /* PRIVATE */
+

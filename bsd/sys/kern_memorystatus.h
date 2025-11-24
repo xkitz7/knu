@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2006-2018 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -379,7 +379,7 @@ __END_DECLS
 #define MEMORYSTATUS_CMD_GET_JETSAM_ZPRINT_NAMES      32   /* Get jetsam snapshot zprint names array */
 #define MEMORYSTATUS_CMD_GET_JETSAM_ZPRINT_INFO       33   /* Get jetsam snapshot zprint zone info */
 #define MEMORYSTATUS_CMD_GET_JETSAM_ZPRINT_MEMINFO    34   /* Get jetsam snapshot zprint wired memory info */
-#define MEMORYSTATUS_CMD_REARM_MEMLIMIT               36 /* Re-arm memory limit (EXC_RESOURCE) */
+#define MEMORYSTATUS_CMD_REARM_MEMLIMIT               36 /* Re- memory limit (EXC_RESOURCE) */
 
 #define MEMORYSTATUS_CMD_GET_PRIORITY_LIST_V2         35 /* Get priority list with v2 struct */
 
@@ -426,8 +426,8 @@ __enum_decl(memorystatus_jetsam_sort_order_t, int, {
 #define MEMORYSTATUS_FLAGS_GRP_SET_FREEZE_PRIORITY      0x100   /* Set a new ordered list of freeze candidates */
 #define MEMORYSTATUS_FLAGS_GRP_SET_DEMOTE_PRIORITY      0x200   /* Set a new ordered list of demote candidates */
 
-#define MEMORYSTATUS_FLAGS_REARM_ACTIVE   0x400 /* Re-arm active limit */
-#define MEMORYSTATUS_FLAGS_REARM_INACTIVE 0x800 /* Re-arm inactive limit */
+#define MEMORYSTATUS_FLAGS_REARM_ACTIVE   0x400 /* Re- active limit */
+#define MEMORYSTATUS_FLAGS_REARM_INACTIVE 0x800 /* Re- inactive limit */
 /*
  * For use with memorystatus_control:
  * MEMORYSTATUS_CMD_GET_JETSAM_SNAPSHOT
@@ -723,3 +723,4 @@ extern boolean_t memorystatus_bg_pressure_eligible(proc_t p);
 #endif /* VM_PRESSURE_EVENTS */
 #endif /* BSD_KERNEL_PRIVATE */
 #endif /* SYS_MEMORYSTATUS_H */
+

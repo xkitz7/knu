@@ -1,4 +1,4 @@
-/*
+﻿/*
  * CDDL HEADER START
  *
  * The contents of this file are subject to the terms of the
@@ -1962,8 +1962,8 @@ fasttrap_add_probe(fasttrap_probe_spec_t *pdata)
 
 #if defined(__arm64__)
 			/*
-			 * On arm the subinfo is used to distinguish between arm
-			 * and thumb modes.  On arm64 there is no thumb mode, so
+			 * On  the subinfo is used to distinguish between 
+			 * and thumb modes.  On  there is no thumb mode, so
 			 * this field is simply initialized to 0 on its way
 			 * into the kernel.
 			 */
@@ -2024,8 +2024,8 @@ fasttrap_add_probe(fasttrap_probe_spec_t *pdata)
 
 #if defined (__arm64__)
 			/*
-			 * On arm the subinfo is used to distinguish between arm
-			 * and thumb modes.  On arm64 there is no thumb mode, so
+			 * On  the subinfo is used to distinguish between 
+			 * and thumb modes.  On  there is no thumb mode, so
 			 * this field is simply initialized to 0 on its way
 			 * into the kernel.
 			 */
@@ -2278,7 +2278,7 @@ fasttrap_meta_create_probe(void *arg, void *parg,
 		tp->ftt_pc = dhpb->dthpb_base + (int64_t)dhpb->dthpb_offs[i] - 1;
 #elif defined(__arm64__)
 		/*
-		 * All ARM and ARM64 probes are zero offset. We need to zero out the
+		 * All  and  probes are zero offset. We need to zero out the
 		 * thumb bit because we still support 32bit user processes.
 		 * On 64bit user processes, bit zero won't be set anyway.
 		 */
@@ -2315,7 +2315,7 @@ fasttrap_meta_create_probe(void *arg, void *parg,
 		tp->ftt_pc = dhpb->dthpb_base + (int64_t)dhpb->dthpb_enoffs[j] + 2;
 #elif defined(__arm64__)
 		/*
-		 * All ARM and ARM64 probes are zero offset. We need to zero out the
+		 * All  and  probes are zero offset. We need to zero out the
 		 * thumb bit because we still support 32bit user processes.
 		 * On 64bit user processes, bit zero won't be set anyway.
 		 */
@@ -2800,3 +2800,4 @@ fasttrap_init( void )
 }
 
 #undef FASTTRAP_MAJOR
+

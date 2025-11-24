@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -60,7 +60,7 @@
 #include <i386/pmap.h>
 #endif
 #if defined(__arm64__)
-#include <arm/pmap.h>
+/* Removed  include (intel-only) */
 #endif
 #include <IOKit/IOKitServer.h>
 
@@ -558,3 +558,4 @@ IOGetTime( mach_timespec_t * clock_time)
 	clock_time->tv_sec = (typeof(clock_time->tv_sec))sec;
 	clock_time->tv_nsec = nsec;
 }
+

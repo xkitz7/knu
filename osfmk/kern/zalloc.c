@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -130,7 +130,7 @@
 #include <sys/code_signing.h>
 
 #include <IOKit/IOBSD.h>
-#include <arm64/amcc_rorgn.h>
+/* Removed  include (intel-only) */
 
 #if DEBUG
 #define z_debug_assert(expr)  assert(expr)
@@ -285,13 +285,13 @@ struct zone_magazine {
  *
  * The CPU layer (@c zone_cache_t) looks like this:
  *
- *      ╭─ a ─ f ─┬───────── zm_depot ──────────╮
- *      │ ╭─╮ ╭─╮ │ ╭─╮ ╭─╮ ╭─╮ ╭─╮ ╭─╮         │
- *      │ │#│ │#│ │ │#│ │#│ │#│ │#│ │#│         │
- *      │ │#│ │ │ │ │#│ │#│ │#│ │#│ │#│         │
- *      │ │ │ │ │ │ │#│ │#│ │#│ │#│ │#│         │
- *      │ ╰─╯ ╰─╯ │ ╰─╯ ╰─╯ ╰─╯ ╰─╯ ╰─╯         │
- *      ╰─────────┴─────────────────────────────╯
+ *      â•­â”€ a â”€ f â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€ zm_depot â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•®
+ *      â”‚ â•­â”€â•® â•­â”€â•® â”‚ â•­â”€â•® â•­â”€â•® â•­â”€â•® â•­â”€â•® â•­â”€â•®         â”‚
+ *      â”‚ â”‚#â”‚ â”‚#â”‚ â”‚ â”‚#â”‚ â”‚#â”‚ â”‚#â”‚ â”‚#â”‚ â”‚#â”‚         â”‚
+ *      â”‚ â”‚#â”‚ â”‚ â”‚ â”‚ â”‚#â”‚ â”‚#â”‚ â”‚#â”‚ â”‚#â”‚ â”‚#â”‚         â”‚
+ *      â”‚ â”‚ â”‚ â”‚ â”‚ â”‚ â”‚#â”‚ â”‚#â”‚ â”‚#â”‚ â”‚#â”‚ â”‚#â”‚         â”‚
+ *      â”‚ â•°â”€â•¯ â•°â”€â•¯ â”‚ â•°â”€â•¯ â•°â”€â•¯ â•°â”€â•¯ â•°â”€â•¯ â•°â”€â•¯         â”‚
+ *      â•°â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•¯
  *
  * It has two pre-loaded magazines (a)lloc and (f)ree which we allocate from,
  * or free to. Serialization is achieved through disabling preemption, and only
@@ -4157,10 +4157,10 @@ zone_scramble_va_and_unlock(
 	}
 
 	/*
-	 * Fisher–Yates shuffle, for an array with indices [0, n)
+	 * Fisherâ€“Yates shuffle, for an array with indices [0, n)
 	 *
-	 * for i from n−1 downto 1 do
-	 *     j ← random integer such that 0 ≤ j ≤ i
+	 * for i from nâˆ’1 downto 1 do
+	 *     j â† random integer such that 0 â‰¤ j â‰¤ i
 	 *     exchange a[j] and a[i]
 	 *
 	 * The point here is that early allocations aren't at a fixed
@@ -7933,7 +7933,7 @@ mach_memory_info_security_check(bool redact_info)
 	}
 
 	/*
-	 * On release non-mac arm devices, allow mach_memory_info
+	 * On release non-mac  devices, allow mach_memory_info
 	 * to be called twice per day per boot. memorymaintenanced
 	 * calls it once per day, which leaves room for a sysdiagnose.
 	 * Allow redacted version to be called without rate limit.
@@ -10869,3 +10869,4 @@ SYSCTL_TEST_REGISTER(zone_alloc_replenish_test, zone_alloc_replenish_test);
 
 
 #endif /* DEBUG || DEVELOPMENT */
+

@@ -1,6 +1,6 @@
-/* Copyright (c) (2010-2023) Apple Inc. All rights reserved.
+﻿/* Copyright (c) (2010-2023) Apple Inc. All rights reserved.
  *
- * corecrypto is licensed under Apple Inc.’s Internal Use License Agreement (which
+ * corecrypto is licensed under Apple Inc.â€™s Internal Use License Agreement (which
  * is contained in the License.txt file distributed with corecrypto) and only to
  * people who accept that license. IMPORTANT:  Any license rights granted to you by
  * Apple Inc. (if any) are limited to internal use within your organization only on
@@ -314,7 +314,7 @@
  #endif
 #endif
 
-//arm arch64 definition for gcc
+// arch64 definition for gcc
 #if defined(__GNUC__) && defined(__aarch64__) && !defined(__arm64__)
     #define __arm64__
 #endif
@@ -439,7 +439,7 @@
 
 #define CC_CACHE_DESCRIPTORS CC_KERNEL
 
-//-(1) ARM V7
+//-(1)  V7
 #if CC_ARM_ARCH_7 && defined(__clang__) && CC_USE_ASM
  #define CCN_ADD_ASM            1
  #define CCN_SUB_ASM            1
@@ -486,7 +486,7 @@
   #define CCSHA2_VNG_ARM        0
  #endif /* !defined(__ARM_NEON__) */
 
-//-(2) ARM 64
+//-(2)  64
 #elif defined(__arm64__) && defined(__clang__) && CC_USE_ASM
  #define CCN_ADD_ASM            1
  #define CCN_SUB_ASM            1
@@ -727,7 +727,7 @@
 #ifndef CC_INTERNAL_SDK
 #if __has_include(<System/i386/cpu_capabilities.h>)
 #define CC_INTERNAL_SDK 1
-#elif __has_include(<System/arm/cpu_capabilities.h>)
+#elif __has_include(<System//cpu_capabilities.h>)
 #define CC_INTERNAL_SDK 1
 #else
 #define CC_INTERNAL_SDK 0
@@ -818,3 +818,4 @@
 #endif
 
 #endif /* _CORECRYPTO_CC_CONFIG_H_ */
+

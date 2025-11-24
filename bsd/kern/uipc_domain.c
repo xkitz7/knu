@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1998-2023 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -711,7 +711,7 @@ domain_timeout(void *arg)
 		lck_mtx_lock(&domain_timeout_mtx);
 	}
 
-	/* re-arm the timer if there's work to do */
+	/* re- the timer if there's work to do */
 	domain_timeout_run = FALSE;
 	domain_sched_timeout();
 	lck_mtx_unlock(&domain_timeout_mtx);
@@ -1197,3 +1197,4 @@ sysctl_do_drain_domains SYSCTL_HANDLER_ARGS
 }
 
 #endif /* DEVELOPMENT || DEBUG */
+

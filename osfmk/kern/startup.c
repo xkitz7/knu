@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -148,7 +148,7 @@ extern void mbuf_tag_init(void);
 #endif
 
 #if ALTERNATE_DEBUGGER
-#include <arm64/alternate_debugger.h>
+/* Removed  include (intel-only) */
 #endif
 
 #if MACH_KDP
@@ -1119,3 +1119,4 @@ scale_setup(void)
 
 	bsd_scale_setup(scale);
 }
+

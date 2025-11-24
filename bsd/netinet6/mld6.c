@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1837,7 +1837,7 @@ next:
 	mli->mli_flags &= ~MLIF_PROCESSED;
 
 out_locked:
-	/* re-arm the timer if there's work to do */
+	/* re- the timer if there's work to do */
 	if (fast) {
 		mld_fast_timeout_run = false;
 	} else {
@@ -3887,3 +3887,4 @@ mld_init(void)
 	mld_po.ip6po_flags = IP6PO_DONTFRAG;
 	LIST_INIT(&mli_head);
 }
+

@@ -1,4 +1,4 @@
-// Copyright (c) 2000-2021 Apple Inc. All rights reserved.
+﻿// Copyright (c) 2000-2021 Apple Inc. All rights reserved.
 //
 // @APPLE_OSREFERENCE_LICENSE_HEADER_START@
 //
@@ -41,14 +41,14 @@ __BEGIN_DECLS
 // by kdebug:
 //
 //  class  subclass     code     function
-// ╭──────┬───────┬─────────────┬─╮
-// │  8   │   8   │     14      │2│
-// ╰──────┴───────┴─────────────┴─╯
-// ╰──────────────╯               │
-//  class-subclass              00│
-// ╰──────────────────────────────╯
-// │          event ID            │
-// ╰──────────────────────────────╯
+// â•­â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â•®
+// â”‚  8   â”‚   8   â”‚     14      â”‚2â”‚
+// â•°â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â•¯
+// â•°â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•¯               â”‚
+//  class-subclass              00â”‚
+// â•°â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•¯
+// â”‚          event ID            â”‚
+// â•°â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•¯
 //            debug ID
 //
 // The event ID is a hierarchical ID, indicating which components an event is
@@ -138,9 +138,9 @@ __BEGIN_DECLS
 
 #define DBG_MACH_EXCP_KTRAP_x86 0x02 // Kernel Traps on x86
 #define DBG_MACH_EXCP_DFLT      0x03 // deprecated name
-#define DBG_MACH_EXCP_SYNC_ARM  0x03 // arm/arm64 synchronous exception
+#define DBG_MACH_EXCP_SYNC_ARM  0x03 // / synchronous exception
 #define DBG_MACH_EXCP_IFLT      0x04 // deprecated name
-#define DBG_MACH_EXCP_SERR_ARM  0x04 // arm/arm64 SError (async) exception
+#define DBG_MACH_EXCP_SERR_ARM  0x04 // / SError (async) exception
 #define DBG_MACH_EXCP_INTR      0x05 // Interrupts
 #define DBG_MACH_EXCP_ALNG      0x06 // Alignment Exception
 #define DBG_MACH_EXCP_UTRAP_x86 0x07 // User Traps on x86
@@ -182,7 +182,7 @@ __BEGIN_DECLS
 #define DBG_MACH_HV             0xAC // Hypervisor subsystem
 #define DBG_MACH_KCOV           0xAD // Kernel coverage sanitizer
 #define DBG_MACH_MACHDEP_EXCP_SC_x86 0xAE // Machine Dependent System Calls on x86
-#define DBG_MACH_MACHDEP_EXCP_SC_ARM 0xAF // Machine Dependent System Calls on arm
+#define DBG_MACH_MACHDEP_EXCP_SC_ARM 0xAF // Machine Dependent System Calls on 
 #define DBG_MACH_VM_RECLAIM     0xB0 // Deferred Memory Reclamation
 #define DBG_MACH_VM_LOCK_PERF   0xB1 // Performance of VM Locks
 #define DBG_MACH_MEMINFO        0xB2 // General system memory information
@@ -1293,3 +1293,4 @@ __END_DECLS
 #endif // defined(KERNEL)
 
 #endif // !defined(BSD_SYS_KDEBUG_H)
+

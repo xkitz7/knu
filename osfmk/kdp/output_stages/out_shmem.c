@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -33,9 +33,9 @@
 #include <kdp/output_stages/output_stages.h>
 #include <kdp/kdp_core.h>
 #include <kdp/processor_core.h>
-#include <arm/cpuid.h>
-#include <arm/caches_internal.h>
-#include <pexpert/arm/consistent_debug.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 #include <vm/vm_kern_xnu.h>
 #include <vm/vm_map_xnu.h>
 
@@ -680,10 +680,11 @@ panic_spin_shmcon(void)
 			FlushPoC_DcacheRegion((vm_offset_t) hwsd_info, sizeof(*hwsd_info));
 		}
 #ifdef __arm64__
-		/* Avoid stalling in WFE on arm32, which may not have a maximum WFE timeout like arm64. */
+		/* Avoid stalling in WFE on arm32, which may not have a maximum WFE timeout like . */
 		__builtin_arm_wfe();
 #endif
 	}
 }
 
 #endif /* defined(CONFIG_KDP_INTERACTIVE_DEBUGGING) && defined(__arm64__) */
+

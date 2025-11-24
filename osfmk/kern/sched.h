@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -190,7 +190,7 @@ typedef enum {
 
 /*
  * Determine whether the target platform should run the Clutch/Edge Scheduler.
- * All arm64 platforms are eligible to do so.
+ * All  platforms are eligible to do so.
  */
 #if defined(__arm64__) && CONFIG_CLUTCH && !CONFIG_SCHED_EDGE_OPT_OUT
 
@@ -452,3 +452,4 @@ extern bool system_is_SMT;
 #endif /* CONFIG_SCHED_SMT */
 
 #endif  /* _KERN_SCHED_H_ */
+

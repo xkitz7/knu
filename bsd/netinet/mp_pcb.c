@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2012-2017 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -120,7 +120,7 @@ mp_timeout(void *arg)
 		mp_ticking = (t_act != 0);
 	}
 
-	/* re-arm the timer if there's work to do */
+	/* re- the timer if there's work to do */
 	mp_timeout_run = FALSE;
 	mp_sched_timeout();
 	lck_mtx_unlock(&mp_timeout_lock);
@@ -370,3 +370,4 @@ mp_getpeeraddr(struct socket *mp_so, struct sockaddr **nam)
 		return EINVAL;
 	}
 }
+

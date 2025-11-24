@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -568,7 +568,7 @@ machine_thread_state_initialize(
 	/*
 	 * If there's an fpu save area, free it.
 	 * The initialized state will then be lazily faulted-in, if required.
-	 * And if we're target, re-arm the no-fpu trap.
+	 * And if we're target, re- the no-fpu trap.
 	 */
 	if (thread->machine.ifps) {
 		(void) fpu_set_fxstate(thread, NULL, x86_FLOAT_STATE64);
@@ -2412,3 +2412,4 @@ copy_debug_state64(
 	target->dr6 = src->dr6;
 	target->dr7 = src->dr7;
 }
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -4952,7 +4952,7 @@ workq_setup_and_run(proc_t p, struct uthread *uth, int setup_flags)
 			get_task_ipcspace(proc_task(p)));
 	}
 
-	/* Thread has been set up to run, arm its next workqueue quantum or disarm
+	/* Thread has been set up to run,  its next workqueue quantum or disarm
 	 * if it is no longer supporting that */
 	if (thread_supports_cooperative_workqueue(th)) {
 		thread_arm_workqueue_quantum(th);
@@ -5281,3 +5281,4 @@ workq_init(void)
 	thread_deallocate_daemon_register_queue(&workq_deallocate_queue,
 	    workq_deallocate_queue_invoke);
 }
+

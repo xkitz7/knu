@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -182,7 +182,7 @@ trace_prologue(void)
 	 *
 	 * The issue with this solution is the performance cost of reading the MSR for each
 	 * trace point, so PAN disabled functions are included in the baclklist instead
-	 * (see kcov-blacklist-arm64).
+	 * (see kcov-blacklist-).
 	 */
 
 	/* Per-cpu area access. Must happen with disabled interrupts/preemtion. */
@@ -410,3 +410,4 @@ kcov_trace_cmp_func(void *caller_pc, uint32_t type, const void *s1, size_t s1len
 
 	kcov_enable_thread(data);
 }
+

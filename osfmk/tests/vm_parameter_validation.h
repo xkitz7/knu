@@ -1,4 +1,4 @@
-#ifndef VM_PARAMETER_VALIDATION_H
+﻿#ifndef VM_PARAMETER_VALIDATION_H
 #define VM_PARAMETER_VALIDATION_H
 
 
@@ -157,11 +157,11 @@ static const int64_t SYSCTL_OUTPUT_BUFFER_SIZE = 512 * 1024 * 1024;  // 512 MB
 #       elif __x86_64__
 #               define ARCH_NAME "x86_64"
 #       elif __arm64__ && __LP64__
-#               define ARCH_NAME "arm64"
+#               define ARCH_NAME ""
 #       elif __arm64__ && !__LP64__
 #               define ARCH_NAME "arm64_32"
 #       elif __arm__
-#               define ARCH_NAME "arm"
+#               define ARCH_NAME ""
 #       else
 #               define ARCH_NAME "unknown-arch"
 #       endif
@@ -171,11 +171,11 @@ static const int64_t SYSCTL_OUTPUT_BUFFER_SIZE = 512 * 1024 * 1024;  // 512 MB
 #       elif TARGET_CPU_X86_64
 #               define ARCH_NAME "x86_64"
 #       elif TARGET_CPU_ARM64 && __LP64__
-#               define ARCH_NAME "arm64"
+#               define ARCH_NAME ""
 #       elif TARGET_CPU_ARM64 && !__LP64__
 #               define ARCH_NAME "arm64_32"
 #       elif TARGET_CPU_ARM
-#               define ARCH_NAME "arm"
+#               define ARCH_NAME ""
 #       else
 #               define ARCH_NAME "unknown-arch"
 #       endif
@@ -3640,16 +3640,16 @@ call_mach_vm_deferred_reclamation_buffer_init(task_t task, mach_vm_address_t add
  * decreased navigability (cmd+click is unlikely to work for you for this code)
  * and increased upfront costs for understanding this code. Maintainability
  * should be better in most cases: if a fix needs to happen, it can be
- * implemented in the right place once and doesn’t need to be copy-and-pasted
+ * implemented in the right place once and doesnâ€™t need to be copy-and-pasted
  * in multiple duplicated functions. There may however be cases where the
- * change you want to make doesn’t fit the spirit of this approach (for
+ * change you want to make doesnâ€™t fit the spirit of this approach (for
  * instance changing the behavior of the test for only one function in the
  * family).
  *
  * The framework is built around the idea that there are three types of
  * parameters:
  * 1. Parameters that will be fixed for all calls to the function (e.g. some
- *    uncommon type specific to the function that doesn’t impact the input
+ *    uncommon type specific to the function that doesnâ€™t impact the input
  *    validation flow)
  * 2. Parameters that cause input validation to change significantly (typically
  *    flags, e.g. fixed vs anywhere). For those we basically want to treat
@@ -3670,13 +3670,13 @@ call_mach_vm_deferred_reclamation_buffer_init(task_t task, mach_vm_address_t add
  * 1. Typedef a function type with shared parameters (see remap_fn_t)
  * 2. Define function wrappers that fit the above typedef for each function
  *    in the family (see e.g. mach_vm_remap_new_kernel_wrapped). These might
- *    set values for “type 1” params.
- * 3. Define “helper” functions that take in parameters of types 2 and 3.A.,
+ *    set values for â€œtype 1â€ params.
+ * 3. Define â€œhelperâ€ functions that take in parameters of types 2 and 3.A.,
  *    and call the wrapper, filling in type 3.B. params. See, e.g.,
  *    help_call_remap_fn__src_size. For remap, all helpers can easily be
  *    implemented as a single call to a core helper function
  *    help_call_remap_fn__src_size_etc.
- * 4. Define generic “caller” functions that take in a wrapper and parameters
+ * 4. Define generic â€œcallerâ€ functions that take in a wrapper and parameters
  *    of type 3.A. and call the helper. Macros are used to mass implement these
  *    for all values of type 2 parameters and for all functions in the family.
  *    See, e.g., `IMPL_FROM_HELPER(dst_size);`.
@@ -5008,3 +5008,4 @@ check_mach_vm_page_info_outparam_changes(kern_return_t * kr, vm_page_info_basic_
 
 // VM_PARAMETER_VALIDATION_H
 #endif
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -41,7 +41,7 @@
 #include <libkern/OSKextLibPrivate.h>
 #include <libkern/kernel_mach_header.h>
 #if __arm64__
-#include <pexpert/arm64/platform.h>
+/* Removed  include (intel-only) */
 #endif
 
 #define TAG "[trap_telemetry] "
@@ -1244,3 +1244,4 @@ trap_telemetry_report_simulated_trap_with_backtrace(
 
 	return rsb_enqueue_if_needed(&submission_e);
 }
+

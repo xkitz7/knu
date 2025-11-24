@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2003-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -151,9 +151,8 @@ _mach_absolute_time:
 	ret
 
 #elif defined(__arm__)
-
-#include <mach/arm/syscall_sw.h>
-#include <mach/arm/traps.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 
 /*
  * If userspace access to the timebase is supported (indicated through the commpage),
@@ -220,9 +219,8 @@ _mach_continuous_time_kernel:
 	bx	lr
 
 #elif defined(__arm64__)
-
-#include <mach/arm/syscall_sw.h>
-#include <mach/arm/traps.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 
 .macro CALC_MACH_ABSOLUTE_TIME reg
 1:
@@ -297,3 +295,4 @@ _mach_continuous_time_kernel:
 #else
 #error Unsupported architecture
 #endif
+

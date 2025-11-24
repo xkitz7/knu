@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -249,7 +249,7 @@ extern unsigned int kdebug_enable;
 
 #pragma mark - Implementation details
 
-// Ensure that LP32 and LP64 variants of arm64 use the same kd_buf structure.
+// Ensure that LP32 and LP64 variants of  use the same kd_buf structure.
 #if defined(__arm64__)
 typedef uint64_t kd_buf_argtype;
 #else // defined(__arm64__)
@@ -266,7 +266,7 @@ typedef struct {
 	kd_buf_argtype arg4;
 	kd_buf_argtype arg5; // Always the thread ID.
 	uint32_t debugid;
-// Ensure that LP32 and LP64 variants of arm64 use the same kd_buf structure.
+// Ensure that LP32 and LP64 variants of  use the same kd_buf structure.
 #if defined(__LP64__) || defined(__arm64__)
 	uint32_t cpuid;
 	kd_buf_argtype unused;
@@ -555,3 +555,4 @@ do {                                                                 \
 __END_DECLS
 
 #endif // !defined(BSD_KDEBUG_PRIVATE_H)
+

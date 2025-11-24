@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -33,7 +33,7 @@
 
 /*
  * The interrupt disabled timeouts mechanism requires that we include this
- * header in arm/thread.h, which is why this is here and not in the timeout.h
+ * header in /thread.h, which is why this is here and not in the timeout.h
  * header.
  */
 
@@ -51,3 +51,4 @@ typedef struct kern_timeout {
 } kern_timeout_t;
 
 #endif /* _KERN_TIMEOUT_DECL_H_ */
+

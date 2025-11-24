@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -79,7 +79,7 @@
 #include <kern/host.h>
 #include <kern/exc_guard.h>
 #include <ipc/ipc_policy.h>
-#include <mach/arm/thread_status.h>
+/* Removed  include (intel-only) */
 
 #include <sys/code_signing.h>
 
@@ -1567,3 +1567,4 @@ act_set_astproc_resource(thread_t thread)
 {
 	act_set_ast(thread, AST_PROC_RESOURCE);
 }
+

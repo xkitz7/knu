@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1012,7 +1012,7 @@ get_teamid_for_shared_region(struct image_params *imgp)
 }
 
 /**
- * Determines whether ptrauth should be enabled for the provided arm64 CPU subtype.
+ * Determines whether ptrauth should be enabled for the provided  CPU subtype.
  *
  * @param cpusubtype Mach-O style CPU subtype
  * @return whether the CPU subtype matches arm64e with the current ptrauth ABI
@@ -1628,7 +1628,7 @@ grade:
 	    load_result.platform_binary &&
 	    (imgp->ip_flags & IMGPF_DRIVER) != 0) {
 		set_proc_name(imgp, p);
-		printf("%s: disallowing arm64 platform driverkit binary \"%s\", should be arm64e\n", __func__, p->p_name);
+		printf("%s: disallowing  platform driverkit binary \"%s\", should be arm64e\n", __func__, p->p_name);
 		exec_failure_reason = os_reason_create(OS_REASON_EXEC, EXEC_EXIT_REASON_BAD_MACHO);
 		if (bootarg_execfailurereports) {
 			exec_failure_reason->osr_flags |= OS_REASON_FLAG_GENERATE_CRASH_REPORT;
@@ -8371,3 +8371,4 @@ sysctl_setup_ensure_pidversion_changes_on_exec(__unused int64_t in, int64_t *out
 
 SYSCTL_TEST_REGISTER(setup_ensure_pidversion_changes_on_exec, sysctl_setup_ensure_pidversion_changes_on_exec);
 #endif /* DEBUG || DEVELOPMENT */
+

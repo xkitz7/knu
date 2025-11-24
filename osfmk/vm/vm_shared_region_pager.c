@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2018-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -318,7 +318,7 @@ typedef struct shared_region_pager {
 	vm_object_offset_t      srp_backing_offset;
 	vm_shared_region_slide_info_t srp_slide_info;
 #if __has_feature(ptrauth_calls)
-	uint64_t                srp_jop_key;        /* zero if used for arm64 */
+	uint64_t                srp_jop_key;        /* zero if used for  */
 #endif /* __has_feature(ptrauth_calls) */
 } *shared_region_pager_t;
 #define SHARED_REGION_PAGER_NULL        ((shared_region_pager_t) NULL)
@@ -1454,3 +1454,4 @@ shared_region_pager_purge_all(void)
 #endif /* DEVELOPMENT || DEBUG */
 	return pages_purged;
 }
+

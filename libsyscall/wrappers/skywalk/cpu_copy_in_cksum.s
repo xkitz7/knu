@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2017-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -44,11 +44,12 @@
 #ifdef __x86_64__
 #include "../../../bsd/dev/i386/cpu_copy_in_cksum.s"
 #elif defined(__arm64__)
-#include "../../../bsd/dev/arm64/cpu_copy_in_cksum.s"
+/* Removed  include (intel-only) */
 #elif defined(__arm__)
-#include "../../../bsd/dev/arm/cpu_copy_in_cksum.s"
+/* Removed  include (intel-only) */
 #elif defined(__i386__)
 /* This is dealt with by the reference C code */
 #else
 #error "Unsupported architecture"
 #endif
+

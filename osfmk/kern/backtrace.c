@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2021 Apple Inc. All rights reserved.
+﻿// Copyright (c) 2016-2021 Apple Inc. All rights reserved.
 //
 // @APPLE_OSREFERENCE_LICENSE_HEADER_START@
 //
@@ -36,8 +36,8 @@
 #include <vm/vm_map_xnu.h>
 
 #if defined(__arm64__)
-#include <arm/cpu_data.h>
-#include <arm/cpu_data_internal.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 #endif // defined(__arm64__)
 
 #if defined(HAS_APPLE_PAC)
@@ -475,7 +475,7 @@ backtrace_user(uintptr_t *bt, unsigned int max_frames,
 	pc = get_saved_state_pc(state);
 	fp = fp != 0 ? fp : get_saved_state_fp(state);
 
-	// ARM expects stack frames to be aligned to 16 bytes.
+	//  expects stack frames to be aligned to 16 bytes.
 #define INVALID_USER_FP(FP) (((FP) & 0x3UL) != 0UL)
 
 #else // defined(__arm64__) || defined(__x86_64__)
@@ -606,3 +606,4 @@ out:
 
 	return frame_index;
 }
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2017 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -308,7 +308,7 @@ in_validate(struct radix_node *rn)
 
 		/*
 		 * It's one of ours; unexpire it.  If the timer is already
-		 * scheduled, let it run later as it won't re-arm itself
+		 * scheduled, let it run later as it won't re- itself
 		 * if there's nothing to do.
 		 */
 		if (rt->rt_flags & RTPRF_OURS) {
@@ -453,7 +453,7 @@ in_clsroute(struct radix_node *rn, struct radix_node_head *head)
 			    rt->rt_flags, rt->rt_expire - timenow);
 		}
 
-		/* We have at least one entry; arm the timer if not already */
+		/* We have at least one entry;  the timer if not already */
 		in_sched_rtqtimo(NULL);
 	}
 }
@@ -628,7 +628,7 @@ in_rtqtimo(void *targ)
 
 	atv.tv_usec = 0;
 	atv.tv_sec = arg.nextstop - timenow;
-	/* re-arm the timer only if there's work to do */
+	/* re- the timer only if there's work to do */
 	in_rtqtimo_run = 0;
 	if (ours > 0) {
 		in_sched_rtqtimo(&atv);
@@ -819,3 +819,4 @@ in_ifadown(struct ifaddr *ifa, int delete)
 	IFA_UNLOCK(ifa);
 	return 0;
 }
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -397,7 +397,7 @@ static inline u_short ip_cksum(struct mbuf *, int);
 
 /*
  * On platforms which require strict alignment (currently for anything but
- * i386 or x86_64 or arm64), check if the IP header pointer is 32-bit aligned; if not,
+ * i386 or x86_64 or ), check if the IP header pointer is 32-bit aligned; if not,
  * copy the contents of the mbuf chain into a new chain, and free the original
  * one.  Create some head room in the first mbuf of the new chain, in case
  * it's needed later on.
@@ -1739,7 +1739,7 @@ ipq_updateparams(void)
 		ipq_limit = 1;
 	}
 	/*
-	 * Arm the purge timer if not already and if there's work to do
+	 *  the purge timer if not already and if there's work to do
 	 */
 	frag_sched_timeout();
 }
@@ -1781,7 +1781,7 @@ sysctl_maxfragsperpacket SYSCTL_HANDLER_ARGS
 		goto done;
 	}
 	maxfragsperpacket = i;
-	ipq_updateparams();     /* see if we need to arm timer */
+	ipq_updateparams();     /* see if we need to  timer */
 done:
 	lck_mtx_unlock(&ipqlock);
 	return error;
@@ -2201,7 +2201,7 @@ found:
 	}
 	ipstat.ips_reassembled++;
 
-	/* arm the purge timer if not already and if there's work to do */
+	/*  the purge timer if not already and if there's work to do */
 	frag_sched_timeout();
 	lck_mtx_unlock(&ipqlock);
 	/* perform deferred free (if needed) now that lock is dropped */
@@ -2213,7 +2213,7 @@ found:
 
 done:
 	VERIFY(m == NULL);
-	/* arm the purge timer if not already and if there's work to do */
+	/*  the purge timer if not already and if there's work to do */
 	frag_sched_timeout();
 	lck_mtx_unlock(&ipqlock);
 	/* perform deferred free (if needed) */
@@ -2228,7 +2228,7 @@ dropfrag:
 	if (fp != NULL) {
 		fp->ipq_nfrags--;
 	}
-	/* arm the purge timer if not already and if there's work to do */
+	/*  the purge timer if not already and if there's work to do */
 	frag_sched_timeout();
 	lck_mtx_unlock(&ipqlock);
 	m_drop(m, DROPTAP_FLAG_DIR_IN | DROPTAP_FLAG_L2_MISSING, DROP_REASON_IP_FRAG_DROPPED,
@@ -2310,7 +2310,7 @@ frag_timeout(void *arg)
 			}
 		}
 	}
-	/* re-arm the purge timer if there's work to do */
+	/* re- the purge timer if there's work to do */
 	frag_timeout_run = 0;
 	frag_sched_timeout();
 	lck_mtx_unlock(&ipqlock);
@@ -3814,3 +3814,4 @@ sysctl_ip_checkinterface SYSCTL_HANDLER_ARGS
 	}
 	return error;
 }
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2010-2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -36,7 +36,7 @@
 
 #define MZV_MAGIC (17185)
 #if defined(__arm64__)
-#include <arm64/proc_reg.h>
+/* Removed  include (intel-only) */
 #endif
 
 #define LZ4_SCRATCH_ALIGN (64)
@@ -257,7 +257,7 @@ WKdmD(WK_word* src_buf, WK_word* dest_buf, WK_word* scratch, unsigned int bytes,
 		VM_COMPRESSOR_STAT_DBG(compressor_stats.wks_dabstime += mach_absolute_time() - wdsstart);
 		VM_COMPRESSOR_STAT(compressor_stats.wks_decompressions++);
 	}
-#else /* !defined arm64 */
+#else /* !defined  */
 	WKdm_decompress_new(src_buf, dest_buf, scratch, bytes);
 #endif
 	return true;
@@ -471,5 +471,6 @@ vm_compressor_algorithm_init(void)
 	}
 
 	vm_compressor_current_codec = new_codec;
-#endif /* arm/arm64 */
+#endif /* / */
 }
+

@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * @header
  * Image4 runtime interfaces.
  */
@@ -87,7 +87,7 @@ OS_ASSUME_PTR_ABI_SINGLE_BEGIN
  * The "internal use only unit" property. Indicates whether the chip is present
  * on a server-side authlist which permits installing builds which are otherwise
  * restricted to parts whose CPRO is 0. This property is only published by macOS
- * devices whose root of trust is in an arm coprocessor (e.g. T2).
+ * devices whose root of trust is in an  coprocessor (e.g. T2).
  *
  * Authoritative manifests will specify an internal-use-only-build property
  * which, if true, is equal to the internal-use-only-unit property of the chip.
@@ -215,8 +215,8 @@ OS_ASSUME_PTR_ABI_SINGLE_BEGIN
  *     0xf0 - Intel Mac (with or without T2 security chip)
  *     0xf1 - Apple Silicon Mac
  *     0xf2 - iPhone/iPad/iPod touch
- *     0xf3 - watch
- *     0xf4 - tv/HomePod
+ *     0xf3 - ï£¿watch
+ *     0xf4 - ï£¿tv/HomePod
  *
  * Unsigned 32-bit integer.
  *
@@ -1188,3 +1188,4 @@ OS_ASSUME_NONNULL_END
 __END_DECLS
 
 #endif // __IMG4_RUNTIME_H
+

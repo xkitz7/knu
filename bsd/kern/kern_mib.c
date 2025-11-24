@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -128,8 +128,8 @@ extern vm_map_t bsd_pageable_map;
 #endif
 
 #if defined(__arm64__)
-#include <arm/cpuid.h>          /* for cpuid_info() & cache_info() */
-#include <arm/cpu_capabilities_public.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 #endif
 
 #if defined(CONFIG_XNUPOST)
@@ -137,14 +137,14 @@ extern vm_map_t bsd_pageable_map;
 #endif
 
 /**
- * Prevents an issue with creating the sysctl node hw.optional.arm on some
- * platforms. If the 'arm' macro is defined, then the word "arm" is preprocessed
- * to 1. As the 'arm' macro is not used in this file, we do not need to redefine
+ * Prevents an issue with creating the sysctl node hw.optional. on some
+ * platforms. If the '' macro is defined, then the word "" is preprocessed
+ * to 1. As the '' macro is not used in this file, we do not need to redefine
  * after we are done.
  */
-#if defined(arm)
-#undef arm
-#endif /* defined(arm) */
+#if defined()
+#undef 
+#endif /* defined() */
 
 #ifndef MAX
 #define MAX(a, b) (a >= b ? a : b)
@@ -540,7 +540,7 @@ sysctl_hw_generic(__unused struct sysctl_oid *oidp, void *arg1,
 		bzero(dummy, sizeof(dummy));
 		if (proc_platform(req->p) == PLATFORM_IOS) {
 			/* iOS-on-Mac processes don't expect the macOS kind of
-			 * hw.machine, e.g. "arm64", but are used to seeing
+			 * hw.machine, e.g. "", but are used to seeing
 			 * a product string on iOS, which we here hardcode
 			 * to return as "iPad8,6" for compatibility.
 			 *
@@ -552,7 +552,7 @@ sysctl_hw_generic(__unused struct sysctl_oid *oidp, void *arg1,
 			strlcpy(dummy, "iPad8,6", sizeof(dummy));
 		}
 		else {
-			strlcpy(dummy, "arm64", sizeof(dummy));
+			strlcpy(dummy, "", sizeof(dummy));
 		}
 		dummy[64] = 0;
 		return SYSCTL_OUT(req, dummy, strlen(dummy) + 1);
@@ -1035,7 +1035,7 @@ SYSCTL_PROC(_hw_perflevel1, OID_AUTO, name, CTLTYPE_STRING | CTLFLAG_RD | CTLFLA
  * 1.
  */
 SYSCTL_NODE(_hw, OID_AUTO, optional, CTLFLAG_RW | CTLFLAG_LOCKED, NULL, "optional features");
-SYSCTL_NODE(_hw_optional, OID_AUTO, arm, CTLFLAG_RW | CTLFLAG_LOCKED, NULL, "optional features for ARM processors");
+SYSCTL_NODE(_hw_optional, OID_AUTO, , CTLFLAG_RW | CTLFLAG_LOCKED, NULL, "optional features for  processors");
 
 SYSCTL_INT(_hw_optional, OID_AUTO, floatingpoint, CTLFLAG_RD | CTLFLAG_KERN | CTLFLAG_LOCKED, (int *)NULL, 1, "");      /* always set */
 
@@ -1140,14 +1140,14 @@ SECURITY_READ_ONLY_LATE(int) arm64_flag = 1;
 SECURITY_READ_ONLY_LATE(int) arm64_flag = 0;
 #endif
 
-/* ARM Optional Feature Sysctls */
+/*  Optional Feature Sysctls */
 #define ARM_FEATURE_FLAG(flag_name) \
 	SECURITY_READ_ONLY_LATE(int) gARM_ ## flag_name = 0; \
 	SYSCTL_INT(_hw_optional_arm, OID_AUTO, flag_name, CTLFLAG_RD | CTLFLAG_KERN | CTLFLAG_LOCKED, &gARM_ ## flag_name, 0, "")
-#include <arm/arm_features.inc>
+/* Removed  include (intel-only) */
 #undef ARM_FEATURE_FLAG
 
-/* Legacy Names ARM Optional Feature Sysctls */
+/* Legacy Names  Optional Feature Sysctls */
 #define LEGACY_ARM_SYSCTL(legacy_name, flag_name) \
 	SYSCTL_INT(_hw_optional, OID_AUTO, legacy_name, CTLFLAG_RD | CTLFLAG_KERN | CTLFLAG_LOCKED, &gARM_ ## flag_name, 0, "")
 
@@ -1162,7 +1162,7 @@ LEGACY_ARM_SYSCTL(armv8_2_sha512, FEAT_SHA512);
 LEGACY_ARM_SYSCTL(armv8_2_sha3, FEAT_SHA3);
 LEGACY_ARM_SYSCTL(armv8_3_compnum, FEAT_FCMA);
 
-/* Misc ARM Optional Feature Sysctls */
+/* Misc  Optional Feature Sysctls */
 SYSCTL_INT(_hw_optional, OID_AUTO, watchpoint, CTLFLAG_RD | CTLFLAG_KERN | CTLFLAG_LOCKED, &watchpoint_flag, 0, "");
 SYSCTL_INT(_hw_optional, OID_AUTO, breakpoint, CTLFLAG_RD | CTLFLAG_KERN | CTLFLAG_LOCKED, &breakpoint_flag, 0, "");
 
@@ -1197,15 +1197,15 @@ SYSCTL_INT(_hw_optional, OID_AUTO, ptrauth, CTLFLAG_RD | CTLFLAG_KERN | CTLFLAG_
 #endif
 
 /*
- * Without this little ifdef dance, the preprocessor replaces "arm64" with "1",
+ * Without this little ifdef dance, the preprocessor replaces "" with "1",
  * leaving us with a less-than-helpful sysctl.hwoptional.1.
  */
-#ifdef arm64
-#undef arm64
-SYSCTL_INT(_hw_optional, OID_AUTO, arm64, CTLFLAG_RD | CTLFLAG_KERN | CTLFLAG_LOCKED, &arm64_flag, 0, "");
-#define arm64 1
+#ifdef 
+#undef 
+SYSCTL_INT(_hw_optional, OID_AUTO, , CTLFLAG_RD | CTLFLAG_KERN | CTLFLAG_LOCKED, &arm64_flag, 0, "");
+#define  1
 #else
-SYSCTL_INT(_hw_optional, OID_AUTO, arm64, CTLFLAG_RD | CTLFLAG_KERN | CTLFLAG_LOCKED, &arm64_flag, 0, "");
+SYSCTL_INT(_hw_optional, OID_AUTO, , CTLFLAG_RD | CTLFLAG_KERN | CTLFLAG_LOCKED, &arm64_flag, 0, "");
 #endif
 #endif /* ! __arm64__ */
 
@@ -1254,7 +1254,7 @@ sysctl_hw_caps(__unused struct sysctl_oid *oidp, __unused void *arg1,
 
 	/* Report presence of all FEATs. */
 	#define ARM_FEATURE_FLAG(x) CAP_SET_BIT(x)
-	#include <arm/arm_features.inc>
+/* Removed  include (intel-only) */
 	#undef ARM_FEATURE_FLAG
 
 
@@ -1293,7 +1293,7 @@ arm_cpu_capabilities_legacy_test(void)
 	T_EXPECT_EQ_INT(mvfp_info->neon_hpfp, gARM_AdvSIMD_HPFPCvt, "neon hpfp cvt value should match legacy");
 	T_EXPECT_EQ_INT(mvfp_info->neon_fp16, gARM_FEAT_FP16, "neon fp16 value should match legacy");
 
-	T_LOG("Completed arm cpu capabalities legacy compliance test.");
+	T_LOG("Completed  cpu capabalities legacy compliance test.");
 	return KERN_SUCCESS;
 }
 #endif /* defined(__arm64__) && defined(CONFIG_XNUPOST) */
@@ -1371,3 +1371,4 @@ sysctl_mib_startup(void)
 #endif /* not XNU_TARGET_OS_XR */
 }
 STARTUP(SYSCTL, STARTUP_RANK_MIDDLE, sysctl_mib_startup);
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2007, 2015 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -150,7 +150,7 @@ typedef struct task_basic_info_64       *task_basic_info_64_t;
 
 	#elif defined(__arm__) && defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && (__IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0)
 /*
- * Note: arm64 can't use the old flavor.  If you somehow manage to,
+ * Note:  can't use the old flavor.  If you somehow manage to,
  * you can cope with the nonsense data yourself.
  */
 	#define TASK_BASIC_INFO_64      5
@@ -664,3 +664,4 @@ __options_decl(task_control_port_options_t, uint32_t, {
 #pragma pack(pop)
 
 #endif  /* _MACH_TASK_INFO_H_ */
+

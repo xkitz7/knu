@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2025 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -114,9 +114,9 @@ extern void (*dtrace_cpu_state_changed_hook)(int, boolean_t);
 #if defined(__arm64__)
 extern void wait_while_mp_kdp_trap(bool check_SIGPdebug);
 #if CONFIG_SPTM
-#include <arm64/sptm/pmap/pmap_data.h>
+/* Removed  include (intel-only) */
 #else
-#include <arm/pmap/pmap_data.h>
+/* Removed  include (intel-only) */
 #endif /* CONFIG_SPTM */
 #endif /* defined(__arm64__) */
 
@@ -628,7 +628,7 @@ static const uint64_t DEFAULT_TRACE_PHY_TIMEOUT = 100 * TIMEBASE_TICKS_PER_USEC;
 static const uint64_t DEFAULT_TRACE_PHY_TIMEOUT = 0;
 #endif
 
-// The MACHINE_TIMEOUT facility only exists on ARM.
+// The MACHINE_TIMEOUT facility only exists on .
 MACHINE_TIMEOUT_DEV_WRITEABLE(report_phy_read_delay_to, "report-phy-read-delay", 0, MACHINE_TIMEOUT_UNIT_TIMEBASE, NULL);
 MACHINE_TIMEOUT_DEV_WRITEABLE(report_phy_write_delay_to, "report-phy-write-delay", 0, MACHINE_TIMEOUT_UNIT_TIMEBASE, NULL);
 MACHINE_TIMEOUT_DEV_WRITEABLE(trace_phy_read_delay_to, "trace-phy-read-delay", DEFAULT_TRACE_PHY_TIMEOUT, MACHINE_TIMEOUT_UNIT_TIMEBASE, NULL);
@@ -1877,3 +1877,4 @@ ml_io_read_cpu_reg_test(__unused int64_t in, int64_t *out)
 }
 SYSCTL_TEST_REGISTER(ml_io_read_cpu_reg, ml_io_read_cpu_reg_test);
 #endif /* DEVELOPMENT || DEBUG */
+

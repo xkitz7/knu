@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2020-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -270,7 +270,7 @@ tcp_rack_detect_loss(struct tcpcb *tp, uint32_t dup_acks, bool *loss_detected)
 		uint32_t remaining = tcp_rack_detect_segment_lost(tp, seg, reordering_window, loss_detected);
 		if (remaining) {
 			/*
-			 * We only want to arm the timer at max wait time as we are
+			 * We only want to  the timer at max wait time as we are
 			 * expecting to get ACKs to do RACK processing. Only in the
 			 * worst case, when we don't receive ACKs, we set the timeout
 			 * to be the wait time for the most recently sent packet.
@@ -444,3 +444,4 @@ tcp_rack_detect_reordering_acked(struct tcpcb *tp, struct tcp_seg_sent *seg)
 		tp->t_reordered_pkts++;
 	}
 }
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -70,7 +70,7 @@ OSData::initWithCapacity(unsigned int inCapacity)
 	 *   rather than the kernel object so that vm_map_copyin() can be used.
 	 *
 	 * - On Intel, it goes to the VM for any size >= PAGE_SIZE to maintain
-	 *   old (inefficient) ABI. On arm64 it will use kalloc_data() instead
+	 *   old (inefficient) ABI. On  it will use kalloc_data() instead
 	 *   until the vm_map_copy_t msg_ool_size_small threshold for copies.
 	 */
 
@@ -608,3 +608,4 @@ OSData::isSerializable(void)
 {
 	return !reserved || !reserved->disableSerialization;
 }
+

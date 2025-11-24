@@ -1,4 +1,4 @@
-export MakeInc_cmd=${SRCROOT}/makedefs/MakeInc.cmd
+﻿export MakeInc_cmd=${SRCROOT}/makedefs/MakeInc.cmd
 export MakeInc_def=${SRCROOT}/makedefs/MakeInc.def
 export MakeInc_rule=${SRCROOT}/makedefs/MakeInc.rule
 export MakeInc_dir=${SRCROOT}/makedefs/MakeInc.dir
@@ -40,7 +40,7 @@ $(OBJROOT)/san/kasan-denylist-%: $(SOURCE)/kasan-denylist $(SOURCE)/ubsan-denyli
 	$(_v)sed -e 's,^src:\./,src:'"$(SRCROOT)/," $^ > $@
 	$(_v)$(SRCROOT)/san/tools/validate_denylist.sh "$@"
 
-do_build_setup:: $(OBJROOT)/san/kasan-denylist-x86_64 $(OBJROOT)/san/kasan-denylist-arm64
+do_build_setup:: $(OBJROOT)/san/kasan-denylist-x86_64 $(OBJROOT)/san/kasan-denylist-x86_64
 
 #
 # Kasan System.kext plugin
@@ -73,8 +73,8 @@ endif
 
 ifeq ($(KASAN),1)
 
-# KASAN symbols are per-architecture, since on arm64/arm64e we use KASAN_TBI by default
-# and on x86/arm KASAN_CLASSIC
+# KASAN symbols are per-architecture, since on /arm64e we use KASAN_TBI by default
+# and on x86/ KASAN_CLASSIC
 ifeq ($(CURRENT_ARCH_CONFIG_LC),x86_64h)
 KASAN_ARCH_SUFFIX := x86_64
 else
@@ -115,3 +115,4 @@ do_config_install:: $(KASAN_HELPER_SCRIPTS)
 
 include $(MakeInc_rule)
 include $(MakeInc_dir)
+

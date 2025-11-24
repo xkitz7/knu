@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1993-1995, 1999-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -814,9 +814,9 @@ _call_dequeue(
  * _arm_delayed_call_timer:
  *
  * Check if the timer needs to be armed for this flavor,
- * and if so, arm it.
+ * and if so,  it.
  *
- * If call is non-NULL, only re-arm the timer if the specified call
+ * If call is non-NULL, only re- the timer if the specified call
  * is the first in the queue.
  *
  * Returns true if the timer was armed/re-armed, false if it was left unset
@@ -2359,3 +2359,4 @@ adjust_cont_time_thread_calls(void)
 		enable_ints_and_unlock(group, s);
 	}
 }
+

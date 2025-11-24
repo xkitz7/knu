@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -34,7 +34,7 @@
 #if defined (__i386__) || defined (__x86_64__)
 #include "i386/cpu_capabilities.h"
 #elif defined (__arm__) || defined (__arm64__)
-#include "arm/cpu_capabilities.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
@@ -43,7 +43,7 @@
 #if defined (__i386__) || defined(__x86_64__)
 #include <i386/cpu_capabilities.h>
 #elif defined (__arm__) || defined(__arm64__)
-#include <arm/cpu_capabilities.h>
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
@@ -51,3 +51,4 @@
 
 #endif /* _MACHINE_CPU_CAPABILITIES_H */
 #endif /* PRIVATE */
+

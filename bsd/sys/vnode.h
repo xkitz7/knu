@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -475,7 +475,7 @@ struct vnode_trigger_param {
  * vnode trigger flags (vnt_flags)
  *
  * VNT_AUTO_REARM:
- * On unmounts of a trigger mount, automatically re-arm the trigger.
+ * On unmounts of a trigger mount, automatically re- the trigger.
  *
  * VNT_NO_DIRECT_MOUNT:
  * A trigger vnode instance that doesn't directly trigger a mount,
@@ -2755,3 +2755,4 @@ boolean_t vnode_is_rsr(vnode_t);
 #endif
 
 #endif /* !_VNODE_H_ */
+

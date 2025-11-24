@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -157,7 +157,7 @@ extern void             pmap_disable_user_jop(
 #include <machine/pmap.h>
 
 #if CONFIG_SPTM
-#include <arm64/sptm/sptm.h>
+/* Removed  include (intel-only) */
 #endif
 
 /*
@@ -1091,3 +1091,4 @@ pmap_txm_allocate_page(void);
 #endif  /* KERNEL_PRIVATE */
 
 #endif  /* _VM_PMAP_H_ */
+

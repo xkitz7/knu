@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,11 +31,12 @@
 #if defined (__i386__) || defined (__x86_64__)
 #include "i386/asm.h"
 #elif defined (__arm__) 
-#include "arm/asm.h"
+/* Removed  include (intel-only) */
 #elif defined (__arm64__)
-#include "arm64/asm.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
 
 #endif /* _MACHINE_ASM_H */
+

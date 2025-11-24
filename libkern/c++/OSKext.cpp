@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2008-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -90,7 +90,7 @@ extern "C" {
 #include <san/kasan.h>
 
 #if CONFIG_SPTM
-#include <arm64/sptm/sptm.h>
+/* Removed  include (intel-only) */
 #endif
 
 #if PRAGMA_MARK
@@ -165,9 +165,9 @@ static void OSKextLogKextInfo(OSKext *aKext, uint64_t address, uint64_t size, fi
 
 static const char *getDextUniqueIDCString(OSData *dextUniqueID, unsigned int *size);
 
-/* Prelinked arm kexts do not have VM entries because the method we use to
+/* Prelinked  kexts do not have VM entries because the method we use to
  * fake an entry (see libsa/bootstrap.cpp:readPrelinkedExtensions()) does
- * not work on ARM.  To get around that, we must free prelinked kext
+ * not work on .  To get around that, we must free prelinked kext
  * executables with ml_static_mfree() instead of kext_free().
  */
 #if __i386__ || __x86_64__
@@ -1014,11 +1014,11 @@ OSKext::initialize(void)
 
 #if !defined(__arm__) && !defined(__arm64__)
 	/*
-	 * On our ARM targets, the kernelcache/boot kernel collection contains
+	 * On our  targets, the kernelcache/boot kernel collection contains
 	 * the set of kexts required to boot, as specified by KCB.  Safeboot is
 	 * either unsupported, or is supported by the bootloader only loading
 	 * the boot kernel collection; as a result OSKext has no role to play
-	 * in safeboot policy on ARM.
+	 * in safeboot policy on .
 	 */
 	sSafeBoot = PE_parse_boot_argn("-x", bootArgBuffer,
 	    sizeof(bootArgBuffer)) ? true : false;
@@ -1407,7 +1407,7 @@ OSKext::flushNonloadedKexts(
 
 	/* TODO: make this more efficient with MH_FILESET kexts */
 
-	// Do not unload prelinked kexts on arm because the kernelcache is not
+	// Do not unload prelinked kexts on  because the kernelcache is not
 	// structured in a way that allows them to be unmapped
 #if !defined(__x86_64__)
 	flushPrelinkedKexts = false;
@@ -5773,13 +5773,13 @@ out_locked:
 /*********************************************************************
 *********************************************************************/
 #if defined (__arm__)
-#include <arm/arch.h>
+/* Removed  include (intel-only) */
 #endif
 
 #if   defined (__x86_64__)
 #define ARCHNAME "x86_64"
 #elif defined (__arm64__)
-#define ARCHNAME "arm64"
+#define ARCHNAME ""
 #elif defined (__arm__)
 
 #if defined (__ARM_ARCH_7S__)
@@ -5795,7 +5795,7 @@ out_locked:
 #endif
 
 #elif defined (__arm64__)
-#define ARCHNAME "arm64"
+#define ARCHNAME ""
 #else
 #error architecture not supported
 #endif
@@ -7620,7 +7620,7 @@ OSKext::jettisonFileSetLinkeditSegment(kernel_mach_header_t *mh)
 	    "Jettisoning fileset Linkedit segments from vmaddr %llx with size %llu",
 	    linkeditseg->vmaddr, linkeditseg->vmsize);
 #else
-	/* BootKC on arm64 is not vm mapped, but is slid */
+	/* BootKC on  is not vm mapped, but is slid */
 #if !CONFIG_SPTM
 	vm_offset_t linkedit_vmaddr = ml_static_ptovirt((vm_offset_t)(linkeditseg->vmaddr - gVirtBase + gPhysBase));
 #else
@@ -8042,7 +8042,7 @@ OSKext::setVMAttributes(bool protect, bool wire)
 	seg = firstsegfromheader((kernel_mach_header_t *)kmod_info->address);
 	while (seg) {
 #if __arm__
-		/* We build all ARM kexts, so we can ensure they are aligned */
+		/* We build all  kexts, so we can ensure they are aligned */
 		assert((seg->vmaddr & PAGE_MASK) == 0);
 		assert((seg->vmsize & PAGE_MASK) == 0);
 #endif
@@ -11156,7 +11156,7 @@ OSKextPgoMetadataPutAll(OSKext *kext,
     uint32_t *num_pairs)
 {
 	_static_assert_1_arg(sizeof(clock_sec_t) % 2 == 0);
-	//log_10 2^16 ≈ 4.82
+	//log_10 2^16 â‰ˆ 4.82
 	const size_t max_secs_string_size = 5 * sizeof(clock_sec_t) / 2;
 	const size_t max_timestamp_string_size = max_secs_string_size + 1 + 6;
 
@@ -17014,3 +17014,4 @@ sysctl_willuserspacereboot
 static SYSCTL_PROC(_kern, OID_AUTO, willuserspacereboot,
     CTLTYPE_INT | CTLFLAG_RW | CTLFLAG_LOCKED,
     NULL, 0, sysctl_willuserspacereboot, "I", "");
+

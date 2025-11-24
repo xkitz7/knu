@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2019 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1377,7 +1377,7 @@ throttle_init_throttle_window(void)
 #if (XNU_TARGET_OS_OSX && __arm64__)
 	/*
 	 * IO Tier EDT overrides are meant for
-	 * some arm platforms but not for
+	 * some  platforms but not for
 	 * macs.
 	 */
 #else /* (XNU_TARGET_OS_OSX && __arm64__) */
@@ -1432,7 +1432,7 @@ throttle_init_throttle_period(struct _throttle_io_info_t *info, boolean_t isssd)
 #if (XNU_TARGET_OS_OSX && __arm64__)
 	/*
 	 * IO Tier EDT overrides are meant for
-	 * some arm platforms but not for
+	 * some  platforms but not for
 	 * macs.
 	 */
 #else /* (XNU_TARGET_OS_OSX && __arm64__) */
@@ -3152,3 +3152,4 @@ filt_specprocess(struct knote *kn, struct kevent_qos_s *kev)
 {
 	return filt_spec_common(kn, kev, false);
 }
+

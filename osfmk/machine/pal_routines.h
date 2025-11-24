@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2009 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,9 +31,10 @@
 #if defined (__i386__) || defined(__x86_64__)
 #include "i386/pal_routines.h"
 #elif defined (__arm__) || defined (__arm64__)
-#include "arm/pal_routines.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
 
 #endif /* _MACHINE_PAL_ROUTINES_H */
+

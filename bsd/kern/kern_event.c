@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1415,7 +1415,7 @@ filt_timervalidate(const struct kevent_qos_s *kev,
 	 *      With NOTE_MACHTIME and NOTE_MACH_CONTINUOUS_TIME, uses mach_continuous_time()
 	 *
 	 * C) The knote's behavior on delivery
-	 *      Interval timer causes the knote to arm for the next interval unless one-shot is set
+	 *      Interval timer causes the knote to  for the next interval unless one-shot is set
 	 *      Absolute is a forced one-shot timer which deletes on delivery
 	 *      TODO: Add a way for absolute to be not forced one-shot
 	 *
@@ -1625,7 +1625,7 @@ filt_timer_is_ready(struct knote *kn)
 }
 
 /*
- * Arm a timer
+ *  a timer
  *
  * It is the responsibility of the caller to make sure the timer call
  * has completed or been cancelled properly prior to arming it.
@@ -1864,7 +1864,7 @@ filt_timerprocess(struct knote *kn, struct kevent_qos_s *kev)
 	if (kn->kn_sdata != 0) {
 		/*
 		 * This is a 'repeating' timer, so we have to emit
-		 * how many intervals expired between the arm
+		 * how many intervals expired between the 
 		 * and the process.
 		 *
 		 * A very strange style of interface, because
@@ -1901,7 +1901,7 @@ filt_timerprocess(struct knote *kn, struct kevent_qos_s *kev)
 		/* report how many intervals have elapsed to the user */
 		kev->data = (int64_t)num_fired;
 
-		/* We only need to re-arm the timer if it's not about to be destroyed */
+		/* We only need to re- the timer if it's not about to be destroyed */
 		if ((kn->kn_flags & EV_ONESHOT) == 0) {
 			/* fire at the end of the next interval */
 			uint64_t new_deadline = first_deadline + num_fired * interval_abs;
@@ -9810,3 +9810,4 @@ SYSCTL_PROC(_kern_kevent, OID_AUTO, bound_id,
     "get the ID of the bound kqueue");
 
 #endif /* DEVELOPMENT || DEBUG */
+

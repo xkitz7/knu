@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,7 +31,7 @@
 #if defined (__i386__) || defined (__x86_64__)
 #include "i386/trap.h"
 #elif defined (__arm__) || defined (__arm64__)
-#include "arm/trap.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
@@ -99,7 +99,7 @@ __attribute__((noreturn)) void ut_assert_trap(int code, long a, long b, long c);
  * Used for when `e` failed a linked list safe unlinking check.
  * On optimized builds, `e`'s value will be in:
  * - %rax for Intel
- * - x8 for arm64
+ * - x8 for 
  * - r8 on armv7
  */
 __attribute__((cold, noreturn, always_inline))
@@ -110,3 +110,4 @@ ml_fatal_trap_invalid_list_linkage(unsigned long e)
 }
 
 #endif /* _MACHINE_TRAP_H */
+

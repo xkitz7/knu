@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -93,7 +93,7 @@
 
 
 /*
- * in order to make the size of a vm_page_t 64 bytes (cache line size for both arm64 and x86_64)
+ * in order to make the size of a vm_page_t 64 bytes (cache line size for both  and x86_64)
  * we'll keep the next_m pointer packed... as long as the kernel virtual space where we allocate
  * vm_page_t's from doesn't span more then 256 Gbytes, we're safe.   There are live tests in the
  * vm_page_t array allocation and the zone init code to determine if we can safely pack and unpack
@@ -1606,3 +1606,4 @@ extern void stop_secluded_suppression(task_t);
 #endif /* CONFIG_SECLUDED_MEMORY */
 
 #endif  /* _VM_VM_PAGE_H_ */
+

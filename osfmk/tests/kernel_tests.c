@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2019-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -807,8 +807,7 @@ kcdata_api_test(void)
  */
 
 #if defined(__arm64__)
-
-#include <arm/pmap.h>
+/* Removed  include (intel-only) */
 
 #define MAX_PMAP_OBJECT_ELEMENT 100000
 
@@ -3405,3 +3404,4 @@ kernel_func8(__unused int a, __unused char b)
 }
 
 #endif /* __BUILDING_XNU_LIB_UNITTEST__ */
+

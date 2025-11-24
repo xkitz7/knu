@@ -1,4 +1,4 @@
-# VM API parameter sanitization
+﻿# VM API parameter sanitization
 
 Validating parameter values passed to virtual memory APIs primarily from user
 space.
@@ -183,9 +183,9 @@ in the kernel headers, leaving the userspace headers unchanged.
 
 - Ensure that you have created the opaque types needed by the BSD subsystem
   using `VM_GENERATE_UNSAFE_BSD_*` in `osfmk/mach/vm_types_unsafe.h`.
-- Add the new opaque type to `sys/_types/*` or `bsd/<arm or i386>/types.h`.
+- Add the new opaque type to `sys/_types/*` or `bsd/< or i386>/types.h`.
   `caddr_ut` was added to `bsd/sys/_types/_caddr_t.h` and `user_addr_ut` was
-  added to `bsd/arm/types.h` and `bsd/i386/types.h`. When adding an opaque for
+  added to `bsd//types.h` and `bsd/i386/types.h`. When adding an opaque for
   `caddr_t` you may also need to add opaque types for corresponding types like
   `user_addr_t` as the syscall generated use those types.
 - Also add the types to `libsyscall/xcodescripts/create-syscalls.pl`.
@@ -421,3 +421,4 @@ rewrites and/or telemetry for binary compatibility.
 Step 10: update the "golden" files of expected results. This is done last
 when you are confident that your sanitization and tests are complete and
 stable. See `tests/vm/vm_parameter_validation.c` for instructions.
+

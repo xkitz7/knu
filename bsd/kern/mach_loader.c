@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -104,9 +104,9 @@
 
 #if ALLOW_FORCING_ARM64_32
 #if DEVELOPMENT || DEBUG
-TUNABLE_DT(uint32_t, force_arm64_32, "/defaults", "force-arm64-32", "force-arm64-32", 0, TUNABLE_DT_NONE);
+TUNABLE_DT(uint32_t, force_arm64_32, "/defaults", "force--32", "force--32", 0, TUNABLE_DT_NONE);
 #else
-TUNABLE_DT(uint32_t, force_arm64_32, "/defaults", "force-arm64-32", "force-arm64-32", 0, TUNABLE_DT_NO_BOOTARG);
+TUNABLE_DT(uint32_t, force_arm64_32, "/defaults", "force--32", "force--32", 0, TUNABLE_DT_NO_BOOTARG);
 #endif
 #endif /* ALLOW_FORCING_ARM64_32 */
 
@@ -895,7 +895,7 @@ load_machfile(
 
 #if __arm64__
 	if (enforce_hard_pagezero && result->is_64bit_addr && (header->cputype == CPU_TYPE_ARM64)) {
-		/* 64 bit ARM binary must have "hard page zero" of 4GB to cover the lower 32 bit address space */
+		/* 64 bit  binary must have "hard page zero" of 4GB to cover the lower 32 bit address space */
 		if (vm_map_has_hard_pagezero(map, 0x100000000) == FALSE) {
 			imgp->ip_free_map = map;
 			return LOAD_BADMACHO;
@@ -962,7 +962,7 @@ load_machfile(
 #if __has_feature(ptrauth_calls)
 	/*
 	 * arm64e plugin hosts currently run with JOP keys disabled, since they
-	 * may need to run arm64 plugins.
+	 * may need to run  plugins.
 	 */
 	if (imgp->ip_flags & IMGPF_3P_PLUGINS) {
 		imgp->ip_flags |= IMGPF_NOJOP;
@@ -4040,3 +4040,4 @@ bad1:
 	vnode_put(vp);
 	return error;
 }
+

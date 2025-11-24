@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2017 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,9 +31,10 @@
 #if defined (__i386__) || defined(__x86_64__)
 #include "i386/smp.h"
 #elif defined (__arm__) || defined (__arm64__)
-#include "arm/smp.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
 
 #endif /* _BSD_MACHINE_SMP_H_ */
+

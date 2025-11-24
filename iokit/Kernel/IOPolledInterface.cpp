@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2006-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -41,7 +41,7 @@
 #include "IOKitKernelInternal.h"
 
 #if defined(__arm64__)
-#include <pexpert/arm64/board_config.h>
+/* Removed  include (intel-only) */
 #endif /* defined(__arm64__) */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -1163,3 +1163,4 @@ IOPolledFileRead(IOPolledFileIOVars * vars,
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+

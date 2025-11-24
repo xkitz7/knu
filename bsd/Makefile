@@ -1,4 +1,4 @@
-export MakeInc_cmd=${SRCROOT}/makedefs/MakeInc.cmd
+﻿export MakeInc_cmd=${SRCROOT}/makedefs/MakeInc.cmd
 export MakeInc_def=${SRCROOT}/makedefs/MakeInc.def
 export MakeInc_rule=${SRCROOT}/makedefs/MakeInc.rule
 export MakeInc_dir=${SRCROOT}/makedefs/MakeInc.dir
@@ -36,7 +36,7 @@ INSTINC_SUBDIRS_X86_64H = \
 	crypto
 
 INSTINC_SUBDIRS_ARM64 = \
-	arm
+	
 
 EXPINC_SUBDIRS = \
 	bsm \
@@ -65,7 +65,7 @@ EXPINC_SUBDIRS_X86_64H = \
 	i386
 
 EXPINC_SUBDIRS_ARM64 = \
-	arm
+	
 
 COMP_SUBDIRS =	\
 	conf
@@ -86,3 +86,4 @@ INSTTEXTFILES_SUBDIRS_ARM64 = \
 
 include $(MakeInc_rule)
 include $(MakeInc_dir)
+

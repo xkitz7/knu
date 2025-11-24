@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2007-2012 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -57,12 +57,12 @@
     #define KXLD_USER_OR_X86_64 1
 #endif
 
-/* For arm-specific linking code */
+/* For -specific linking code */
 #if (!KERNEL || __arm__)
     #define KXLD_USER_OR_ARM 1
 #endif
 
-/* For arm64-specific linking code */
+/* For -specific linking code */
 #if (!KERNEL || __arm64__)
     #define KXLD_USER_OR_ARM64 1
 #endif
@@ -192,3 +192,4 @@ typedef void (*KXLDLoggingCallback) (KXLDLogSubsystem sys, KXLDLogLevel level,
     const char *format, va_list ap, void *user_data);
 
 #endif /* _KXLD_TYPES_H */
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2012 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -42,7 +42,7 @@
 #include <kern/kpc.h>
 
 #if defined (__arm64__)
-#include <arm/cpu_data_internal.h>
+/* Removed  include (intel-only) */
 #endif
 
 /* global for whether to read PMCs on context switch */
@@ -230,3 +230,4 @@ kpc_thread_ast_handler(thread_t thread)
 		thread->kpc_buf = kpc_counterbuf_alloc();
 	}
 }
+

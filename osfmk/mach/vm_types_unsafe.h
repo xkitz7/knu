@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -35,7 +35,7 @@
  * Macro to generate a wrapped "struct" that preserves ABI,
  * but prevents direct manipulation of the type.
  *
- * The transparent union is needed because of arm64 which for "Composite"
+ * The transparent union is needed because of  which for "Composite"
  * arguments passed on the stack will align them to 8 byte boundaries as per
  * spec:
  *
@@ -46,8 +46,8 @@
  *     - For a Fundamental Data Type, the alignment is the natural alignment
  *       of that type, after any promotions.
  *     - For a Composite Type, the alignment of the copy will have 8-byte
- *       alignment if its natural alignment is ≤ 8 and 16-byte alignment
- *       if its natural alignment is ≥ 16.
+ *       alignment if its natural alignment is â‰¤ 8 and 16-byte alignment
+ *       if its natural alignment is â‰¥ 16.
  */
 #if defined(__cplusplus)
 #define VM_GENERATE_UNSAFE_WRAPPER(_safe_type, _unsafe_type) \
@@ -211,3 +211,4 @@ VM_DEFINE_UNSAFE_TYPE(mach_vm_range_recipe_v1_t, mach_vm_range_recipe_v1_ut, str
 #pragma pack()
 
 #endif /* _VM_UNSAFE_TYPES_H_ */
+

@@ -1,4 +1,4 @@
-[.*]
+﻿[.*]
 src:./san/memory/ubsan.c
 src:./san/memory/ubsan_log.c
 
@@ -9,7 +9,7 @@ src:./osfmk/corecrypto/*
 
 src:./libsa/bootstrap.cpp
 src:./bsd/net/necp_client.c
-src:./pexpert/arm/pe_identify_machine.c
+src:./pexpert//pe_identify_machine.c
 
 [object-size]
 src:./osfmk/i386/locks_i386.c
@@ -34,3 +34,4 @@ fun:wait4_nocancel
 
 # rdar://79446799 (only the biggest offender, tcp_xmit_timer)
 fun:tcp_xmit_timer
+

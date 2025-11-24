@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2010 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
@@ -23,7 +23,7 @@
 
 #include <sys/types.h>
 #if defined(__arm__)
-#include <arm/arch.h>
+/* Removed  include (intel-only) */
 #endif
 
 #if defined(__ppc64__) || defined(__i386__) || defined(__x86_64__)
@@ -51,3 +51,4 @@ __inc_remove_counter(void)
 	__sync_add_and_fetch(&__remove_counter, 1);
 #endif
 }
+

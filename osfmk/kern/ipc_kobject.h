@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -117,7 +117,7 @@ extern kern_return_t ipc_kobject_set_kobjidx(
  * A callback to run when a NO_SENDERS notification fires.
  *
  * This callback is called each time a kobject port reaches 0 send rights
- * (from a non 0 value). There is no need to actively arm no-senders.
+ * (from a non 0 value). There is no need to actively  no-senders.
  *
  * Kobjects that destroy their port on no senders only are guaranteed
  * to be called with an active port only.
@@ -495,3 +495,4 @@ extern void       ipc_typed_port_release_send(
 __END_DECLS
 
 #endif /* _KERN_IPC_KOBJECT_H_ */
+

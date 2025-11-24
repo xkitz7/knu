@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2004-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,9 +31,10 @@
 #if defined (__i386__) || defined (__x86_64__)
 #include "i386/locks.h"
 #elif defined (__arm__) || defined (__arm64__)
-#include "arm/locks.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
 
 #endif /* _MACHINE_LOCKS_H_ */
+

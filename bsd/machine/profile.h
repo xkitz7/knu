@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1997-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -36,9 +36,10 @@
 #if defined (__i386__) || defined(__x86_64__)
 #include "i386/profile.h"
 #elif defined (__arm__) || defined (__arm64__)
-#include "arm/profile.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
 
 #endif /* _BSD_MACHINE_PROFILE_H_ */
+

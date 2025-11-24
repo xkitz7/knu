@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -2583,7 +2583,7 @@ void className ::_RESERVED ## className ## index ()             \
 
 /*
  * OSMetaClassDeclareReservedUsedX86 needs to be placed with the unused vtable
- * slots since it will unused on arm targets.
+ * slots since it will unused on  targets.
  */
 #if defined(__arm64__) || defined(__arm__)
 #define OSMetaClassDeclareReservedUsedX86               OSMetaClassDeclareReservedUnused
@@ -2626,3 +2626,4 @@ private:
 };
 
 #endif /* !_LIBKERN_OSMETACLASS_H */
+

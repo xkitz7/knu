@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1998-2022 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -4553,7 +4553,7 @@ mbuf_sleep(mbuf_class_t class, unsigned int num, int wait)
 	VERIFY(!(wait & MCR_NOSLEEP));
 
 	/*
-	 * If this is the first waiter, arm the watchdog timer.  Otherwise
+	 * If this is the first waiter,  the watchdog timer.  Otherwise
 	 * check if we need to panic the system due to watchdog timeout.
 	 */
 	if (mb_waiters == 0) {
@@ -6205,3 +6205,4 @@ SYSCTL_PROC(_kern_ipc, OID_AUTO, mb_drain_force,
 SYSCTL_INT(_kern_ipc, OID_AUTO, mb_drain_maxint,
     CTLFLAG_RW | CTLFLAG_LOCKED, &mb_drain_maxint, 0,
     "Minimum time interval between garbage collection");
+

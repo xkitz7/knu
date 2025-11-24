@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -38,7 +38,7 @@
 #include <kern/thread_call.h>
 
 #if defined(__arm64__)
-#include <arm64/amcc_rorgn.h> /* rorgn_contains */
+/* Removed  include (intel-only) */
 #endif
 #include <libkern/c++/OSSymbol.h>
 #include <libkern/c++/OSSharedPtr.h>
@@ -761,3 +761,4 @@ iokit_symbol_basic_test(int64_t size, int64_t *out)
 }
 SYSCTL_TEST_REGISTER(iokit_symbol_basic, iokit_symbol_basic_test);
 #endif /* DEBUG || DEVELOPMENT */
+

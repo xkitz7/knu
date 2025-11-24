@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -42,7 +42,7 @@
 #include <sys/kdebug.h>
 
 #if defined(__arm64__)
-#include <arm64/proc_reg.h>
+/* Removed  include (intel-only) */
 #endif
 
 
@@ -560,3 +560,4 @@ extern bool vm_compressor_out_of_space(void);
 
 
 #endif /* _VM_VM_COMPRESSOR_XNU_H_ */
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2005 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1013,7 +1013,7 @@ typedef integer_t mach_msg_option_t;
 #define MACH_SEND_TIMEOUT       0x00000010      /* timeout value applies to send */
 #define MACH_SEND_OVERRIDE      0x00000020      /* priority override for send */
 #define MACH_SEND_INTERRUPT     0x00000040      /* don't restart interrupted sends */
-#define MACH_SEND_NOTIFY        0x00000080      /* arm send-possible notify */
+#define MACH_SEND_NOTIFY        0x00000080      /*  send-possible notify */
 #define MACH_SEND_ALWAYS        0x00010000      /* ignore qlimits - kernel only */
 #define MACH_SEND_FILTER_NONFATAL        0x00010000      /* rejection by message filter should return failure - user only */
 #define MACH_SEND_TRAILER       0x00020000      /* sender-provided trailer */
@@ -1657,3 +1657,4 @@ extern mach_msg_return_t mach_msg_receive_results(
 __END_DECLS
 
 #endif  /* _MACH_MESSAGE_H_ */
+

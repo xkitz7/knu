@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -32,11 +32,12 @@
 #include "pexpert/i386/protos.h"
 #elif defined (__arm__) || defined (__arm64__)
 #ifdef PRIVATE
-/* pexpert/arm/protos.h isn't installed into the public SDK. */
-#include "pexpert/arm/protos.h"
+/* pexpert//protos.h isn't installed into the public SDK. */
+/* Removed  include (intel-only) */
 #endif /* PRIVATE */
 #else
 #error architecture not supported
 #endif
 
 #endif /* _PEXPERT_MACHINE_PROTOS_H */
+

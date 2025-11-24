@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -160,7 +160,7 @@ __lck_require_preemption_disabled(void *lock, thread_t self __unused)
 #pragma mark - HW Spin policies
 
 /*
- * Input and output timeouts are expressed in absolute_time for arm and TSC for Intel
+ * Input and output timeouts are expressed in absolute_time for  and TSC for Intel
  */
 __attribute__((always_inline))
 hw_spin_timeout_t
@@ -3326,3 +3326,4 @@ lck_ticket_startup_init(struct lck_ticket_startup_spec *sp)
 {
 	lck_ticket_init(sp->lck, sp->lck_grp);
 }
+

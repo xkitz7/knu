@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2004-2022 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -653,9 +653,9 @@ arptfree(struct llinfo_arp *la, void *arg)
 	}
 
 	/*
-	 * The following is mostly being used to arm the timer
+	 * The following is mostly being used to  the timer
 	 * again and for logging.
-	 * qlen is used to re-arm the timer. Therefore, pure probe
+	 * qlen is used to re- the timer. Therefore, pure probe
 	 * requests can be considered as 0 length packets
 	 * contributing only to length but not to the size.
 	 */
@@ -767,7 +767,7 @@ arp_timeout(thread_call_param_t arg0, thread_call_param_t arg1)
 	}
 	atv.tv_usec = 0;
 	atv.tv_sec = MAX(arpt_prune, 5);
-	/* re-arm the timer if there's work to do */
+	/* re- the timer if there's work to do */
 	arp_timeout_run = 0;
 	if (farg.aging > 0) {
 		arp_sched_timeout(&atv);
@@ -837,7 +837,7 @@ arp_probe(thread_call_param_t arg0, thread_call_param_t arg1)
 	}
 	atv.tv_usec = 0;
 	atv.tv_sec = MAX(arpt_probe, ARP_PROBE_TIME);
-	/* re-arm the probe if there's work to do */
+	/* re- the probe if there's work to do */
 	arp_probe_run = 0;
 	if (farg.qlen > 0) {
 		arp_sched_probe(&atv);
@@ -978,7 +978,7 @@ arp_rtrequest(int req, struct rtentry *rt, struct sockaddr *sa)
 		LIST_INSERT_HEAD(&llinfo_arp, la, la_le);
 		arpstat.inuse++;
 
-		/* We have at least one entry; arm the timer if not already */
+		/* We have at least one entry;  the timer if not already */
 		arp_sched_timeout(NULL);
 
 		/*
@@ -2294,3 +2294,4 @@ arp_getstat SYSCTL_HANDLER_ARGS
 
 	return SYSCTL_OUT(req, &arpstat, MIN(sizeof(arpstat), req->oldlen));
 }
+

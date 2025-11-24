@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -169,7 +169,7 @@ __enum_decl(startup_rank_t, uint32_t, {
 #define STARTUP_HOOK_SEGMENT "__KLDDATA"
 #define STARTUP_HOOK_SECTION "__init_entry_set"
 #else
-/* arm protects __KLD early, so use __BOOTDATA for data */
+/*  protects __KLD early, so use __BOOTDATA for data */
 #define STARTUP_CODE_SEGSECT "__TEXT,__text"
 #define STARTUP_CONST_SEGSECT "__KLDDATA,__const"
 #define STARTUP_DATA_SEGSECT "__BOOTDATA,__init"
@@ -968,3 +968,4 @@ __END_DECLS
 #endif  /* _KERN_STARTUP_H_ */
 
 #endif  /* XNU_KERNEL_PRIVATE */
+

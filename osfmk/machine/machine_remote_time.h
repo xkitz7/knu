@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,7 +31,7 @@
 #if defined (__x86_64__)
 #include "x86_64/machine_remote_time.h"
 #elif defined (__arm64__)
-#include "arm64/machine_remote_time.h"
+/* Removed  include (intel-only) */
 #endif
 
 #define BT_SLEEP_SENTINEL_TS  (~1ULL)
@@ -39,3 +39,4 @@
 #define BT_RESET_SENTINEL_TS  (~3ULL)
 
 #endif /* MACHINE_REMOTE_TIME_H */
+

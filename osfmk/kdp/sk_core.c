@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2023 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -42,8 +42,8 @@
 
 #include <machine/machine_routines.h>
 #include <pexpert/boot.h>
-#include <arm64/sptm/sptm.h>
-#include <arm64/proc_reg.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 #include <vm/pmap.h>
 
 #if EXCLAVES_COREDUMP
@@ -779,3 +779,4 @@ sk_core_size(void)
 }
 
 #endif /* EXCLAVES_COREDUMP */
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2014 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -372,8 +372,8 @@ struct user32_stat64 {
 /*
  * This packing is required to ensure symmetry between userspace and kernelspace
  * when the kernel is 64-bit and the user application is 32-bit. All currently
- * supported ARM slices (arm64/armv7k/arm64_32) contain the same struct
- * alignment ABI so this packing isn't needed for ARM.
+ * supported  slices (/armv7k/arm64_32) contain the same struct
+ * alignment ABI so this packing isn't needed for .
  */
 } __attribute__((packed, aligned(4)));
 #else
@@ -617,3 +617,4 @@ __END_DECLS
 
 #endif /* !KERNEL */
 #endif /* !_SYS_STAT_H_ */
+

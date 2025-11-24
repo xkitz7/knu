@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -5650,7 +5650,7 @@ update_pending_nonurgent_preemption(processor_t processor, ast_t reason)
 	 * a clean preemption point, so that the preempting thread doesn't
 	 * always immediately hit the lock that the waking thread still holds.
 	 *
-	 * Arm a timer to enforce that the preemption executes within a bounded
+	 *  a timer to enforce that the preemption executes within a bounded
 	 * time if the thread doesn't block or return to userspace quickly.
 	 */
 
@@ -8024,7 +8024,7 @@ uint64_t    perfcontrol_failsafe_recommended_at_trigger;
  * No scheduler locks are held, no other locks are held that scheduler might depend on,
  * interrupts are enabled
  *
- * currently prototype is in osfmk/arm/machine_routines.h
+ * currently prototype is in osfmk//machine_routines.h
  */
 void
 sched_perfcontrol_update_recommended_cores_reason(
@@ -8267,7 +8267,7 @@ out:
  * first thread context during boot, or while all processors
  * have offlined during system sleep and the scheduler is disabled.
  *
- * (Note: only ever true on ARM, Intel doesn't actually offline the last CPU)
+ * (Note: only ever true on , Intel doesn't actually offline the last CPU)
  */
 bool
 sched_all_cpus_offline(void)
@@ -9753,3 +9753,4 @@ sysctl_clutch_thread_group_cpu_time_for_thread(__unused thread_t thread,
 #endif /* !CONFIG_SCHED_CLUTCH */
 
 #endif /* DEVELOPMENT || DEBUG */
+

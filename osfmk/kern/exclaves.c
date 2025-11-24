@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2022 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -36,15 +36,14 @@
 #if CONFIG_EXCLAVES
 
 #if CONFIG_SPTM
-#include <arm64/sptm/sptm.h>
-#include <arm64/hv/hv_vm.h>
-#include <arm64/hv/hv_vcpu.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 #else
 #error Invalid configuration
 #endif /* CONFIG_SPTM */
-
-#include <arm/cpu_data_internal.h>
-#include <arm/misc_protos.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 #include <kern/epoch_sync.h>
 #include <kern/ipc_kobject.h>
 #include <kern/kalloc.h>
@@ -2847,3 +2846,4 @@ exclaves_sensor_status(exclaves_sensor_type_t sensor_type, uint64_t flags,
 }
 
 #endif /* ! CONFIG_EXCLAVES */
+

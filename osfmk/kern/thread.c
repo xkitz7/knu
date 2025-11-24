@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -155,7 +155,7 @@
 
 #if defined(HAS_APPLE_PAC)
 #include <ptrauth.h>
-#include <arm64/proc_reg.h>
+/* Removed  include (intel-only) */
 #endif /* defined(HAS_APPLE_PAC) */
 
 /*
@@ -391,7 +391,7 @@ thread_bootstrap(void)
 	init_thread.sched_pri = MAXPRI_KERNEL;
 
 	/*
-	 * We can't quite use ctid yet, on ARM thread_bootstrap() is called
+	 * We can't quite use ctid yet, on  thread_bootstrap() is called
 	 * before we can call random or anything,
 	 * so we just make it barely work and it will get fixed up
 	 * when the first thread is actually made.
@@ -3068,7 +3068,7 @@ thread_set_cpulimit(int action, uint8_t percentage, uint64_t interval_ns)
 
 		/*
 		 * Make a note that this thread's CPU limit is being used for the task-wide CPU
-		 * usage monitor. We don't have to arm the callback which will trigger the
+		 * usage monitor. We don't have to  the callback which will trigger the
 		 * exception, because that was done for us in ledger_instantiate (because the
 		 * ledger template used has a default callback).
 		 */
@@ -4440,3 +4440,4 @@ dtrace_thread_didexec(thread_t thread)
 	thread->t_dtrace_flags |= TH_DTRACE_EXECSUCCESS;
 }
 #endif /* CONFIG_DTRACE */
+

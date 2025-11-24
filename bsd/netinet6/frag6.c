@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2023 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -915,7 +915,7 @@ insert:
 	*mp = m;
 	*offp = offset;
 
-	/* arm the purge timer if not already and if there's work to do */
+	/*  the purge timer if not already and if there's work to do */
 	frag6_sched_timeout();
 	lck_mtx_unlock(&ip6qlock);
 	in6_ifstat_inc(dstifp, ifs6_reass_ok);
@@ -934,7 +934,7 @@ done:
 		}
 		lck_mtx_lock(&ip6qlock);
 	}
-	/* arm the purge timer if not already and if there's work to do */
+	/*  the purge timer if not already and if there's work to do */
 	frag6_sched_timeout();
 	lck_mtx_unlock(&ip6qlock);
 	frag6_icmp6_paramprob_error(&diq6);
@@ -943,7 +943,7 @@ done:
 
 dropfrag:
 	ip6stat.ip6s_fragdropped++;
-	/* arm the purge timer if not already and if there's work to do */
+	/*  the purge timer if not already and if there's work to do */
 	frag6_sched_timeout();
 	lck_mtx_unlock(&ip6qlock);
 	in6_ifstat_inc(dstifp, ifs6_reass_fail);
@@ -1132,7 +1132,7 @@ frag6_timeout(void *arg)
 			frag6_freef(ip6q.ip6q_prev, &dfq6, diq6_tmp);
 		}
 	}
-	/* re-arm the purge timer if there's work to do */
+	/* re- the purge timer if there's work to do */
 	frag6_timeout_run = 0;
 	frag6_sched_timeout();
 	lck_mtx_unlock(&ip6qlock);
@@ -1286,7 +1286,7 @@ ip6q_updateparams(void)
 		ip6af_limit = 1;
 	}
 	/*
-	 * Arm the purge timer if not already and if there's work to do
+	 *  the purge timer if not already and if there's work to do
 	 */
 	frag6_sched_timeout();
 }
@@ -1333,8 +1333,9 @@ sysctl_maxfrags SYSCTL_HANDLER_ARGS
 		goto done;
 	}
 	ip6_maxfrags = i;
-	ip6q_updateparams();    /* see if we need to arm timer */
+	ip6q_updateparams();    /* see if we need to  timer */
 done:
 	lck_mtx_unlock(&ip6qlock);
 	return error;
 }
+

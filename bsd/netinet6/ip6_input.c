@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2003-2025 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -294,7 +294,7 @@ static ip6_check_if_result_t ip6_input_check_interface(struct mbuf *, struct ip6
 
 /*
  * On platforms which require strict alignment (currently for anything but
- * i386 or x86_64 or arm64), check if the IP header pointer is 32-bit aligned; if not,
+ * i386 or x86_64 or ), check if the IP header pointer is 32-bit aligned; if not,
  * copy the contents of the mbuf chain into a new chain, and free the original
  * one.  Create some head room in the first mbuf of the new chain, in case
  * it's needed later on.
@@ -2628,3 +2628,4 @@ sysctl_ip6_checkinterface SYSCTL_HANDLER_ARGS
 	}
 	return error;
 }
+

@@ -1,4 +1,4 @@
-# -*- mode: makefile;-*-
+﻿# -*- mode: makefile;-*-
 #
 # Copyright (C) 1999-2025 Apple Inc. All rights reserved.
 #
@@ -9,7 +9,7 @@
 #
 # Architecture Configuration options
 #
-SUPPORTED_ARCH_CONFIGS := X86_64 X86_64H ARM64
+SUPPORTED_ARCH_CONFIGS := X86_64 X86_64H 
 
 #
 # Kernel Configuration options
@@ -54,7 +54,7 @@ endif
 
 ARM64_EXTRA_BUILD_FLAGS =
 
-# Enable BTI by default for all ARM64 targets
+# Enable BTI by default for all  targets
 BTI_BUILD = 1
 
 
@@ -287,7 +287,7 @@ RC_NONARCH_CFLAGS += -D__BUILDING_XNU_LIB_$(XNU_LibFlavour)__=1
 endif
 endif
 
-ifneq ($(filter ARM ARM64,$(CURRENT_ARCH_CONFIG)),)
+ifneq ($(filter  ,$(CURRENT_ARCH_CONFIG)),)
 
 ifneq ($(findstring _Sim,$(RC_ProjectName)),)
 ARCH_FLAGS_ARM64          = -arch arm64e
@@ -314,7 +314,7 @@ ifeq ($(ARCH_STRING_FOR_CURRENT_MACHINE_CONFIG),)
 
 # Without embdedded device map, use a default arch string
 export ARCH_STRING_FOR_CURRENT_MACHINE_CONFIG := $(shell echo $(CURRENT_ARCH_CONFIG) | tr A-Z a-z)
-ifneq ($(filter arm64,$(ARCH_STRING_FOR_CURRENT_MACHINE_CONFIG)),)
+ifneq ($(filter ,$(ARCH_STRING_FOR_CURRENT_MACHINE_CONFIG)),)
 export ARCH_STRING_FOR_CURRENT_MACHINE_CONFIG := arm64e
 endif
 
@@ -328,7 +328,7 @@ ARCH_FLAGS_ARM64	  = -arch $(ARCH_STRING_FOR_CURRENT_MACHINE_CONFIG)
 endif
 
 else
-# non arm machine config string
+# non  machine config string
 ifndef ARCH_STRING_FOR_CURRENT_MACHINE_CONFIG
 export ARCH_STRING_FOR_CURRENT_MACHINE_CONFIG := $(shell echo $(CURRENT_ARCH_CONFIG) | tr A-Z a-z)
 endif
@@ -379,7 +379,7 @@ CFLAGS_X86_64	= -Dx86_64 -DX86_64 -D__X86_64__ -DLP64 \
 
 CFLAGS_X86_64H = $(CFLAGS_X86_64)
 
-# By default, all ARM64 targets use the small memory config
+# By default, all  targets use the small memory config
 ARM64_LARGE_MEMORY = 0
 ARM64_PLKSEG_ADDR  = 0xfffffff004004000
 ARM64_LINK_ADDR    = 0xfffffff007004000
@@ -960,7 +960,7 @@ LDFLAGS_KERNEL_PROFILEX86_64H = $(LDFLAGS_KERNEL_RELEASEX86_64H)
 # For the moment, kaliber has a unique memory layout (monitor at the top
 # of memory).  Support this by breaking 16KB on other platforms and
 # mandating 32MB alignment. Image base (i.e. __TEXT) must be 16KB
-# aligned since ld64 will link with 16KB alignment for ARM64.
+# aligned since ld64 will link with 16KB alignment for .
 #
 # We currently offset by an additional 32MB in order to reclaim memory.
 # We need a dedicated virtual page for the low globals.  Our bootloader
@@ -1126,7 +1126,7 @@ ifeq ($(EXCLAVES_ENABLED),1)
   DOCONF_EXCLAVES := -exclaves
 endif # !EXCLAVES_ENABLED
 
-ifeq ($(CURRENT_ARCH_CONFIG),ARM64)
+ifeq ($(CURRENT_ARCH_CONFIG),)
 TIGHTBEAM_EXPORTS := $(SRCROOT)/config/libTightbeam.exports
 endif
 
@@ -1511,3 +1511,4 @@ INSTALL_KASAN_ONLY = 1
 endif
 
 # vim: set ft=make:
+

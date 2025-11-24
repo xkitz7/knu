@@ -1,4 +1,4 @@
-# -*- mode: makefile;-*-
+﻿# -*- mode: makefile;-*-
 #
 # Copyright (C) 1999-2020 Apple Inc. All rights reserved.
 #
@@ -317,7 +317,7 @@ lastkerneldataconst.o: $(SRCROOT)/libsa/lastkerneldataconst.c
 
 
 lastkernelconstructor.o_CFLAGS_RM = -fprofile-instr-generate -fcoverage-mapping
-# the LAST segment is mapped read-only on arm, so if we include llvm profiling
+# the LAST segment is mapped read-only on , so if we include llvm profiling
 # here it will segfault the kernel.  (see arm_vm_init.c) We don't currently have
 # a way of retrieving these counters from LAST anyway, so there's no harm in just
 # disabling them.
@@ -570,3 +570,4 @@ print_exports:
 	$(_v)printenv | sort
 
 # vim: set ft=make:
+

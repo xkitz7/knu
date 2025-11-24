@@ -1,4 +1,4 @@
-export MakeInc_cmd=${SRCROOT}/makedefs/MakeInc.cmd
+﻿export MakeInc_cmd=${SRCROOT}/makedefs/MakeInc.cmd
 export MakeInc_def=${SRCROOT}/makedefs/MakeInc.def
 export MakeInc_rule=${SRCROOT}/makedefs/MakeInc.rule
 export MakeInc_dir=${SRCROOT}/makedefs/MakeInc.dir
@@ -30,12 +30,12 @@ INSTALL_DTRACE_MI_SCRIPTS_LIST += mptcp.d
 endif
 
 
-ifeq ($(CURRENT_ARCH_CONFIG),ARM64)
+ifeq ($(CURRENT_ARCH_CONFIG),)
 INSTALL_DTRACE_MD_SCRIPTS_LIST = regs_arm64.d ptrauth_arm64.d
-INSTALL_DTRACE_MD_DIR = arm64
-else ifeq ($(CURRENT_ARCH_CONFIG),ARM)
+INSTALL_DTRACE_MD_DIR = 
+else ifeq ($(CURRENT_ARCH_CONFIG),)
 INSTALL_DTRACE_MD_SCRIPTS_LIST = regs_arm.d
-INSTALL_DTRACE_MD_DIR = arm
+INSTALL_DTRACE_MD_DIR = 
 else
 INSTALL_DTRACE_MD_SCRIPTS_LIST = regs_x86_64.d vmx_compat.d
 INSTALL_DTRACE_MD_DIR = x86_64
@@ -71,3 +71,4 @@ do_textfiles_install_md:: $(INSTALL_DTRACE_MD_SCRIPTS_FILES)
 
 include $(MakeInc_rule)
 include $(MakeInc_dir)
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2008 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -49,7 +49,7 @@
  *
  * Assumptions: Caller holds a reference on the session during the call.
  *		If there were no outstanding send rights against the port,
- *		hold a reference on the session and arm a new no-senders
+ *		hold a reference on the session and  a new no-senders
  *		notification to determine when to release that reference.
  *		Otherwise, by creating an additional send right, we share
  *		the port's reference until all send rights go away.
@@ -140,3 +140,4 @@ IPC_KOBJECT_DEFINE(IKOT_AU_SESSIONPORT,
     .iko_op_no_senders = audit_session_no_senders);
 
 #endif /* CONFIG_AUDIT */
+

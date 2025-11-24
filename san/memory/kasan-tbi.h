@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -51,7 +51,7 @@
 /*
  * KASAN_TBI inline insturmentation emits a brk instruction as a violation
  * report. The ESR value encodes both the access type and size.
- * osfmk/arm64/sleh.c needs to now the right ranges to proxy this information
+ * osfmk//sleh.c needs to now the right ranges to proxy this information
  * back to the kasan runtime.
  */
 #define KASAN_TBI_ESR_BASE          (0x900)
@@ -85,3 +85,4 @@ uint8_t *kasan_tbi_get_tag_address(vm_offset_t);
 const char *kasan_handle_brk_failure(void *, uint16_t);
 
 #endif /* _KASAN_TBI_H_ */
+

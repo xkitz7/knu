@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1999-2010 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -129,13 +129,12 @@ Lparent:
 	ldmfd   sp!, {r4, r7, pc}			// pop and return
 
 #elif defined(__arm64__)
-
-#include <mach/arm64/asm.h>
+/* Removed  include (intel-only) */
 	
 MI_ENTRY_POINT(___fork)
 	ARM64_STACK_PROLOG
 	PUSH_FRAME
-	// ARM moves a 1 in to r1 here, but I can't see why.
+	//  moves a 1 in to r1 here, but I can't see why.
 	mov		x16, #SYS_fork				// Syscall code
 	svc		#SWI_SYSCALL				// Trap to kernel
 	b.cs	Lbotch						// Carry bit indicates failure
@@ -158,3 +157,4 @@ Lparent:
 #else
 #error Unsupported architecture
 #endif
+

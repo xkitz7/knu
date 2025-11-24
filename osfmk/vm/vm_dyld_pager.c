@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -61,13 +61,13 @@
 #include <mach-o/fixup-chains.h>
 #if defined(HAS_APPLE_PAC)
 #include <ptrauth.h>
-#include <arm/misc_protos.h>
+/* Removed  include (intel-only) */
 #endif /* defined(HAS_APPLE_PAC) */
 
 
 /* For speculation macros */
 #if __arm64__
-#include <arm64/speculation.h>
+/* Removed  include (intel-only) */
 #endif /* #if __arm64__ */
 
 extern int proc_selfpid(void);
@@ -370,7 +370,7 @@ fixupPage64(
 	uint64_t                              *bindsArray  = (uint64_t *)((uintptr_t)hdr + hdr->mwli_binds_offset);
 	uint16_t                              firstStartOffset = segInfo->page_start[pageIndex];
 	vm_offset_t                           end_contents = contents + PAGE_SIZE;
-	//  For DYLD_CHAINED_PTR_64 (arm64 and x86_64) and DYLD_CHAINED_PTR_32 (arm64_32) the stride is always 4
+	//  For DYLD_CHAINED_PTR_64 ( and x86_64) and DYLD_CHAINED_PTR_32 (arm64_32) the stride is always 4
 	uint64_t                              step_multiplier = 4; // 4-byte stride
 	/*
 	 * Done if no fixups on the page
@@ -1814,3 +1814,4 @@ dyld_pager_purge_all(void)
 #endif /* DEVELOPMENT || DEBUG */
 	return pages_purged;
 }
+

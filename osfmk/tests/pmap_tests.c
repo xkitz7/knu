@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -31,12 +31,12 @@
 #include <kern/ledger.h>
 #include <kern/thread.h>
 #if defined(__arm64__)
-#include <pexpert/arm64/board_config.h>
+/* Removed  include (intel-only) */
 #if CONFIG_SPTM
-#include <arm64/sptm/pmap/pmap_pt_geometry.h>
-#include <arm64/sptm/pmap/pmap_data.h>
+/* Removed  include (intel-only) */
+/* Removed  include (intel-only) */
 #else /* CONFIG_SPTM */
-#include <arm/pmap/pmap_pt_geometry.h>
+/* Removed  include (intel-only) */
 #endif /* CONFIG_SPTM */
 #endif /* defined(__arm64__) */
 #include <vm/vm_map_xnu.h>
@@ -1067,3 +1067,4 @@ test_surt(unsigned int num_surts)
 }
 #endif /* __ARM64_PMAP_SUBPAGE_L1__ */
 #endif /* CONFIG_SPTM */
+

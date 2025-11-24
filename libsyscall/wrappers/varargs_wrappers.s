@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2011-2013 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
@@ -24,10 +24,10 @@
 #ifdef __arm64__
 
 #include "../custom/SYS.h"
-#include <mach/arm64/asm.h>
+/* Removed  include (intel-only) */
 
 /* 
- * Stubs are to handle the ARM64 ABI for variadic functions' 
+ * Stubs are to handle the  ABI for variadic functions' 
  * not matching the ABI used by the system call handler.
  */
 
@@ -140,3 +140,4 @@ MI_ENTRY_POINT(_semsys)
 	ARM64_STACK_EPILOG
 
 #endif /* defined(__arm64__) */
+

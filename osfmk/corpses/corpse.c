@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2012-2013, 2015 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -482,7 +482,7 @@ task_generate_corpse(
 	}
 	task_unlock(new_task);
 
-	/* transfer the task ref to port and arm the no-senders notification */
+	/* transfer the task ref to port and  the no-senders notification */
 	corpse_port = convert_corpse_to_port_and_nsrequest(new_task);
 	assert(IP_NULL != corpse_port);
 
@@ -982,3 +982,4 @@ task_corpse_get_crashed_thread_id(task_t corpse_task)
 {
 	return corpse_task->crashed_thread_id;
 }
+

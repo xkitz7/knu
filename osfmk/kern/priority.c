@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1077,7 +1077,7 @@ sched_thread_mode_undemote(thread_t thread, uint32_t reason)
 	case TH_SFLAG_FAILSAFE:
 		KDBG(MACHDBG_CODE(DBG_MACH_SCHED, MACH_MODE_UNDEMOTE_FAILSAFE),
 		    thread_tid(thread), thread->sched_flags);
-		/* re-arm failsafe reporting mechanism */
+		/* re- failsafe reporting mechanism */
 		thread->sched_flags &= ~TH_SFLAG_FAILSAFE_REPORTED;
 		break;
 	case TH_SFLAG_RT_DISALLOWED:
@@ -1191,3 +1191,4 @@ sched_thread_unpromote_reason(thread_t  thread,
 
 	thread_recompute_sched_pri(thread, SETPRI_DEFAULT);
 }
+

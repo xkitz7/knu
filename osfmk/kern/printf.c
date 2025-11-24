@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -176,7 +176,7 @@
 #endif /* __x86_64__ */
 
 #if __arm64__
-#include <arm/cpu_data_internal.h>
+/* Removed  include (intel-only) */
 #endif
 
 #ifdef HAS_APPLE_PAC
@@ -1043,3 +1043,4 @@ sprintf(char *buf, const char *fmt, ...)
 	return (int)strlen(buf);
 }
 #endif /* CONFIG_VSPRINTF */
+

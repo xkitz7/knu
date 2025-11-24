@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2025 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1805,7 +1805,7 @@ nd6_timeout(void *arg)
 	nd6log4(debug, "%s: found %u, aging_lazy %u, aging %u, "
 	    "sticky %u, killed %u\n", __func__, sarg.found, sarg.aging_lazy,
 	    sarg.aging, sarg.sticky, sarg.killed);
-	/* re-arm the timer if there's work to do */
+	/* re- the timer if there's work to do */
 	nd6_timeout_run--;
 	VERIFY(nd6_timeout_run >= 0 && nd6_timeout_run < 2);
 	if (arg == &nd6_fast_timer_on) {
@@ -2924,7 +2924,7 @@ nd6_rtrequest(int req, struct rtentry *rt, struct sockaddr *sa)
 		LN_INSERTHEAD(ln);
 		nd6_inuse++;
 
-		/* We have at least one entry; arm the timer if not already */
+		/* We have at least one entry;  the timer if not already */
 		nd6_sched_timeout(NULL, NULL);
 
 		/*
@@ -4191,7 +4191,7 @@ lookup:
 		ln->ln_asked = 0;
 		ND6_CACHE_STATE_TRANSITION(ln, ND6_LLINFO_DELAY);
 		ln_setexpire(ln, timenow + nd6_delay);
-		/* N.B.: we will re-arm the timer below. */
+		/* N.B.: we will re- the timer below. */
 		static_assert(ND6_LLINFO_DELAY > ND6_LLINFO_INCOMPLETE);
 	}
 
@@ -5088,3 +5088,4 @@ in6_ifaddr_set_dadprogress(struct in6_ifaddr *ia)
 	    if_name(ia->ia_ifp),
 	    ia->ia6_flags);
 }
+

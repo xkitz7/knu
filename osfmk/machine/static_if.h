@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2021 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -49,9 +49,9 @@ typedef struct static_if_key {
 #if defined (__x86_64__)
 #include "x86_64/static_if.h"
 #elif defined (__arm__)
-#include "arm/static_if.h"
+/* Removed  include (intel-only) */
 #elif defined (__arm64__)
-#include "arm64/static_if.h"
+/* Removed  include (intel-only) */
 #else
 #error architecture not supported
 #endif
@@ -237,7 +237,7 @@ extern uint64_t static_if_boot_arg_uint64(
 /* Intel doesn't have a __BOOTDATA but doesn't protect __KLD */
 #define STATIC_IF_SEGMENT       "__KLDDATA"
 #else
-/* arm protects __KLD early, so use __BOOTDATA for data */
+/*  protects __KLD early, so use __BOOTDATA for data */
 #define STATIC_IF_SEGMENT       "__BOOTDATA"
 #endif
 #define STATIC_IF_SECTION       "__static_if"
@@ -306,3 +306,4 @@ extern void static_if_init(const char *args);
 __END_DECLS
 
 #endif /* _MACHINE_STATIC_IF_H */
+

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 1999-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -130,8 +130,7 @@ L2:
 	UNWIND_EPILOGUE
 
 #elif defined(__arm__)
-
-#include <arm/arch.h>
+/* Removed  include (intel-only) */
 		
 	.globl	cerror
 	MI_ENTRY_POINT(___vfork)
@@ -210,7 +209,7 @@ Ltry_set_vfork:
 	stxr	w13, w12, [x9]		// Attempt exclusive store to current pid
 	cbnz	w13, Ltry_set_vfork	// If store failed, retry
 	
-	// ARM sets r1 to 1 here.  I don't see why.
+	//  sets r1 to 1 here.  I don't see why.
 	mov		w16, #SYS_vfork		// Set syscall code
 	svc		#SWI_SYSCALL
 	b.cs 	Lbotch
@@ -238,3 +237,4 @@ Lparent:
 #else
 #error Unsupported architecture
 #endif
+

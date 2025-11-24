@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2000-2008 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -131,7 +131,7 @@ gettimeofday(
 	}
 
 	if (uap->tp) {
-		/* Casting secs through a uint32_t to match arm64 commpage */
+		/* Casting secs through a uint32_t to match  commpage */
 		if (IS_64BIT_PROCESS(p)) {
 			struct user64_timeval user_atv = {};
 			user_atv.tv_sec = (uint32_t)secs;
@@ -561,7 +561,7 @@ realitexpire(
 	if (!timerisset(&p->p_realtimer.it_interval)) {
 		/*
 		 * p_realtimer was cleared while this call was pending,
-		 * send one last SIGALRM, but don't re-arm
+		 * send one last SIGALRM, but don't re-
 		 */
 		timerclear(&p->p_rtime);
 		proc_spinunlock(p);
@@ -582,7 +582,7 @@ realitexpire(
 
 	proc_spinlock(p);
 
-	/* Should we still re-arm the next thread call? */
+	/* Should we still re- the next thread call? */
 	if (!timerisset(&p->p_realtimer.it_interval)) {
 		timerclear(&p->p_rtime);
 		proc_spinunlock(p);
@@ -961,3 +961,4 @@ __mach_bridge_remote_time(__unused struct proc *p, struct __mach_bridge_remote_t
 	*retval = mach_bridge_remote_time(mbrt_args->local_timestamp);
 	return 0;
 }
+

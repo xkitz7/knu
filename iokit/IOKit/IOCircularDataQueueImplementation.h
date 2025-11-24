@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2024 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
@@ -1709,7 +1709,7 @@ IOCircularDataQueueCopyMemoryDescriptor(IOCircularDataQueue  *queue)
 #else /* KERNEL */
 
 #if defined(__arm64__) && defined(__LP64__)
-#include <System/arm/cpu_capabilities.h>
+/* Removed  include (intel-only) */
 #endif /* defined(__arm64__) */
 
 IOReturn ATTR_LSE2
@@ -1916,3 +1916,4 @@ IOCircularDataQueueCopyCurrent(IOCircularDataQueue *queue, void *data, size_t *s
 }
 
 __END_DECLS
+

@@ -1,4 +1,4 @@
-export MakeInc_cmd=${SRCROOT}/makedefs/MakeInc.cmd
+﻿export MakeInc_cmd=${SRCROOT}/makedefs/MakeInc.cmd
 export MakeInc_def=${SRCROOT}/makedefs/MakeInc.def
 export MakeInc_rule=${SRCROOT}/makedefs/MakeInc.rule
 export MakeInc_dir=${SRCROOT}/makedefs/MakeInc.dir
@@ -42,7 +42,7 @@ $(OBJROOT)/san/kcov-denylist-%: $(SOURCE)/kcov-denylist $(SOURCE)/kcov-denylist-
 	$(_v)sed -e 's,^src:\./,src:'"$(SRCROOT)/," $^ > $@
 	$(_v)$(SRCROOT)/san/tools/validate_denylist.sh "$@"
 
-do_build_setup:: $(OBJROOT)/san/kcov-denylist-x86_64 $(OBJROOT)/san/kcov-denylist-arm64
+do_build_setup:: $(OBJROOT)/san/kcov-denylist-x86_64 $(OBJROOT)/san/kcov-denylist-x86_64
 
 #
 # Kcov System.kext plugin
@@ -98,3 +98,4 @@ endif
 
 include $(MakeInc_rule)
 include $(MakeInc_dir)
+
