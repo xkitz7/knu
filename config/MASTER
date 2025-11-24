@@ -1,4 +1,5 @@
-﻿#
+﻿/* ARM-specific build options removed for intel-only tree */
+#
 # Mach Operating System
 # Copyright (c) 1986 Carnegie-Mellon University
 # Copyright 2001-2018 Apple Inc.
@@ -328,8 +329,7 @@ options		CONFIG_EXCLAVES			# <config_exclaves>
 # Compile XNU with PPL support.
 options   CONFIG_PMAP_PPL			# <config_pmap_ppl>
 
-options   NOS_ARM_ASM			# <nos_arm_asm>
-options   NOS_ARM_PMAP			# <nos_arm_pmap>
+/* ARM-specific build options removed for intel-only tree */
 
 # support dynamic signing of code
 #
@@ -755,7 +755,7 @@ options		CONFIG_MACH_BRIDGE_SEND_TIME #  # <config_mach_bridge_send_time>
 options		CONFIG_MACH_BRIDGE_RECV_TIME #  # <config_mach_bridge_recv_time>
 
 options		CONFIG_QUIESCE_COUNTER # Support for _COMM_PAGE_CPU_QUIESCENT_COUNTER # <config_quiesce_counter>
-options		CONFIG_ARM_PFZ	# Support for PFZ on  # <config_arm_pfz>
+options		CONFIG_QUIESCE_COUNTER # Support for _COMM_PAGE_CPU_QUIESCENT_COUNTER # <config_quiesce_counter>
 
 #
 # Sanitizers
