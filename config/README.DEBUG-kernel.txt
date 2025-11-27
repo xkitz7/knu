@@ -1,4 +1,4 @@
-This directory contains a universal DEBUG kernel, built for 32-bit and
+﻿This directory contains a universal DEBUG kernel, built for 32-bit and
 64-bit Intel. It includes a dSYM bundle for remote kernel debugging
 and live kernel debugging.
 
@@ -34,6 +34,5 @@ Loading Kernel GDB Macros package.  Type "help kgm" for more info.
 Connected.
 
 <arch> should reflect the currently booted kernel architecture, either
-"i386" or "x86_64"
 
 

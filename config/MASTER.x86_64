@@ -1,4 +1,4 @@
-#
+﻿#
 # Mach Operating System
 # Copyright (c) 1986 Carnegie-Mellon University
 # Copyright 2001-2018 Apple Inc.
@@ -79,7 +79,6 @@ machine		"x86_64"						# <intel>
 
 makeoptions	OSFMK_MACHINE = "x86_64"				# <mach>
 
-options		PAL_I386
 
 options	    CONFIG_MCA			    # Machine Check Architecture	# <config_mca>
 options	    CONFIG_VMX			    # Virtual Machine Extensions	# <config_vmx>
