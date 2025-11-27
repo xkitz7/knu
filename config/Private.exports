@@ -1,4 +1,4 @@
-_PE_i_can_has_debugger
+﻿_PE_i_can_has_debugger
 __ZN15IORegistryEntry18setIndexedPropertyEjP8OSObject
 __ZNK15IORegistryEntry18getIndexedPropertyEj
 __ZN16IOPlatformExpert*
@@ -271,7 +271,6 @@ __ZTVN24IOProviderPropertyMerger9MetaClassE
 _PE_i_can_has_kernel_configuration
 _add_fsevent
 _need_fsevent
-_apple_encrypted_archive_interface_register
 _assert_wait_deadline_with_leeway
 _assert_wait_timeout_with_leeway
 _audio_active

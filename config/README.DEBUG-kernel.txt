@@ -10,8 +10,6 @@ System.kext. Backup all files before attempting these steps.
 To install the DEBUG kernel, do:
 bash-3.2$ sudo -s
 bash-3.2# cd /
-bash-3.2# ditto /AppleInternal/Developer/Extras/Kernel\ Debugging/System.kext /System/Library/Extensions/System.kext
-bash-3.2# cp -r /AppleInternal/Developer/Extras/Kernel\ Debugging/mach_kernel* /
 bash-3.2# chown -R root:wheel /System/Library/Extensions/System.kext /mach_kernel*
 bash-3.2# chmod -R g-w /System/Library/Extensions/System.kext /mach_kernel*
 bash-3.2# touch /System/Library/Extensions
@@ -27,8 +25,6 @@ With the DEBUG kernel installed, set "kmem=1" in your "boot-args"
 NVRAM variable, reboot, and do:
 
 bash-3.2$ sudo gdb -a <arch> --quiet /mach_kernel
-(gdb) target darwin-kernel
-(gdb) source /AppleInternal/Developer/Extras/Kernel\ Debugging/kgmacros
 Loading Kernel GDB Macros package.  Type "help kgm" for more info.
 (gdb) attach
 Connected.

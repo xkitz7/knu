@@ -1,4 +1,4 @@
-export MakeInc_cmd=${SRCROOT}/makedefs/MakeInc.cmd
+﻿export MakeInc_cmd=${SRCROOT}/makedefs/MakeInc.cmd
 export MakeInc_def=${SRCROOT}/makedefs/MakeInc.def
 export MakeInc_rule=${SRCROOT}/makedefs/MakeInc.rule
 export MakeInc_dir=${SRCROOT}/makedefs/MakeInc.dir
@@ -18,8 +18,6 @@ KEXT_PLIST_LIST := \
 	System.kext/Info.plist \
 	System.kext/PlugIns/Kasan.kext/Info.plist \
 	System.kext/PlugIns/Kcov.kext/Info.plist \
-	System.kext/PlugIns/AppleNMI.kext/Info.plist \
-	System.kext/PlugIns/ApplePlatformFamily.kext/Info.plist \
 	System.kext/PlugIns/IONVRAMFamily.kext/Info.plist \
 	System.kext/PlugIns/IOSystemManagement.kext/Info.plist
 

@@ -2,7 +2,6 @@
 #
 # Mach Operating System
 # Copyright (c) 1986 Carnegie-Mellon University
-# Copyright 2001-2018 Apple Inc.
 #
 # All rights reserved.  The CMU software License Agreement
 # specifies the terms and conditions for use and redistribution.
@@ -104,7 +103,6 @@ options		SENDFILE	# sendfile					# <sendfile>
 options		NETWORKING	# networking layer		# <inet>
 options		CONFIG_FSE	# file system events		# <config_fse>
 options		CONFIG_IMAGEBOOT	# local image boot	# <config_imageboot>
-options		CONFIG_IMAGEBOOT_IMG4	# authenticate image with AppleImage4	# <config_imageboot_img4>
 options		CONFIG_IMAGEBOOT_CHUNKLIST	# authenticate image with a chunk list	# <config_imageboot_chunklist>
 
 options		CONFIG_WORKLOOP_DEBUG	# <config_workloop_debug>
@@ -127,7 +125,6 @@ options		CONFIG_DEV_KMEM	    # /dev/kmem device for reading KVA	# <config_dev_km
 #
 options		QUOTA		# file system quotas		# <quota>
 options		NAMEDSTREAMS	# named stream vnop support	# <namedstreams>
-options		CONFIG_APPLEDOUBLE # apple double support	# <config_appledouble>
 options		CONFIG_VOLFS	# volfs path support (legacy)	# <config_volfs>
 options		CONFIG_IMGSRC_ACCESS # source of imageboot dmg	# <config_imgsrc_access>
 options		CONFIG_TRIGGERS	# trigger vnodes		# <config_triggers>
@@ -155,7 +152,6 @@ options		NFSSERVER	# Be an NFS server		# <nfsserver>
 options		CONFIG_NETBOOT	# network booting		# <config_netboot>
 
 #
-# Machine Independent Apple Features
 #
 profile				# build a profiling kernel	# <profile>
 

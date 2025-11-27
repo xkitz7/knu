@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
@@ -7,9 +6,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Private</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Private Pseudoextension, Apple Computer Inc, ###KERNEL_VERSION_LONG###</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.kpi.private</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

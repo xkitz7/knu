@@ -1,19 +1,16 @@
 ﻿#
 # Mach Operating System
 # Copyright (c) 1986 Carnegie-Mellon University
-# Copyright 2001-2018 Apple Inc.
 #
 # All rights reserved.  The CMU software License Agreement
 # specifies the terms and conditions for use and redistribution.
 #
 ######################################################################
 #
-#  Master Apple configuration file (see the master machine independent
 #  configuration file for a description of the file format).
 #
 ######################################################################
 #
-#  Standard Apple OS Configurations:
 #  -------- ----- -- ---------------
 #
 #  KERNEL_BASE =    [ intel medium msgb_large config_requires_u32_munging config_delay_idle_sleep config_proc_udata_storage vsprintf ]
@@ -24,7 +21,6 @@
 #  BSD_RELEASE =    [ BSD_BASE ]
 #  BSD_DEV =        [ BSD_BASE config_vnguard ]
 #  BSD_DEBUG =      [ BSD_BASE config_vnguard ]
-#  FILESYS_BASE =   [ devfs fdesc config_dev_kmem config_fse quota namedstreams config_mnt_rootsnap config_rosv_startup config_mount_vm config_mount_prebootrecovery config_basesystemroot config_keypage_wp config_protect fifo config_volfs fs_compression config_imgsrc_access config_triggers config_ext_resolver config_searchfs config_appledouble nullfs config_mnt_suid config_firmlinks config_dataless_files config_union_mounts bindfs config_file_leases]
 #  FILESYS_RELEASE= [ FILESYS_BASE ]
 #  FILESYS_DEV =    [ FILESYS_BASE config_iocount_trace ]
 #  FILESYS_DEBUG =  [ FILESYS_BASE config_iocount_trace ]
@@ -87,7 +83,6 @@ options     CONFIG_MACF_LAZY_VNODE_LABELS   # Turn on labels, don't preallocate
 
 options     NO_NESTED_PMAP                  # <no_nested_pmap>
 
-options		HYPERVISOR				# Apple hypervisor kext support	# <hypervisor>
 
 options     CONFIG_MACH_APPROXIMATE_TIME
 

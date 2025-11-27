@@ -1,4 +1,4 @@
-_Debugger
+﻿_Debugger
 _NDR_record
 _OSSpinLockTry
 _OSSpinLockUnlock
@@ -68,7 +68,6 @@ _aes_encrypt_cbc
 _aes_encrypt_key
 _aes_encrypt_key128
 _aes_encrypt_key256
-_appleClut8
 _cons_cinput
 _cons_ops
 _conslog_putc

@@ -1,7 +1,4 @@
-_IOLockSleepDeadline_darwin14
-_IOLockSleep_darwin14
-_IOLockWakeup_darwin14
-_IOOFPathMatching
+﻿_IOOFPathMatching
 _IOSpinUnlock:_OSSpinLockUnlock
 _IOTrySpinLock:_OSSpinLockTry
 __Z16IODTFindSlotNameP15IORegistryEntryj

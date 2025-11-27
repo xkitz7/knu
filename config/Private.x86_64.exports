@@ -1,4 +1,4 @@
-_IOGetBootKeyStoreData
+﻿_IOGetBootKeyStoreData
 _IOGetAPFSKeyStoreData
 _IOSetAPFSKeyStoreData
 _IOGetARVRootHashData
@@ -103,7 +103,6 @@ _getsegdatafromheader
 _getsegbynamefromheader
 __mh_execute_header
 
-#macOS only codesigning kpi
 _csproc_disable_enforcement
 _csproc_mark_invalid_allowed
 _csproc_check_invalid_allowed
@@ -114,7 +113,6 @@ _csproc_forced_lv
 _mach_vm_map
 _mach_vm_remap
 
-#exports for AppleHV
 _hv_ast_pending
 _hv_disable
 _hv_ept_pmap_create
